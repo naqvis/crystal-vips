@@ -2005,16 +2005,16 @@ lib LibVips
   fun vips_col_lcmc2_l = vips_col_Lcmc2L(lcmc : LibC::Float) : LibC::Float
   fun vips_col_ccmc2_c = vips_col_Ccmc2C(ccmc : LibC::Float) : LibC::Float
   fun vips_col_chcmc2h = vips_col_Chcmc2h(c : LibC::Float, hcmc : LibC::Float) : LibC::Float
-  fun vips_col_s_rgb2sc_rgb_8 = vips_col_sRGB2scRGB_8(r : LibC::Int, g : LibC::Int, b : LibC::Int, r : LibC::Float*, g : LibC::Float*, b : LibC::Float*) : LibC::Int
-  fun vips_col_s_rgb2sc_rgb_16 = vips_col_sRGB2scRGB_16(r : LibC::Int, g : LibC::Int, b : LibC::Int, r : LibC::Float*, g : LibC::Float*, b : LibC::Float*) : LibC::Int
-  fun vips_col_s_rgb2sc_rgb_8_noclip = vips_col_sRGB2scRGB_8_noclip(r : LibC::Int, g : LibC::Int, b : LibC::Int, r : LibC::Float*, g : LibC::Float*, b : LibC::Float*) : LibC::Int
-  fun vips_col_s_rgb2sc_rgb_16_noclip = vips_col_sRGB2scRGB_16_noclip(r : LibC::Int, g : LibC::Int, b : LibC::Int, r : LibC::Float*, g : LibC::Float*, b : LibC::Float*) : LibC::Int
+  fun vips_col_s_rgb2sc_rgb_8 = vips_col_sRGB2scRGB_8(r : LibC::Int, g : LibC::Int, b : LibC::Int, r_ptr : LibC::Float*, g_ptr : LibC::Float*, b_ptr : LibC::Float*) : LibC::Int
+  fun vips_col_s_rgb2sc_rgb_16 = vips_col_sRGB2scRGB_16(r : LibC::Int, g : LibC::Int, b : LibC::Int, r_ptr : LibC::Float*, g_ptr : LibC::Float*, b_ptr : LibC::Float*) : LibC::Int
+  fun vips_col_s_rgb2sc_rgb_8_noclip = vips_col_sRGB2scRGB_8_noclip(r : LibC::Int, g : LibC::Int, b : LibC::Int, r_ptr : LibC::Float*, g_ptr : LibC::Float*, b_ptr : LibC::Float*) : LibC::Int
+  fun vips_col_s_rgb2sc_rgb_16_noclip = vips_col_sRGB2scRGB_16_noclip(r : LibC::Int, g : LibC::Int, b : LibC::Int, r_ptr : LibC::Float*, g_ptr : LibC::Float*, b_ptr : LibC::Float*) : LibC::Int
   fun vips_col_sc_rgb2_xyz = vips_col_scRGB2XYZ(r : LibC::Float, g : LibC::Float, b : LibC::Float, x : LibC::Float*, y : LibC::Float*, z : LibC::Float*) : LibC::Int
   fun vips_col_xyz2sc_rgb = vips_col_XYZ2scRGB(x : LibC::Float, y : LibC::Float, z : LibC::Float, r : LibC::Float*, g : LibC::Float*, b : LibC::Float*) : LibC::Int
-  fun vips_col_sc_rgb2s_rgb_8 = vips_col_scRGB2sRGB_8(r : LibC::Float, g : LibC::Float, b : LibC::Float, r : LibC::Int*, g : LibC::Int*, b : LibC::Int*, og : LibC::Int*) : LibC::Int
-  fun vips_col_sc_rgb2s_rgb_16 = vips_col_scRGB2sRGB_16(r : LibC::Float, g : LibC::Float, b : LibC::Float, r : LibC::Int*, g : LibC::Int*, b : LibC::Int*, og : LibC::Int*) : LibC::Int
-  fun vips_col_sc_rgb2_bw_16 = vips_col_scRGB2BW_16(r : LibC::Float, g : LibC::Float, b : LibC::Float, g : LibC::Int*, og : LibC::Int*) : LibC::Int
-  fun vips_col_sc_rgb2_bw_8 = vips_col_scRGB2BW_8(r : LibC::Float, g : LibC::Float, b : LibC::Float, g : LibC::Int*, og : LibC::Int*) : LibC::Int
+  fun vips_col_sc_rgb2s_rgb_8 = vips_col_scRGB2sRGB_8(r : LibC::Float, g : LibC::Float, b : LibC::Float, r_ptr : LibC::Int*, g_ptr : LibC::Int*, b_ptr : LibC::Int*, og : LibC::Int*) : LibC::Int
+  fun vips_col_sc_rgb2s_rgb_16 = vips_col_scRGB2sRGB_16(r : LibC::Float, g : LibC::Float, b : LibC::Float, r_ptr : LibC::Int*, g_ptr : LibC::Int*, b_ptr : LibC::Int*, og : LibC::Int*) : LibC::Int
+  fun vips_col_sc_rgb2_bw_16 = vips_col_scRGB2BW_16(r : LibC::Float, g : LibC::Float, b : LibC::Float, g_ptr : LibC::Int*, og : LibC::Int*) : LibC::Int
+  fun vips_col_sc_rgb2_bw_8 = vips_col_scRGB2BW_8(r : LibC::Float, g : LibC::Float, b : LibC::Float, g_ptr : LibC::Int*, og : LibC::Int*) : LibC::Int
   fun vips_pythagoras(l1 : LibC::Float, a1 : LibC::Float, b1 : LibC::Float, l2 : LibC::Float, a2 : LibC::Float, b2 : LibC::Float) : LibC::Float
   fun vips_col_d_e00 = vips_col_dE00(l1 : LibC::Float, a1 : LibC::Float, b1 : LibC::Float, l2 : LibC::Float, a2 : LibC::Float, b2 : LibC::Float) : LibC::Float
 
