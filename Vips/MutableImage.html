@@ -1,0 +1,3364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 1.3.2">
+<meta name="crystal_docs.project_version" content="main">
+<meta name="crystal_docs.project_name" content="vips">
+
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+  <meta name="repository-name" content="vips">
+  <title>Vips::MutableImage - vips main</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          vips
+        </a>
+      </h1>
+
+      <span class="project-version">
+        main
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="vips/Vips" data-name="vips">
+      <a href="../Vips.html">Vips</a>
+      
+        <ul>
+  
+  <li class=" " data-id="vips/Vips/Cache" data-name="vips::cache">
+      <a href="../Vips/Cache.html">Cache</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Connection" data-name="vips::connection">
+      <a href="../Vips/Connection.html">Connection</a>
+      
+    </li>
+  
+  <li class="parent " data-id="vips/Vips/Enums" data-name="vips::enums">
+      <a href="../Vips/Enums.html">Enums</a>
+      
+        <ul>
+  
+  <li class=" " data-id="vips/Vips/Enums/Access" data-name="vips::enums::access">
+      <a href="../Vips/Enums/Access.html">Access</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/Align" data-name="vips::enums::align">
+      <a href="../Vips/Enums/Align.html">Align</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/Angle" data-name="vips::enums::angle">
+      <a href="../Vips/Enums/Angle.html">Angle</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/Angle45" data-name="vips::enums::angle45">
+      <a href="../Vips/Enums/Angle45.html">Angle45</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/BandFormat" data-name="vips::enums::bandformat">
+      <a href="../Vips/Enums/BandFormat.html">BandFormat</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/BlendMode" data-name="vips::enums::blendmode">
+      <a href="../Vips/Enums/BlendMode.html">BlendMode</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/Coding" data-name="vips::enums::coding">
+      <a href="../Vips/Enums/Coding.html">Coding</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/Combine" data-name="vips::enums::combine">
+      <a href="../Vips/Enums/Combine.html">Combine</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/CombineMode" data-name="vips::enums::combinemode">
+      <a href="../Vips/Enums/CombineMode.html">CombineMode</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/CompassDirection" data-name="vips::enums::compassdirection">
+      <a href="../Vips/Enums/CompassDirection.html">CompassDirection</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/DemandStyle" data-name="vips::enums::demandstyle">
+      <a href="../Vips/Enums/DemandStyle.html">DemandStyle</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/Direction" data-name="vips::enums::direction">
+      <a href="../Vips/Enums/Direction.html">Direction</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/Extend" data-name="vips::enums::extend">
+      <a href="../Vips/Enums/Extend.html">Extend</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/FailOn" data-name="vips::enums::failon">
+      <a href="../Vips/Enums/FailOn.html">FailOn</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/ForeignDzContainer" data-name="vips::enums::foreigndzcontainer">
+      <a href="../Vips/Enums/ForeignDzContainer.html">ForeignDzContainer</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/ForeignDzDepth" data-name="vips::enums::foreigndzdepth">
+      <a href="../Vips/Enums/ForeignDzDepth.html">ForeignDzDepth</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/ForeignDzLayout" data-name="vips::enums::foreigndzlayout">
+      <a href="../Vips/Enums/ForeignDzLayout.html">ForeignDzLayout</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/ForeignFlags" data-name="vips::enums::foreignflags">
+      <a href="../Vips/Enums/ForeignFlags.html">ForeignFlags</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/ForeignHeifCompression" data-name="vips::enums::foreignheifcompression">
+      <a href="../Vips/Enums/ForeignHeifCompression.html">ForeignHeifCompression</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/ForeignJpegSubsample" data-name="vips::enums::foreignjpegsubsample">
+      <a href="../Vips/Enums/ForeignJpegSubsample.html">ForeignJpegSubsample</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/ForeignPpmFormat" data-name="vips::enums::foreignppmformat">
+      <a href="../Vips/Enums/ForeignPpmFormat.html">ForeignPpmFormat</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/ForeignSubsample" data-name="vips::enums::foreignsubsample">
+      <a href="../Vips/Enums/ForeignSubsample.html">ForeignSubsample</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/ForeignTiffCompression" data-name="vips::enums::foreigntiffcompression">
+      <a href="../Vips/Enums/ForeignTiffCompression.html">ForeignTiffCompression</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/ForeignTiffPredictor" data-name="vips::enums::foreigntiffpredictor">
+      <a href="../Vips/Enums/ForeignTiffPredictor.html">ForeignTiffPredictor</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/ForeignTiffResunit" data-name="vips::enums::foreigntiffresunit">
+      <a href="../Vips/Enums/ForeignTiffResunit.html">ForeignTiffResunit</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/ForeignWebpPreset" data-name="vips::enums::foreignwebppreset">
+      <a href="../Vips/Enums/ForeignWebpPreset.html">ForeignWebpPreset</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/ImageType" data-name="vips::enums::imagetype">
+      <a href="../Vips/Enums/ImageType.html">ImageType</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/Intent" data-name="vips::enums::intent">
+      <a href="../Vips/Enums/Intent.html">Intent</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/Interesting" data-name="vips::enums::interesting">
+      <a href="../Vips/Enums/Interesting.html">Interesting</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/Interpretation" data-name="vips::enums::interpretation">
+      <a href="../Vips/Enums/Interpretation.html">Interpretation</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/Kernel" data-name="vips::enums::kernel">
+      <a href="../Vips/Enums/Kernel.html">Kernel</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/OperationBoolean" data-name="vips::enums::operationboolean">
+      <a href="../Vips/Enums/OperationBoolean.html">OperationBoolean</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/OperationComplex" data-name="vips::enums::operationcomplex">
+      <a href="../Vips/Enums/OperationComplex.html">OperationComplex</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/OperationComplex2" data-name="vips::enums::operationcomplex2">
+      <a href="../Vips/Enums/OperationComplex2.html">OperationComplex2</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/OperationComplexget" data-name="vips::enums::operationcomplexget">
+      <a href="../Vips/Enums/OperationComplexget.html">OperationComplexget</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/OperationFlags" data-name="vips::enums::operationflags">
+      <a href="../Vips/Enums/OperationFlags.html">OperationFlags</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/OperationMath" data-name="vips::enums::operationmath">
+      <a href="../Vips/Enums/OperationMath.html">OperationMath</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/OperationMath2" data-name="vips::enums::operationmath2">
+      <a href="../Vips/Enums/OperationMath2.html">OperationMath2</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/OperationMorphology" data-name="vips::enums::operationmorphology">
+      <a href="../Vips/Enums/OperationMorphology.html">OperationMorphology</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/OperationRelational" data-name="vips::enums::operationrelational">
+      <a href="../Vips/Enums/OperationRelational.html">OperationRelational</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/OperationRound" data-name="vips::enums::operationround">
+      <a href="../Vips/Enums/OperationRound.html">OperationRound</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/PCS" data-name="vips::enums::pcs">
+      <a href="../Vips/Enums/PCS.html">PCS</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/Precision" data-name="vips::enums::precision">
+      <a href="../Vips/Enums/Precision.html">Precision</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/RegionShrink" data-name="vips::enums::regionshrink">
+      <a href="../Vips/Enums/RegionShrink.html">RegionShrink</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/Saveable" data-name="vips::enums::saveable">
+      <a href="../Vips/Enums/Saveable.html">Saveable</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/Signal" data-name="vips::enums::signal">
+      <a href="../Vips/Enums/Signal.html">Signal</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/Size" data-name="vips::enums::size">
+      <a href="../Vips/Enums/Size.html">Size</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/Token" data-name="vips::enums::token">
+      <a href="../Vips/Enums/Token.html">Token</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/GObject" data-name="vips::gobject">
+      <a href="../Vips/GObject.html">GObject</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/GValue" data-name="vips::gvalue">
+      <a href="../Vips/GValue.html">GValue</a>
+      
+    </li>
+  
+  <li class="parent " data-id="vips/Vips/Image" data-name="vips::image">
+      <a href="../Vips/Image.html">Image</a>
+      
+        <ul>
+  
+  <li class=" " data-id="vips/Vips/Image/EvalProc" data-name="vips::image::evalproc">
+      <a href="../Vips/Image/EvalProc.html">EvalProc</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Interpolate" data-name="vips::interpolate">
+      <a href="../Vips/Interpolate.html">Interpolate</a>
+      
+    </li>
+  
+  <li class="parent " data-id="vips/Vips/Introspect" data-name="vips::introspect">
+      <a href="../Vips/Introspect.html">Introspect</a>
+      
+        <ul>
+  
+  <li class=" " data-id="vips/Vips/Introspect/Argument" data-name="vips::introspect::argument">
+      <a href="../Vips/Introspect/Argument.html">Argument</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" current" data-id="vips/Vips/MutableImage" data-name="vips::mutableimage">
+      <a href="../Vips/MutableImage.html">MutableImage</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Operation" data-name="vips::operation">
+      <a href="../Vips/Operation.html">Operation</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Region" data-name="vips::region">
+      <a href="../Vips/Region.html">Region</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Source" data-name="vips::source">
+      <a href="../Vips/Source.html">Source</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/SourceCustom" data-name="vips::sourcecustom">
+      <a href="../Vips/SourceCustom.html">SourceCustom</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/SourceStream" data-name="vips::sourcestream">
+      <a href="../Vips/SourceStream.html">SourceStream</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Stats" data-name="vips::stats">
+      <a href="../Vips/Stats.html">Stats</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Target" data-name="vips::target">
+      <a href="../Vips/Target.html">Target</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/TargetCustom" data-name="vips::targetcustom">
+      <a href="../Vips/TargetCustom.html">TargetCustom</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/TargetStream" data-name="vips::targetstream">
+      <a href="../Vips/TargetStream.html">TargetStream</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Type" data-name="vips::type">
+      <a href="../Vips/Type.html">Type</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/VipsBlob" data-name="vips::vipsblob">
+      <a href="../Vips/VipsBlob.html">VipsBlob</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/VipsException" data-name="vips::vipsexception">
+      <a href="../Vips/VipsException.html">VipsException</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/VipsObject" data-name="vips::vipsobject">
+      <a href="../Vips/VipsObject.html">VipsObject</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Vips::MutableImage
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Vips/MutableImage.html">Vips::MutableImage</a></li><li class="superclass"><a href="../Vips/Image.html">Vips::Image</a></li><li class="superclass"><a href="../Vips/VipsObject.html">Vips::VipsObject</a></li><li class="superclass"><a href="../Vips/GObject.html">Vips::GObject</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/naqvis/crystal-vips/blob/adb3c42333182aee3afbb6e4760d875a0b54abd7/src/vips/ext/mutableimage.cr#L13" target="_blank">
+        vips/ext/mutableimage.cr
+      </a>
+    
+    <br/>
+  
+    
+      <a href="https://github.com/naqvis/crystal-vips/blob/adb3c42333182aee3afbb6e4760d875a0b54abd7/src/vips/mutableimage.cr#L4" target="_blank">
+        vips/mutableimage.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#%5B%5D%3D%28index%2Cvalue%29-instance-method" class="signature"><strong>#[]=</strong>(index, value)</a>
+        
+          <div class="summary"><p>Use <code>[]</code> to set band elements on an image.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#draw_circle%28ink%3AArray%28Float64%29%2Ccx%3AInt32%2Ccy%3AInt32%2Cradius%3AInt32%2C%2A%2Akwargs%29%3ANil-instance-method" class="signature"><strong>#draw_circle</strong>(ink : Array(Float64), cx : Int32, cy : Int32, radius : Int32, **kwargs) : Nil</a>
+        
+          <div class="summary"><p>Draw a circle on an image</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#draw_flood%28ink%3AArray%28Float64%29%2Cx%3AInt32%2Cy%3AInt32%2C%2A%2Akwargs%29%3ANil-instance-method" class="signature"><strong>#draw_flood</strong>(ink : Array(Float64), x : Int32, y : Int32, **kwargs) : Nil</a>
+        
+          <div class="summary"><p>Flood-fill an area</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#draw_image%28sub%3AImage%2Cx%3AInt32%2Cy%3AInt32%2C%2A%2Akwargs%29%3ANil-instance-method" class="signature"><strong>#draw_image</strong>(sub : Image, x : Int32, y : Int32, **kwargs) : Nil</a>
+        
+          <div class="summary"><p>Paint an image into another image</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#draw_line%28ink%3AArray%28Float64%29%2Cx1%3AInt32%2Cy1%3AInt32%2Cx2%3AInt32%2Cy2%3AInt32%29%3ANil-instance-method" class="signature"><strong>#draw_line</strong>(ink : Array(Float64), x1 : Int32, y1 : Int32, x2 : Int32, y2 : Int32) : Nil</a>
+        
+          <div class="summary"><p>Draw a line on an image</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#draw_mask%28ink%3AArray%28Float64%29%2Cmask%3AImage%2Cx%3AInt32%2Cy%3AInt32%29%3ANil-instance-method" class="signature"><strong>#draw_mask</strong>(ink : Array(Float64), mask : Image, x : Int32, y : Int32) : Nil</a>
+        
+          <div class="summary"><p>Draw a mask on an image</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#draw_rect%28ink%3AArray%28Float64%29%2Cleft%3AInt32%2Ctop%3AInt32%2Cwidth%3AInt32%2Cheight%3AInt32%2C%2A%2Akwargs%29%3ANil-instance-method" class="signature"><strong>#draw_rect</strong>(ink : Array(Float64), left : Int32, top : Int32, width : Int32, height : Int32, **kwargs) : Nil</a>
+        
+          <div class="summary"><p>Paint a rectangle on an image</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#draw_smudge%28left%3AInt32%2Ctop%3AInt32%2Cwidth%3AInt32%2Cheight%3AInt32%29%3ANil-instance-method" class="signature"><strong>#draw_smudge</strong>(left : Int32, top : Int32, width : Int32, height : Int32) : Nil</a>
+        
+          <div class="summary"><p>Blur a rectangle on an image</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#mutate%28%26%29-instance-method" class="signature"><strong>#mutate</strong>(&)</a>
+        
+          <div class="summary"><p>Mutate an image with a block.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#remove%28name%3AString%29-instance-method" class="signature"><strong>#remove</strong>(name : String)</a>
+        
+          <div class="summary"><p>Remove a metadata item from an image.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#set%28gtype%3ALibVips%3A%3AGType%2Cname%3AString%2Cvalue%29-instance-method" class="signature"><strong>#set</strong>(gtype : LibVips::GType, name : String, value)</a>
+        
+          <div class="summary"><p>Sets the type and value of an item of metadata.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#set%28name%3AString%2Cvalue%29-instance-method" class="signature"><strong>#set</strong>(name : String, value)</a>
+        
+          <div class="summary"><p>Sets the value of an item of metadata.</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#to_s%28io%3AIO%29-instance-method" class="signature"><strong>#to_s</strong>(io : IO)</a>
+        
+          <div class="summary"><p>Appends a short String representation of this object which includes its class name and its object address.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+  <h3>Instance methods inherited from class <code><a href="../Vips/Image.html">Vips::Image</a></code></h3>
+  
+  
+    <a href="../Vips/Image.html#%21%3D%28other%29-instance-method" class="tooltip">
+      <span>!=(other)</span>
+    !=</a>, 
+    
+  
+    <a href="../Vips/Image.html#%25%28other%29-instance-method" class="tooltip">
+      <span>%(other)</span>
+    %</a>, 
+    
+  
+    <a href="../Vips/Image.html#%26%28other%29-instance-method" class="tooltip">
+      <span>&(other)</span>
+    &</a>, 
+    
+  
+    <a href="../Vips/Image.html#%2A%28other%29-instance-method" class="tooltip">
+      <span>*(other)</span>
+    *</a>, 
+    
+  
+    <a href="../Vips/Image.html#%2A%2A%28exp%3AImage%29-instance-method" class="tooltip">
+      <span>**(exp : Image)<br/>**(exp : Array(Number))<br/>**(*exp : Number)</span>
+    **</a>, 
+    
+  
+    <a href="../Vips/Image.html#%2B%28other%29-instance-method" class="tooltip">
+      <span>+(other)</span>
+    +</a>, 
+    
+  
+    <a href="../Vips/Image.html#-%28other%29-instance-method" class="tooltip">
+      <span>-(other)</span>
+    -</a>, 
+    
+  
+    <a href="../Vips/Image.html#/%28other%29-instance-method" class="tooltip">
+      <span>/(other)</span>
+    /</a>, 
+    
+  
+    <a href="../Vips/Image.html#%3C%28other%29-instance-method" class="tooltip">
+      <span><(other)</span>
+    <</a>, 
+    
+  
+    <a href="../Vips/Image.html#%3C%3C%28other%29-instance-method" class="tooltip">
+      <span><<(other)</span>
+    <<</a>, 
+    
+  
+    <a href="../Vips/Image.html#%3C%3D%28other%29-instance-method" class="tooltip">
+      <span><=(other)</span>
+    <=</a>, 
+    
+  
+    <a href="../Vips/Image.html#%3D%3D%28other%29-instance-method" class="tooltip">
+      <span>==(other)</span>
+    ==</a>, 
+    
+  
+    <a href="../Vips/Image.html#%3E%28other%29-instance-method" class="tooltip">
+      <span>>(other)</span>
+    ></a>, 
+    
+  
+    <a href="../Vips/Image.html#%3E%3D%28other%29-instance-method" class="tooltip">
+      <span>>=(other)</span>
+    >=</a>, 
+    
+  
+    <a href="../Vips/Image.html#%3E%3E%28other%29-instance-method" class="tooltip">
+      <span>>>(other)</span>
+    >></a>, 
+    
+  
+    <a href="../Vips/Image.html#%5B%5D%28x%3AInt32%2Cy%3AInt32%29-instance-method" class="tooltip">
+      <span>[](x : Int32, y : Int32)<br/>[](i : Int32)<br/>[](index : Range)</span>
+    []</a>, 
+    
+  
+    <a href="../Vips/Image.html#%5E%28other%29-instance-method" class="tooltip">
+      <span>^(other)</span>
+    ^</a>, 
+    
+  
+    <a href="../Vips/Image.html#a_cosh%3AImage-instance-method" class="tooltip">
+      <span>a_cosh : Image</span>
+    a_cosh</a>, 
+    
+  
+    <a href="../Vips/Image.html#a_sinh%3AImage-instance-method" class="tooltip">
+      <span>a_sinh : Image</span>
+    a_sinh</a>, 
+    
+  
+    <a href="../Vips/Image.html#a_tan2%28x%3AImage%29-instance-method" class="tooltip">
+      <span>a_tan2(x : Image)</span>
+    a_tan2</a>, 
+    
+  
+    <a href="../Vips/Image.html#a_tanh%3AImage-instance-method" class="tooltip">
+      <span>a_tanh : Image</span>
+    a_tanh</a>, 
+    
+  
+    <a href="../Vips/Image.html#abs-instance-method" class="tooltip">
+      <span>abs</span>
+    abs</a>, 
+    
+  
+    <a href="../Vips/Image.html#acos%3AImage-instance-method" class="tooltip">
+      <span>acos : Image</span>
+    acos</a>, 
+    
+  
+    <a href="../Vips/Image.html#add%28right%3AImage%29-instance-method" class="tooltip">
+      <span>add(right : Image)</span>
+    add</a>, 
+    
+  
+    <a href="../Vips/Image.html#add_alpha%3AImage-instance-method" class="tooltip">
+      <span>add_alpha : Image</span>
+    add_alpha</a>, 
+    
+  
+    <a href="../Vips/Image.html#affine%28matrix%3AArray%28Float64%29%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>affine(matrix : Array(Float64), **kwargs)</span>
+    affine</a>, 
+    
+  
+    <a href="../Vips/Image.html#asin%3AImage-instance-method" class="tooltip">
+      <span>asin : Image</span>
+    asin</a>, 
+    
+  
+    <a href="../Vips/Image.html#atan%3AImage-instance-method" class="tooltip">
+      <span>atan : Image</span>
+    atan</a>, 
+    
+  
+    <a href="../Vips/Image.html#autorot-instance-method" class="tooltip">
+      <span>autorot</span>
+    autorot</a>, 
+    
+  
+    <a href="../Vips/Image.html#avg-instance-method" class="tooltip">
+      <span>avg</span>
+    avg</a>, 
+    
+  
+    <a href="../Vips/Image.html#avifsave_stream%28stream%3AIO%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>avifsave_stream(stream : IO, **kwargs)</span>
+    avifsave_stream</a>, 
+    
+  
+    <a href="../Vips/Image.html#avifsave_target%28target%3ATarget%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>avifsave_target(target : Target, **kwargs)</span>
+    avifsave_target</a>, 
+    
+  
+    <a href="../Vips/Image.html#band_exists%3F%28i%3AInt32%29-instance-method" class="tooltip">
+      <span>band_exists?(i : Int32)</span>
+    band_exists?</a>, 
+    
+  
+    <a href="../Vips/Image.html#bandand-instance-method" class="tooltip">
+      <span>bandand</span>
+    bandand</a>, 
+    
+  
+    <a href="../Vips/Image.html#bandbool%28boolean%3AEnums%3A%3AOperationBoolean%29-instance-method" class="tooltip">
+      <span>bandbool(boolean : Enums::OperationBoolean)</span>
+    bandbool</a>, 
+    
+  
+    <a href="../Vips/Image.html#bandeor-instance-method" class="tooltip">
+      <span>bandeor</span>
+    bandeor</a>, 
+    
+  
+    <a href="../Vips/Image.html#bandfold%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>bandfold(**kwargs)</span>
+    bandfold</a>, 
+    
+  
+    <a href="../Vips/Image.html#bandjoin%28arr%3AArray%28Int32%29%29%3AImage-instance-method" class="tooltip">
+      <span>bandjoin(arr : Array(Int32)) : Image<br/>bandjoin(arr : Array(Float64)) : Image<br/>bandjoin(arr : Array(Image)) : Image<br/>bandjoin(*arr : Float64) : Image<br/>bandjoin(*arr : Int32) : Image<br/>bandjoin(*arr : Image) : Image<br/>bandjoin(*arr : Image | Number) : Image</span>
+    bandjoin</a>, 
+    
+  
+    <a href="../Vips/Image.html#bandjoin_const%28c%3AArray%28Float64%29%29-instance-method" class="tooltip">
+      <span>bandjoin_const(c : Array(Float64))</span>
+    bandjoin_const</a>, 
+    
+  
+    <a href="../Vips/Image.html#bandmean-instance-method" class="tooltip">
+      <span>bandmean</span>
+    bandmean</a>, 
+    
+  
+    <a href="../Vips/Image.html#bandor-instance-method" class="tooltip">
+      <span>bandor</span>
+    bandor</a>, 
+    
+  
+    <a href="../Vips/Image.html#bandrank%28%2Avals%3AFloat64%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>bandrank(*vals : Float64, **kwargs)<br/>bandrank(*vals : Int32, **kwargs)<br/>bandrank(*vals : Image, **kwargs)<br/>bandrank(*vals, **kwargs)</span>
+    bandrank</a>, 
+    
+  
+    <a href="../Vips/Image.html#bands%3AInt32-instance-method" class="tooltip">
+      <span>bands : Int32</span>
+    bands</a>, 
+    
+  
+    <a href="../Vips/Image.html#bandsplit%3AArray%28Image%29-instance-method" class="tooltip">
+      <span>bandsplit : Array(Image)</span>
+    bandsplit</a>, 
+    
+  
+    <a href="../Vips/Image.html#bandunfold%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>bandunfold(**kwargs)</span>
+    bandunfold</a>, 
+    
+  
+    <a href="../Vips/Image.html#boolean%28right%3AImage%2Cboolean%3AEnums%3A%3AOperationBoolean%29-instance-method" class="tooltip">
+      <span>boolean(right : Image, boolean : Enums::OperationBoolean)</span>
+    boolean</a>, 
+    
+  
+    <a href="../Vips/Image.html#boolean_const%28boolean%3AEnums%3A%3AOperationBoolean%2Cc%3AArray%28Float64%29%29-instance-method" class="tooltip">
+      <span>boolean_const(boolean : Enums::OperationBoolean, c : Array(Float64))</span>
+    boolean_const</a>, 
+    
+  
+    <a href="../Vips/Image.html#buildlut-instance-method" class="tooltip">
+      <span>buildlut</span>
+    buildlut</a>, 
+    
+  
+    <a href="../Vips/Image.html#byteswap-instance-method" class="tooltip">
+      <span>byteswap</span>
+    byteswap</a>, 
+    
+  
+    <a href="../Vips/Image.html#cache%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>cache(**kwargs)</span>
+    cache</a>, 
+    
+  
+    <a href="../Vips/Image.html#canny%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>canny(**kwargs)</span>
+    canny</a>, 
+    
+  
+    <a href="../Vips/Image.html#case%28%2Aargs%3AFloat64%29%3AImage-instance-method" class="tooltip">
+      <span>case(*args : Float64) : Image<br/>case(*args : Int32) : Image<br/>case(*images : Image) : Image<br/>case(*args) : Image</span>
+    case</a>, 
+    
+  
+    <a href="../Vips/Image.html#cast%28format%3AEnums%3A%3ABandFormat%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>cast(format : Enums::BandFormat, **kwargs)</span>
+    cast</a>, 
+    
+  
+    <a href="../Vips/Image.html#ceil%3AImage-instance-method" class="tooltip">
+      <span>ceil : Image</span>
+    ceil</a>, 
+    
+  
+    <a href="../Vips/Image.html#cmc2lch-instance-method" class="tooltip">
+      <span>cmc2lch</span>
+    cmc2lch</a>, 
+    
+  
+    <a href="../Vips/Image.html#cmyk2xyz-instance-method" class="tooltip">
+      <span>cmyk2xyz</span>
+    cmyk2xyz</a>, 
+    
+  
+    <a href="../Vips/Image.html#coding%3AEnums%3A%3ACoding-instance-method" class="tooltip">
+      <span>coding : Enums::Coding</span>
+    coding</a>, 
+    
+  
+    <a href="../Vips/Image.html#colourspace%28space%3AEnums%3A%3AInterpretation%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>colourspace(space : Enums::Interpretation, **kwargs)</span>
+    colourspace</a>, 
+    
+  
+    <a href="../Vips/Image.html#compass%28mask%3AImage%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>compass(mask : Image, **kwargs)</span>
+    compass</a>, 
+    
+  
+    <a href="../Vips/Image.html#complex%28cmplx%3AEnums%3A%3AOperationComplex%29-instance-method" class="tooltip">
+      <span>complex(cmplx : Enums::OperationComplex)</span>
+    complex</a>, 
+    
+  
+    <a href="../Vips/Image.html#complex2%28right%3AImage%2Ccmplx%3AEnums%3A%3AOperationComplex2%29-instance-method" class="tooltip">
+      <span>complex2(right : Image, cmplx : Enums::OperationComplex2)</span>
+    complex2</a>, 
+    
+  
+    <a href="../Vips/Image.html#complexform%28right%3AImage%29-instance-method" class="tooltip">
+      <span>complexform(right : Image)</span>
+    complexform</a>, 
+    
+  
+    <a href="../Vips/Image.html#complexget%28get%3AEnums%3A%3AOperationComplexget%29-instance-method" class="tooltip">
+      <span>complexget(get : Enums::OperationComplexget)</span>
+    complexget</a>, 
+    
+  
+    <a href="../Vips/Image.html#composite%28images%3AArray%28Image%29%2Cmodes%3AArray%28Enums%3A%3ABlendMode%29%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>composite(images : Array(Image), modes : Array(Enums::BlendMode), **kwargs)<br/>composite(image : Image, mode : Enums::BlendMode, **kwargs)</span>
+    composite</a>, 
+    
+  
+    <a href="../Vips/Image.html#composite2%28overlay%3AImage%2Cmode%3AEnums%3A%3ABlendMode%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>composite2(overlay : Image, mode : Enums::BlendMode, **kwargs)</span>
+    composite2</a>, 
+    
+  
+    <a href="../Vips/Image.html#conj%3AImage-instance-method" class="tooltip">
+      <span>conj : Image</span>
+    conj</a>, 
+    
+  
+    <a href="../Vips/Image.html#contains%28name%3AString%29-instance-method" class="tooltip">
+      <span>contains(name : String)</span>
+    contains</a>, 
+    
+  
+    <a href="../Vips/Image.html#conv%28mask%3AImage%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>conv(mask : Image, **kwargs)</span>
+    conv</a>, 
+    
+  
+    <a href="../Vips/Image.html#conva%28mask%3AImage%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>conva(mask : Image, **kwargs)</span>
+    conva</a>, 
+    
+  
+    <a href="../Vips/Image.html#convasep%28mask%3AImage%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>convasep(mask : Image, **kwargs)</span>
+    convasep</a>, 
+    
+  
+    <a href="../Vips/Image.html#convf%28mask%3AImage%29-instance-method" class="tooltip">
+      <span>convf(mask : Image)</span>
+    convf</a>, 
+    
+  
+    <a href="../Vips/Image.html#convi%28mask%3AImage%29-instance-method" class="tooltip">
+      <span>convi(mask : Image)</span>
+    convi</a>, 
+    
+  
+    <a href="../Vips/Image.html#convsep%28mask%3AImage%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>convsep(mask : Image, **kwargs)</span>
+    convsep</a>, 
+    
+  
+    <a href="../Vips/Image.html#copy%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>copy(**kwargs)</span>
+    copy</a>, 
+    
+  
+    <a href="../Vips/Image.html#copy_memory-instance-method" class="tooltip">
+      <span>copy_memory</span>
+    copy_memory</a>, 
+    
+  
+    <a href="../Vips/Image.html#cos%3AImage-instance-method" class="tooltip">
+      <span>cos : Image</span>
+    cos</a>, 
+    
+  
+    <a href="../Vips/Image.html#cosh%3AImage-instance-method" class="tooltip">
+      <span>cosh : Image</span>
+    cosh</a>, 
+    
+  
+    <a href="../Vips/Image.html#countlines%28direction%3AEnums%3A%3ADirection%29-instance-method" class="tooltip">
+      <span>countlines(direction : Enums::Direction)</span>
+    countlines</a>, 
+    
+  
+    <a href="../Vips/Image.html#crop%28left%3AInt32%2Ctop%3AInt32%2Cwidth%3AInt32%2Cheight%3AInt32%29-instance-method" class="tooltip">
+      <span>crop(left : Int32, top : Int32, width : Int32, height : Int32)</span>
+    crop</a>, 
+    
+  
+    <a href="../Vips/Image.html#csvsave%28filename%3AString%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>csvsave(filename : String, **kwargs)</span>
+    csvsave</a>, 
+    
+  
+    <a href="../Vips/Image.html#csvsave_stream%28stream%3AIO%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>csvsave_stream(stream : IO, **kwargs)</span>
+    csvsave_stream</a>, 
+    
+  
+    <a href="../Vips/Image.html#csvsave_target%28target%3ATarget%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>csvsave_target(target : Target, **kwargs)</span>
+    csvsave_target</a>, 
+    
+  
+    <a href="../Vips/Image.html#de00%28right%3AImage%29-instance-method" class="tooltip">
+      <span>de00(right : Image)</span>
+    de00</a>, 
+    
+  
+    <a href="../Vips/Image.html#de76%28right%3AImage%29-instance-method" class="tooltip">
+      <span>de76(right : Image)</span>
+    de76</a>, 
+    
+  
+    <a href="../Vips/Image.html#decmc%28right%3AImage%29-instance-method" class="tooltip">
+      <span>decmc(right : Image)</span>
+    decmc</a>, 
+    
+  
+    <a href="../Vips/Image.html#deviate-instance-method" class="tooltip">
+      <span>deviate</span>
+    deviate</a>, 
+    
+  
+    <a href="../Vips/Image.html#dilate%28mask%3AImage%29-instance-method" class="tooltip">
+      <span>dilate(mask : Image)</span>
+    dilate</a>, 
+    
+  
+    <a href="../Vips/Image.html#divide%28right%3AImage%29-instance-method" class="tooltip">
+      <span>divide(right : Image)</span>
+    divide</a>, 
+    
+  
+    <a href="../Vips/Image.html#dzsave%28filename%3AString%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>dzsave(filename : String, **kwargs)</span>
+    dzsave</a>, 
+    
+  
+    <a href="../Vips/Image.html#dzsave_buffer%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>dzsave_buffer(**kwargs)</span>
+    dzsave_buffer</a>, 
+    
+  
+    <a href="../Vips/Image.html#embed%28x%3AInt32%2Cy%3AInt32%2Cwidth%3AInt32%2Cheight%3AInt32%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>embed(x : Int32, y : Int32, width : Int32, height : Int32, **kwargs)</span>
+    embed</a>, 
+    
+  
+    <a href="../Vips/Image.html#erode%28mask%3AImage%29-instance-method" class="tooltip">
+      <span>erode(mask : Image)</span>
+    erode</a>, 
+    
+  
+    <a href="../Vips/Image.html#exp%3AImage-instance-method" class="tooltip">
+      <span>exp : Image</span>
+    exp</a>, 
+    
+  
+    <a href="../Vips/Image.html#exp10%3AImage-instance-method" class="tooltip">
+      <span>exp10 : Image</span>
+    exp10</a>, 
+    
+  
+    <a href="../Vips/Image.html#extract_area%28left%3AInt32%2Ctop%3AInt32%2Cwidth%3AInt32%2Cheight%3AInt32%29-instance-method" class="tooltip">
+      <span>extract_area(left : Int32, top : Int32, width : Int32, height : Int32)</span>
+    extract_area</a>, 
+    
+  
+    <a href="../Vips/Image.html#extract_band%28band%3AInt32%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>extract_band(band : Int32, **kwargs)</span>
+    extract_band</a>, 
+    
+  
+    <a href="../Vips/Image.html#falsecolour-instance-method" class="tooltip">
+      <span>falsecolour</span>
+    falsecolour</a>, 
+    
+  
+    <a href="../Vips/Image.html#fastcor%28ref%3AImage%29-instance-method" class="tooltip">
+      <span>fastcor(ref : Image)</span>
+    fastcor</a>, 
+    
+  
+    <a href="../Vips/Image.html#filename%3AString-instance-method" class="tooltip">
+      <span>filename : String</span>
+    filename</a>, 
+    
+  
+    <a href="../Vips/Image.html#fill_nearest-instance-method" class="tooltip">
+      <span>fill_nearest</span>
+    fill_nearest</a>, 
+    
+  
+    <a href="../Vips/Image.html#find_trim%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>find_trim(**kwargs)</span>
+    find_trim</a>, 
+    
+  
+    <a href="../Vips/Image.html#fitssave%28filename%3AString%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>fitssave(filename : String, **kwargs)</span>
+    fitssave</a>, 
+    
+  
+    <a href="../Vips/Image.html#flatten%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>flatten(**kwargs)</span>
+    flatten</a>, 
+    
+  
+    <a href="../Vips/Image.html#flip%28direction%3AEnums%3A%3ADirection%29-instance-method" class="tooltip">
+      <span>flip(direction : Enums::Direction)</span>
+    flip</a>, 
+    
+  
+    <a href="../Vips/Image.html#fliphor-instance-method" class="tooltip">
+      <span>fliphor</span>
+    fliphor</a>, 
+    
+  
+    <a href="../Vips/Image.html#flipver-instance-method" class="tooltip">
+      <span>flipver</span>
+    flipver</a>, 
+    
+  
+    <a href="../Vips/Image.html#float2rad-instance-method" class="tooltip">
+      <span>float2rad</span>
+    float2rad</a>, 
+    
+  
+    <a href="../Vips/Image.html#floor%3AImage-instance-method" class="tooltip">
+      <span>floor : Image</span>
+    floor</a>, 
+    
+  
+    <a href="../Vips/Image.html#format%3AEnums%3A%3ABandFormat-instance-method" class="tooltip">
+      <span>format : Enums::BandFormat</span>
+    format</a>, 
+    
+  
+    <a href="../Vips/Image.html#freqmult%28mask%3AImage%29-instance-method" class="tooltip">
+      <span>freqmult(mask : Image)</span>
+    freqmult</a>, 
+    
+  
+    <a href="../Vips/Image.html#fwfft-instance-method" class="tooltip">
+      <span>fwfft</span>
+    fwfft</a>, 
+    
+  
+    <a href="../Vips/Image.html#gamma%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>gamma(**kwargs)</span>
+    gamma</a>, 
+    
+  
+    <a href="../Vips/Image.html#gaussblur%28sigma%3AFloat64%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>gaussblur(sigma : Float64, **kwargs)</span>
+    gaussblur</a>, 
+    
+  
+    <a href="../Vips/Image.html#get%28name%3AString%29-instance-method" class="tooltip">
+      <span>get(name : String)</span>
+    get</a>, 
+    
+  
+    <a href="../Vips/Image.html#get_fields-instance-method" class="tooltip">
+      <span>get_fields</span>
+    get_fields</a>, 
+    
+  
+    <a href="../Vips/Image.html#get_typeof%28nam%3AString%29-instance-method" class="tooltip">
+      <span>get_typeof(nam : String)</span>
+    get_typeof</a>, 
+    
+  
+    <a href="../Vips/Image.html#getpoint%28x%3AInt32%2Cy%3AInt32%29-instance-method" class="tooltip">
+      <span>getpoint(x : Int32, y : Int32)</span>
+    getpoint</a>, 
+    
+  
+    <a href="../Vips/Image.html#gifsave%28filename%3AString%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>gifsave(filename : String, **kwargs)</span>
+    gifsave</a>, 
+    
+  
+    <a href="../Vips/Image.html#gifsave_buffer%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>gifsave_buffer(**kwargs)</span>
+    gifsave_buffer</a>, 
+    
+  
+    <a href="../Vips/Image.html#gifsave_stream%28stream%3AIO%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>gifsave_stream(stream : IO, **kwargs)</span>
+    gifsave_stream</a>, 
+    
+  
+    <a href="../Vips/Image.html#gifsave_target%28target%3ATarget%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>gifsave_target(target : Target, **kwargs)</span>
+    gifsave_target</a>, 
+    
+  
+    <a href="../Vips/Image.html#globalbalance%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>globalbalance(**kwargs)</span>
+    globalbalance</a>, 
+    
+  
+    <a href="../Vips/Image.html#gravity%28direction%3AEnums%3A%3ACompassDirection%2Cwidth%3AInt32%2Cheight%3AInt32%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>gravity(direction : Enums::CompassDirection, width : Int32, height : Int32, **kwargs)</span>
+    gravity</a>, 
+    
+  
+    <a href="../Vips/Image.html#grid%28tile_height%3AInt32%2Cacross%3AInt32%2Cdown%3AInt32%29-instance-method" class="tooltip">
+      <span>grid(tile_height : Int32, across : Int32, down : Int32)</span>
+    grid</a>, 
+    
+  
+    <a href="../Vips/Image.html#has_alpha%3F%3ABool-instance-method" class="tooltip">
+      <span>has_alpha? : Bool</span>
+    has_alpha?</a>, 
+    
+  
+    <a href="../Vips/Image.html#heifsave%28filename%3AString%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>heifsave(filename : String, **kwargs)</span>
+    heifsave</a>, 
+    
+  
+    <a href="../Vips/Image.html#heifsave_buffer%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>heifsave_buffer(**kwargs)</span>
+    heifsave_buffer</a>, 
+    
+  
+    <a href="../Vips/Image.html#heifsave_stream%28stream%3AIO%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>heifsave_stream(stream : IO, **kwargs)</span>
+    heifsave_stream</a>, 
+    
+  
+    <a href="../Vips/Image.html#heifsave_target%28target%3ATarget%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>heifsave_target(target : Target, **kwargs)</span>
+    heifsave_target</a>, 
+    
+  
+    <a href="../Vips/Image.html#height%3AInt32-instance-method" class="tooltip">
+      <span>height : Int32</span>
+    height</a>, 
+    
+  
+    <a href="../Vips/Image.html#hist_cum-instance-method" class="tooltip">
+      <span>hist_cum</span>
+    hist_cum</a>, 
+    
+  
+    <a href="../Vips/Image.html#hist_entropy-instance-method" class="tooltip">
+      <span>hist_entropy</span>
+    hist_entropy</a>, 
+    
+  
+    <a href="../Vips/Image.html#hist_equal%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>hist_equal(**kwargs)</span>
+    hist_equal</a>, 
+    
+  
+    <a href="../Vips/Image.html#hist_find%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>hist_find(**kwargs)</span>
+    hist_find</a>, 
+    
+  
+    <a href="../Vips/Image.html#hist_find_indexed%28index%3AImage%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>hist_find_indexed(index : Image, **kwargs)</span>
+    hist_find_indexed</a>, 
+    
+  
+    <a href="../Vips/Image.html#hist_find_ndim%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>hist_find_ndim(**kwargs)</span>
+    hist_find_ndim</a>, 
+    
+  
+    <a href="../Vips/Image.html#hist_ismonotonic-instance-method" class="tooltip">
+      <span>hist_ismonotonic</span>
+    hist_ismonotonic</a>, 
+    
+  
+    <a href="../Vips/Image.html#hist_local%28width%3AInt32%2Cheight%3AInt32%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>hist_local(width : Int32, height : Int32, **kwargs)</span>
+    hist_local</a>, 
+    
+  
+    <a href="../Vips/Image.html#hist_match%28ref%3AImage%29-instance-method" class="tooltip">
+      <span>hist_match(ref : Image)</span>
+    hist_match</a>, 
+    
+  
+    <a href="../Vips/Image.html#hist_norm-instance-method" class="tooltip">
+      <span>hist_norm</span>
+    hist_norm</a>, 
+    
+  
+    <a href="../Vips/Image.html#hist_plot-instance-method" class="tooltip">
+      <span>hist_plot</span>
+    hist_plot</a>, 
+    
+  
+    <a href="../Vips/Image.html#hough_circle%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>hough_circle(**kwargs)</span>
+    hough_circle</a>, 
+    
+  
+    <a href="../Vips/Image.html#hough_line%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>hough_line(**kwargs)</span>
+    hough_line</a>, 
+    
+  
+    <a href="../Vips/Image.html#hsv2srgb-instance-method" class="tooltip">
+      <span>hsv2srgb</span>
+    hsv2srgb</a>, 
+    
+  
+    <a href="../Vips/Image.html#icc_export%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>icc_export(**kwargs)</span>
+    icc_export</a>, 
+    
+  
+    <a href="../Vips/Image.html#icc_import%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>icc_import(**kwargs)</span>
+    icc_import</a>, 
+    
+  
+    <a href="../Vips/Image.html#icc_transform%28output_profile%3AString%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>icc_transform(output_profile : String, **kwargs)</span>
+    icc_transform</a>, 
+    
+  
+    <a href="../Vips/Image.html#ifthenelse%28in1%2Cin2%2Cblend%3Dfalse%29-instance-method" class="tooltip">
+      <span>ifthenelse(in1, in2, blend = <span class="n">false</span>)</span>
+    ifthenelse</a>, 
+    
+  
+    <a href="../Vips/Image.html#imag%3AImage-instance-method" class="tooltip">
+      <span>imag : Image</span>
+    imag</a>, 
+    
+  
+    <a href="../Vips/Image.html#insert%28sub%3AImage%2Cx%3AInt32%2Cy%3AInt32%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>insert(sub : Image, x : Int32, y : Int32, **kwargs)</span>
+    insert</a>, 
+    
+  
+    <a href="../Vips/Image.html#interpretation%3AEnums%3A%3AInterpretation-instance-method" class="tooltip">
+      <span>interpretation : Enums::Interpretation</span>
+    interpretation</a>, 
+    
+  
+    <a href="../Vips/Image.html#invert-instance-method" class="tooltip">
+      <span>invert</span>
+    invert</a>, 
+    
+  
+    <a href="../Vips/Image.html#invertlut%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>invertlut(**kwargs)</span>
+    invertlut</a>, 
+    
+  
+    <a href="../Vips/Image.html#invfft%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>invfft(**kwargs)</span>
+    invfft</a>, 
+    
+  
+    <a href="../Vips/Image.html#join%28in2%3AImage%2Cdirection%3AEnums%3A%3ADirection%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>join(in2 : Image, direction : Enums::Direction, **kwargs)</span>
+    join</a>, 
+    
+  
+    <a href="../Vips/Image.html#jp2ksave%28filename%3AString%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>jp2ksave(filename : String, **kwargs)</span>
+    jp2ksave</a>, 
+    
+  
+    <a href="../Vips/Image.html#jp2ksave_buffer%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>jp2ksave_buffer(**kwargs)</span>
+    jp2ksave_buffer</a>, 
+    
+  
+    <a href="../Vips/Image.html#jp2ksave_stream%28stream%3AIO%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>jp2ksave_stream(stream : IO, **kwargs)</span>
+    jp2ksave_stream</a>, 
+    
+  
+    <a href="../Vips/Image.html#jp2ksave_target%28target%3ATarget%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>jp2ksave_target(target : Target, **kwargs)</span>
+    jp2ksave_target</a>, 
+    
+  
+    <a href="../Vips/Image.html#jpegsave%28filename%3AString%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>jpegsave(filename : String, **kwargs)</span>
+    jpegsave</a>, 
+    
+  
+    <a href="../Vips/Image.html#jpegsave_buffer%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>jpegsave_buffer(**kwargs)</span>
+    jpegsave_buffer</a>, 
+    
+  
+    <a href="../Vips/Image.html#jpegsave_mime%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>jpegsave_mime(**kwargs)</span>
+    jpegsave_mime</a>, 
+    
+  
+    <a href="../Vips/Image.html#jpegsave_stream%28stream%3AIO%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>jpegsave_stream(stream : IO, **kwargs)</span>
+    jpegsave_stream</a>, 
+    
+  
+    <a href="../Vips/Image.html#jpegsave_target%28target%3ATarget%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>jpegsave_target(target : Target, **kwargs)</span>
+    jpegsave_target</a>, 
+    
+  
+    <a href="../Vips/Image.html#jxlsave%28filename%3AString%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>jxlsave(filename : String, **kwargs)</span>
+    jxlsave</a>, 
+    
+  
+    <a href="../Vips/Image.html#jxlsave_buffer%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>jxlsave_buffer(**kwargs)</span>
+    jxlsave_buffer</a>, 
+    
+  
+    <a href="../Vips/Image.html#jxlsave_stream%28stream%3AIO%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>jxlsave_stream(stream : IO, **kwargs)</span>
+    jxlsave_stream</a>, 
+    
+  
+    <a href="../Vips/Image.html#jxlsave_target%28target%3ATarget%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>jxlsave_target(target : Target, **kwargs)</span>
+    jxlsave_target</a>, 
+    
+  
+    <a href="../Vips/Image.html#killed%3F-instance-method" class="tooltip">
+      <span>killed?</span>
+    killed?</a>, 
+    
+  
+    <a href="../Vips/Image.html#lab2labq-instance-method" class="tooltip">
+      <span>lab2labq</span>
+    lab2labq</a>, 
+    
+  
+    <a href="../Vips/Image.html#lab2labs-instance-method" class="tooltip">
+      <span>lab2labs</span>
+    lab2labs</a>, 
+    
+  
+    <a href="../Vips/Image.html#lab2lch-instance-method" class="tooltip">
+      <span>lab2lch</span>
+    lab2lch</a>, 
+    
+  
+    <a href="../Vips/Image.html#lab2xyz%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>lab2xyz(**kwargs)</span>
+    lab2xyz</a>, 
+    
+  
+    <a href="../Vips/Image.html#labelregions-instance-method" class="tooltip">
+      <span>labelregions</span>
+    labelregions</a>, 
+    
+  
+    <a href="../Vips/Image.html#labq2lab-instance-method" class="tooltip">
+      <span>labq2lab</span>
+    labq2lab</a>, 
+    
+  
+    <a href="../Vips/Image.html#labq2labs-instance-method" class="tooltip">
+      <span>labq2labs</span>
+    labq2labs</a>, 
+    
+  
+    <a href="../Vips/Image.html#labq2srgb-instance-method" class="tooltip">
+      <span>labq2srgb</span>
+    labq2srgb</a>, 
+    
+  
+    <a href="../Vips/Image.html#labs2lab-instance-method" class="tooltip">
+      <span>labs2lab</span>
+    labs2lab</a>, 
+    
+  
+    <a href="../Vips/Image.html#labs2labq-instance-method" class="tooltip">
+      <span>labs2labq</span>
+    labs2labq</a>, 
+    
+  
+    <a href="../Vips/Image.html#lch2cmc-instance-method" class="tooltip">
+      <span>lch2cmc</span>
+    lch2cmc</a>, 
+    
+  
+    <a href="../Vips/Image.html#lch2lab-instance-method" class="tooltip">
+      <span>lch2lab</span>
+    lch2lab</a>, 
+    
+  
+    <a href="../Vips/Image.html#linear%28a%3AArray%28Float64%29%2Cb%3AArray%28Float64%29%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>linear(a : Array(Float64), b : Array(Float64), **kwargs)</span>
+    linear</a>, 
+    
+  
+    <a href="../Vips/Image.html#linecache%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>linecache(**kwargs)</span>
+    linecache</a>, 
+    
+  
+    <a href="../Vips/Image.html#log%3AImage-instance-method" class="tooltip">
+      <span>log : Image</span>
+    log</a>, 
+    
+  
+    <a href="../Vips/Image.html#log10%3AImage-instance-method" class="tooltip">
+      <span>log10 : Image</span>
+    log10</a>, 
+    
+  
+    <a href="../Vips/Image.html#magicksave%28filename%3AString%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>magicksave(filename : String, **kwargs)</span>
+    magicksave</a>, 
+    
+  
+    <a href="../Vips/Image.html#magicksave_bmp%28filename%3AString%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>magicksave_bmp(filename : String, **kwargs)</span>
+    magicksave_bmp</a>, 
+    
+  
+    <a href="../Vips/Image.html#magicksave_bmp_buffer%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>magicksave_bmp_buffer(**kwargs)</span>
+    magicksave_bmp_buffer</a>, 
+    
+  
+    <a href="../Vips/Image.html#magicksave_buffer%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>magicksave_buffer(**kwargs)</span>
+    magicksave_buffer</a>, 
+    
+  
+    <a href="../Vips/Image.html#magicksave_gif%28filename%3AString%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>magicksave_gif(filename : String, **kwargs)</span>
+    magicksave_gif</a>, 
+    
+  
+    <a href="../Vips/Image.html#magicksave_gif_buffer%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>magicksave_gif_buffer(**kwargs)</span>
+    magicksave_gif_buffer</a>, 
+    
+  
+    <a href="../Vips/Image.html#mapim%28index%3AImage%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>mapim(index : Image, **kwargs)</span>
+    mapim</a>, 
+    
+  
+    <a href="../Vips/Image.html#maplut%28lut%3AImage%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>maplut(lut : Image, **kwargs)</span>
+    maplut</a>, 
+    
+  
+    <a href="../Vips/Image.html#match%28sec%3AImage%2Cxr1%3AInt32%2Cyr1%3AInt32%2Cxs1%3AInt32%2Cys1%3AInt32%2Cxr2%3AInt32%2Cyr2%3AInt32%2Cxs2%3AInt32%2Cys2%3AInt32%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>match(sec : Image, xr1 : Int32, yr1 : Int32, xs1 : Int32, ys1 : Int32, xr2 : Int32, yr2 : Int32, xs2 : Int32, ys2 : Int32, **kwargs)</span>
+    match</a>, 
+    
+  
+    <a href="../Vips/Image.html#math%28math%3AEnums%3A%3AOperationMath%29-instance-method" class="tooltip">
+      <span>math(math : Enums::OperationMath)</span>
+    math</a>, 
+    
+  
+    <a href="../Vips/Image.html#math2%28right%3AImage%2Cmath2%3AEnums%3A%3AOperationMath2%29-instance-method" class="tooltip">
+      <span>math2(right : Image, math2 : Enums::OperationMath2)</span>
+    math2</a>, 
+    
+  
+    <a href="../Vips/Image.html#math2_const%28math2%3AEnums%3A%3AOperationMath2%2Cc%3AArray%28Float64%29%29-instance-method" class="tooltip">
+      <span>math2_const(math2 : Enums::OperationMath2, c : Array(Float64))</span>
+    math2_const</a>, 
+    
+  
+    <a href="../Vips/Image.html#matrixinvert-instance-method" class="tooltip">
+      <span>matrixinvert</span>
+    matrixinvert</a>, 
+    
+  
+    <a href="../Vips/Image.html#matrixprint%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>matrixprint(**kwargs)</span>
+    matrixprint</a>, 
+    
+  
+    <a href="../Vips/Image.html#matrixsave%28filename%3AString%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>matrixsave(filename : String, **kwargs)</span>
+    matrixsave</a>, 
+    
+  
+    <a href="../Vips/Image.html#matrixsave_stream%28stream%3AIO%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>matrixsave_stream(stream : IO, **kwargs)</span>
+    matrixsave_stream</a>, 
+    
+  
+    <a href="../Vips/Image.html#matrixsave_target%28target%3ATarget%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>matrixsave_target(target : Target, **kwargs)</span>
+    matrixsave_target</a>, 
+    
+  
+    <a href="../Vips/Image.html#max%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>max(**kwargs)</span>
+    max</a>, 
+    
+  
+    <a href="../Vips/Image.html#maxpos-instance-method" class="tooltip">
+      <span>maxpos</span>
+    maxpos</a>, 
+    
+  
+    <a href="../Vips/Image.html#measure%28h%3AInt32%2Cv%3AInt32%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>measure(h : Int32, v : Int32, **kwargs)</span>
+    measure</a>, 
+    
+  
+    <a href="../Vips/Image.html#median%28size%3D3%29-instance-method" class="tooltip">
+      <span>median(size = <span class="n">3</span>)</span>
+    median</a>, 
+    
+  
+    <a href="../Vips/Image.html#merge%28sec%3AImage%2Cdirection%3AEnums%3A%3ADirection%2Cdx%3AInt32%2Cdy%3AInt32%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>merge(sec : Image, direction : Enums::Direction, dx : Int32, dy : Int32, **kwargs)</span>
+    merge</a>, 
+    
+  
+    <a href="../Vips/Image.html#min%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>min(**kwargs)</span>
+    min</a>, 
+    
+  
+    <a href="../Vips/Image.html#minpos-instance-method" class="tooltip">
+      <span>minpos</span>
+    minpos</a>, 
+    
+  
+    <a href="../Vips/Image.html#morph%28mask%3AImage%2Cmorph%3AEnums%3A%3AOperationMorphology%29-instance-method" class="tooltip">
+      <span>morph(mask : Image, morph : Enums::OperationMorphology)</span>
+    morph</a>, 
+    
+  
+    <a href="../Vips/Image.html#mosaic%28sec%3AImage%2Cdirection%3AEnums%3A%3ADirection%2Cxref%3AInt32%2Cyref%3AInt32%2Cxsec%3AInt32%2Cysec%3AInt32%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>mosaic(sec : Image, direction : Enums::Direction, xref : Int32, yref : Int32, xsec : Int32, ysec : Int32, **kwargs)</span>
+    mosaic</a>, 
+    
+  
+    <a href="../Vips/Image.html#mosaic1%28sec%3AImage%2Cdirection%3AEnums%3A%3ADirection%2Cxr1%3AInt32%2Cyr1%3AInt32%2Cxs1%3AInt32%2Cys1%3AInt32%2Cxr2%3AInt32%2Cyr2%3AInt32%2Cxs2%3AInt32%2Cys2%3AInt32%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>mosaic1(sec : Image, direction : Enums::Direction, xr1 : Int32, yr1 : Int32, xs1 : Int32, ys1 : Int32, xr2 : Int32, yr2 : Int32, xs2 : Int32, ys2 : Int32, **kwargs)</span>
+    mosaic1</a>, 
+    
+  
+    <a href="../Vips/Image.html#msb%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>msb(**kwargs)</span>
+    msb</a>, 
+    
+  
+    <a href="../Vips/Image.html#multiply%28right%3AImage%29-instance-method" class="tooltip">
+      <span>multiply(right : Image)</span>
+    multiply</a>, 
+    
+  
+    <a href="../Vips/Image.html#mutate%28%26%29-instance-method" class="tooltip">
+      <span>mutate(&)</span>
+    mutate</a>, 
+    
+  
+    <a href="../Vips/Image.html#new_from_image%28value%29-instance-method" class="tooltip">
+      <span>new_from_image(value)<br/>new_from_image(*value : Int32 | Float64)</span>
+    new_from_image</a>, 
+    
+  
+    <a href="../Vips/Image.html#offset-instance-method" class="tooltip">
+      <span>offset</span>
+    offset</a>, 
+    
+  
+    <a href="../Vips/Image.html#page_height%3AInt32-instance-method" class="tooltip">
+      <span>page_height : Int32</span>
+    page_height</a>, 
+    
+  
+    <a href="../Vips/Image.html#pbmsave_stream%28stream%3AIO%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>pbmsave_stream(stream : IO, **kwargs)</span>
+    pbmsave_stream</a>, 
+    
+  
+    <a href="../Vips/Image.html#pbmsave_target%28target%3ATarget%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>pbmsave_target(target : Target, **kwargs)</span>
+    pbmsave_target</a>, 
+    
+  
+    <a href="../Vips/Image.html#percent%28percent%3AFloat64%29-instance-method" class="tooltip">
+      <span>percent(percent : Float64)</span>
+    percent</a>, 
+    
+  
+    <a href="../Vips/Image.html#pfmsave_stream%28stream%3AIO%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>pfmsave_stream(stream : IO, **kwargs)</span>
+    pfmsave_stream</a>, 
+    
+  
+    <a href="../Vips/Image.html#pfmsave_target%28target%3ATarget%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>pfmsave_target(target : Target, **kwargs)</span>
+    pfmsave_target</a>, 
+    
+  
+    <a href="../Vips/Image.html#pgmsave_stream%28stream%3AIO%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>pgmsave_stream(stream : IO, **kwargs)</span>
+    pgmsave_stream</a>, 
+    
+  
+    <a href="../Vips/Image.html#pgmsave_target%28target%3ATarget%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>pgmsave_target(target : Target, **kwargs)</span>
+    pgmsave_target</a>, 
+    
+  
+    <a href="../Vips/Image.html#phasecor%28in2%3AImage%29-instance-method" class="tooltip">
+      <span>phasecor(in2 : Image)</span>
+    phasecor</a>, 
+    
+  
+    <a href="../Vips/Image.html#pngsave%28filename%3AString%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>pngsave(filename : String, **kwargs)</span>
+    pngsave</a>, 
+    
+  
+    <a href="../Vips/Image.html#pngsave_buffer%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>pngsave_buffer(**kwargs)</span>
+    pngsave_buffer</a>, 
+    
+  
+    <a href="../Vips/Image.html#pngsave_stream%28stream%3AIO%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>pngsave_stream(stream : IO, **kwargs)</span>
+    pngsave_stream</a>, 
+    
+  
+    <a href="../Vips/Image.html#pngsave_target%28target%3ATarget%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>pngsave_target(target : Target, **kwargs)</span>
+    pngsave_target</a>, 
+    
+  
+    <a href="../Vips/Image.html#polar%3AImage-instance-method" class="tooltip">
+      <span>polar : Image</span>
+    polar</a>, 
+    
+  
+    <a href="../Vips/Image.html#ppmsave%28filename%3AString%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>ppmsave(filename : String, **kwargs)</span>
+    ppmsave</a>, 
+    
+  
+    <a href="../Vips/Image.html#ppmsave_stream%28stream%3AIO%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>ppmsave_stream(stream : IO, **kwargs)</span>
+    ppmsave_stream</a>, 
+    
+  
+    <a href="../Vips/Image.html#ppmsave_target%28target%3ATarget%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>ppmsave_target(target : Target, **kwargs)</span>
+    ppmsave_target</a>, 
+    
+  
+    <a href="../Vips/Image.html#premultiply%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>premultiply(**kwargs)</span>
+    premultiply</a>, 
+    
+  
+    <a href="../Vips/Image.html#profile-instance-method" class="tooltip">
+      <span>profile</span>
+    profile</a>, 
+    
+  
+    <a href="../Vips/Image.html#project-instance-method" class="tooltip">
+      <span>project</span>
+    project</a>, 
+    
+  
+    <a href="../Vips/Image.html#quadratic%28coeff%3AImage%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>quadratic(coeff : Image, **kwargs)</span>
+    quadratic</a>, 
+    
+  
+    <a href="../Vips/Image.html#rad2float-instance-method" class="tooltip">
+      <span>rad2float</span>
+    rad2float</a>, 
+    
+  
+    <a href="../Vips/Image.html#radsave%28filename%3AString%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>radsave(filename : String, **kwargs)</span>
+    radsave</a>, 
+    
+  
+    <a href="../Vips/Image.html#radsave_buffer%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>radsave_buffer(**kwargs)</span>
+    radsave_buffer</a>, 
+    
+  
+    <a href="../Vips/Image.html#radsave_stream%28stream%3AIO%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>radsave_stream(stream : IO, **kwargs)</span>
+    radsave_stream</a>, 
+    
+  
+    <a href="../Vips/Image.html#radsave_target%28target%3ATarget%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>radsave_target(target : Target, **kwargs)</span>
+    radsave_target</a>, 
+    
+  
+    <a href="../Vips/Image.html#rank%28width%3AInt32%2Cheight%3AInt32%2Cindex%3AInt32%29-instance-method" class="tooltip">
+      <span>rank(width : Int32, height : Int32, index : Int32)</span>
+    rank</a>, 
+    
+  
+    <a href="../Vips/Image.html#rawsave%28filename%3AString%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>rawsave(filename : String, **kwargs)</span>
+    rawsave</a>, 
+    
+  
+    <a href="../Vips/Image.html#rawsave_fd%28fd%3AInt32%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>rawsave_fd(fd : Int32, **kwargs)</span>
+    rawsave_fd</a>, 
+    
+  
+    <a href="../Vips/Image.html#real%3AImage-instance-method" class="tooltip">
+      <span>real : Image</span>
+    real</a>, 
+    
+  
+    <a href="../Vips/Image.html#recomb%28m%3AImage%29-instance-method" class="tooltip">
+      <span>recomb(m : Image)</span>
+    recomb</a>, 
+    
+  
+    <a href="../Vips/Image.html#rect%3AImage-instance-method" class="tooltip">
+      <span>rect : Image</span>
+    rect</a>, 
+    
+  
+    <a href="../Vips/Image.html#reduce%28hshrink%3AFloat64%2Cvshrink%3AFloat64%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>reduce(hshrink : Float64, vshrink : Float64, **kwargs)</span>
+    reduce</a>, 
+    
+  
+    <a href="../Vips/Image.html#reduceh%28hshrink%3AFloat64%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>reduceh(hshrink : Float64, **kwargs)</span>
+    reduceh</a>, 
+    
+  
+    <a href="../Vips/Image.html#reducev%28vshrink%3AFloat64%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>reducev(vshrink : Float64, **kwargs)</span>
+    reducev</a>, 
+    
+  
+    <a href="../Vips/Image.html#relational%28right%3AImage%2Crelational%3AEnums%3A%3AOperationRelational%29-instance-method" class="tooltip">
+      <span>relational(right : Image, relational : Enums::OperationRelational)</span>
+    relational</a>, 
+    
+  
+    <a href="../Vips/Image.html#relational_const%28relational%3AEnums%3A%3AOperationRelational%2Cc%3AArray%28Float64%29%29-instance-method" class="tooltip">
+      <span>relational_const(relational : Enums::OperationRelational, c : Array(Float64))</span>
+    relational_const</a>, 
+    
+  
+    <a href="../Vips/Image.html#remainder%28right%3AImage%29-instance-method" class="tooltip">
+      <span>remainder(right : Image)</span>
+    remainder</a>, 
+    
+  
+    <a href="../Vips/Image.html#remainder_const%28c%3AArray%28Float64%29%29-instance-method" class="tooltip">
+      <span>remainder_const(c : Array(Float64))</span>
+    remainder_const</a>, 
+    
+  
+    <a href="../Vips/Image.html#replicate%28across%3AInt32%2Cdown%3AInt32%29-instance-method" class="tooltip">
+      <span>replicate(across : Int32, down : Int32)</span>
+    replicate</a>, 
+    
+  
+    <a href="../Vips/Image.html#resize%28scale%3AFloat64%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>resize(scale : Float64, **kwargs)</span>
+    resize</a>, 
+    
+  
+    <a href="../Vips/Image.html#rint%3AImage-instance-method" class="tooltip">
+      <span>rint : Image</span>
+    rint</a>, 
+    
+  
+    <a href="../Vips/Image.html#rot%28angle%3AEnums%3A%3AAngle%29-instance-method" class="tooltip">
+      <span>rot(angle : Enums::Angle)</span>
+    rot</a>, 
+    
+  
+    <a href="../Vips/Image.html#rot180-instance-method" class="tooltip">
+      <span>rot180</span>
+    rot180</a>, 
+    
+  
+    <a href="../Vips/Image.html#rot270-instance-method" class="tooltip">
+      <span>rot270</span>
+    rot270</a>, 
+    
+  
+    <a href="../Vips/Image.html#rot45%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>rot45(**kwargs)</span>
+    rot45</a>, 
+    
+  
+    <a href="../Vips/Image.html#rot90-instance-method" class="tooltip">
+      <span>rot90</span>
+    rot90</a>, 
+    
+  
+    <a href="../Vips/Image.html#rotate%28angle%3AFloat64%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>rotate(angle : Float64, **kwargs)</span>
+    rotate</a>, 
+    
+  
+    <a href="../Vips/Image.html#round%28round%3AEnums%3A%3AOperationRound%29-instance-method" class="tooltip">
+      <span>round(round : Enums::OperationRound)</span>
+    round</a>, 
+    
+  
+    <a href="../Vips/Image.html#scale-instance-method" class="tooltip">
+      <span>scale</span>
+    scale</a>, 
+    
+  
+    <a href="../Vips/Image.html#scaleimage%28%2A%2Aopts%29-instance-method" class="tooltip">
+      <span>scaleimage(**opts)</span>
+    scaleimage</a>, 
+    
+  
+    <a href="../Vips/Image.html#scrgb2bw%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>scrgb2bw(**kwargs)</span>
+    scrgb2bw</a>, 
+    
+  
+    <a href="../Vips/Image.html#scrgb2srgb%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>scrgb2srgb(**kwargs)</span>
+    scrgb2srgb</a>, 
+    
+  
+    <a href="../Vips/Image.html#scrgb2xyz-instance-method" class="tooltip">
+      <span>scrgb2xyz</span>
+    scrgb2xyz</a>, 
+    
+  
+    <a href="../Vips/Image.html#sequential%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>sequential(**kwargs)</span>
+    sequential</a>, 
+    
+  
+    <a href="../Vips/Image.html#set_kill%28kill%3ABool%29-instance-method" class="tooltip">
+      <span>set_kill(kill : Bool)</span>
+    set_kill</a>, 
+    
+  
+    <a href="../Vips/Image.html#set_progress%28enable%3ABool%29-instance-method" class="tooltip">
+      <span>set_progress(enable : Bool)<br/>set_progress(&block : Int32 -> Nil)</span>
+    set_progress</a>, 
+    
+  
+    <a href="../Vips/Image.html#sharpen%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>sharpen(**kwargs)</span>
+    sharpen</a>, 
+    
+  
+    <a href="../Vips/Image.html#shrink%28hshrink%3AFloat64%2Cvshrink%3AFloat64%29-instance-method" class="tooltip">
+      <span>shrink(hshrink : Float64, vshrink : Float64)</span>
+    shrink</a>, 
+    
+  
+    <a href="../Vips/Image.html#shrinkh%28hshrink%3AInt32%29-instance-method" class="tooltip">
+      <span>shrinkh(hshrink : Int32)</span>
+    shrinkh</a>, 
+    
+  
+    <a href="../Vips/Image.html#shrinkv%28vshrink%3AInt32%29-instance-method" class="tooltip">
+      <span>shrinkv(vshrink : Int32)</span>
+    shrinkv</a>, 
+    
+  
+    <a href="../Vips/Image.html#sign-instance-method" class="tooltip">
+      <span>sign</span>
+    sign</a>, 
+    
+  
+    <a href="../Vips/Image.html#signal_connect%28signal%3AEnums%3A%3ASignal%2Cdata%3APointer%28Void%29%3DPointer%28Void%29.null%2C%26callback%3AEvalProc%29-instance-method" class="tooltip">
+      <span>signal_connect(signal : Enums::Signal, data : Pointer(Void) = <span class="t">Pointer</span>(<span class="t">Void</span>).null, &callback : EvalProc)</span>
+    signal_connect</a>, 
+    
+  
+    <a href="../Vips/Image.html#similarity%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>similarity(**kwargs)</span>
+    similarity</a>, 
+    
+  
+    <a href="../Vips/Image.html#sin%3AImage-instance-method" class="tooltip">
+      <span>sin : Image</span>
+    sin</a>, 
+    
+  
+    <a href="../Vips/Image.html#sinh%3AImage-instance-method" class="tooltip">
+      <span>sinh : Image</span>
+    sinh</a>, 
+    
+  
+    <a href="../Vips/Image.html#size-instance-method" class="tooltip">
+      <span>size</span>
+    size</a>, 
+    
+  
+    <a href="../Vips/Image.html#smartcrop%28width%3AInt32%2Cheight%3AInt32%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>smartcrop(width : Int32, height : Int32, **kwargs)</span>
+    smartcrop</a>, 
+    
+  
+    <a href="../Vips/Image.html#sobel-instance-method" class="tooltip">
+      <span>sobel</span>
+    sobel</a>, 
+    
+  
+    <a href="../Vips/Image.html#spcor%28ref%3AImage%29-instance-method" class="tooltip">
+      <span>spcor(ref : Image)</span>
+    spcor</a>, 
+    
+  
+    <a href="../Vips/Image.html#spectrum-instance-method" class="tooltip">
+      <span>spectrum</span>
+    spectrum</a>, 
+    
+  
+    <a href="../Vips/Image.html#srgb2hsv-instance-method" class="tooltip">
+      <span>srgb2hsv</span>
+    srgb2hsv</a>, 
+    
+  
+    <a href="../Vips/Image.html#srgb2scrgb-instance-method" class="tooltip">
+      <span>srgb2scrgb</span>
+    srgb2scrgb</a>, 
+    
+  
+    <a href="../Vips/Image.html#stats-instance-method" class="tooltip">
+      <span>stats</span>
+    stats</a>, 
+    
+  
+    <a href="../Vips/Image.html#stdif%28width%3AInt32%2Cheight%3AInt32%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>stdif(width : Int32, height : Int32, **kwargs)</span>
+    stdif</a>, 
+    
+  
+    <a href="../Vips/Image.html#subsample%28xfac%3AInt32%2Cyfac%3AInt32%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>subsample(xfac : Int32, yfac : Int32, **kwargs)</span>
+    subsample</a>, 
+    
+  
+    <a href="../Vips/Image.html#subtract%28right%3AImage%29-instance-method" class="tooltip">
+      <span>subtract(right : Image)</span>
+    subtract</a>, 
+    
+  
+    <a href="../Vips/Image.html#tan%3AImage-instance-method" class="tooltip">
+      <span>tan : Image</span>
+    tan</a>, 
+    
+  
+    <a href="../Vips/Image.html#tanh%3AImage-instance-method" class="tooltip">
+      <span>tanh : Image</span>
+    tanh</a>, 
+    
+  
+    <a href="../Vips/Image.html#thumbnail_image%28width%3AInt32%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>thumbnail_image(width : Int32, **kwargs)</span>
+    thumbnail_image</a>, 
+    
+  
+    <a href="../Vips/Image.html#tiffsave%28filename%3AString%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>tiffsave(filename : String, **kwargs)</span>
+    tiffsave</a>, 
+    
+  
+    <a href="../Vips/Image.html#tiffsave_buffer%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>tiffsave_buffer(**kwargs)</span>
+    tiffsave_buffer</a>, 
+    
+  
+    <a href="../Vips/Image.html#tilecache%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>tilecache(**kwargs)</span>
+    tilecache</a>, 
+    
+  
+    <a href="../Vips/Image.html#to_s%28io%3AIO%29-instance-method" class="tooltip">
+      <span>to_s(io : IO)</span>
+    to_s</a>, 
+    
+  
+    <a href="../Vips/Image.html#transpose3d%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>transpose3d(**kwargs)</span>
+    transpose3d</a>, 
+    
+  
+    <a href="../Vips/Image.html#unpremultiply%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>unpremultiply(**kwargs)</span>
+    unpremultiply</a>, 
+    
+  
+    <a href="../Vips/Image.html#vipssave%28filename%3AString%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>vipssave(filename : String, **kwargs)</span>
+    vipssave</a>, 
+    
+  
+    <a href="../Vips/Image.html#vipssave_stream%28stream%3AIO%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>vipssave_stream(stream : IO, **kwargs)</span>
+    vipssave_stream</a>, 
+    
+  
+    <a href="../Vips/Image.html#vipssave_target%28target%3ATarget%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>vipssave_target(target : Target, **kwargs)</span>
+    vipssave_target</a>, 
+    
+  
+    <a href="../Vips/Image.html#webpsave%28filename%3AString%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>webpsave(filename : String, **kwargs)</span>
+    webpsave</a>, 
+    
+  
+    <a href="../Vips/Image.html#webpsave_buffer%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>webpsave_buffer(**kwargs)</span>
+    webpsave_buffer</a>, 
+    
+  
+    <a href="../Vips/Image.html#webpsave_stream%28stream%3AIO%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>webpsave_stream(stream : IO, **kwargs)</span>
+    webpsave_stream</a>, 
+    
+  
+    <a href="../Vips/Image.html#webpsave_target%28target%3ATarget%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>webpsave_target(target : Target, **kwargs)</span>
+    webpsave_target</a>, 
+    
+  
+    <a href="../Vips/Image.html#width%3AInt32-instance-method" class="tooltip">
+      <span>width : Int32</span>
+    width</a>, 
+    
+  
+    <a href="../Vips/Image.html#wrap%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>wrap(**kwargs)</span>
+    wrap</a>, 
+    
+  
+    <a href="../Vips/Image.html#write%28other%3AImage%29-instance-method" class="tooltip">
+      <span>write(other : Image)</span>
+    write</a>, 
+    
+  
+    <a href="../Vips/Image.html#write_to_buffer%28format%3AString%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>write_to_buffer(format : String, **kwargs)</span>
+    write_to_buffer</a>, 
+    
+  
+    <a href="../Vips/Image.html#write_to_bytes%3ABytes-instance-method" class="tooltip">
+      <span>write_to_bytes : Bytes</span>
+    write_to_bytes</a>, 
+    
+  
+    <a href="../Vips/Image.html#write_to_file%28name%3AString%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>write_to_file(name : String, **kwargs)</span>
+    write_to_file</a>, 
+    
+  
+    <a href="../Vips/Image.html#write_to_memory%3ATuple%28Pointer%28Void%29%2CLibC%3A%3ASizeT%29-instance-method" class="tooltip">
+      <span>write_to_memory : Tuple(Pointer(Void), LibC::SizeT)</span>
+    write_to_memory</a>, 
+    
+  
+    <a href="../Vips/Image.html#write_to_target%28stream%3AIO%2Cformat%3AString%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>write_to_target(stream : IO, format : String, **kwargs)<br/>write_to_target(target : Target, format : String, **kwargs)</span>
+    write_to_target</a>, 
+    
+  
+    <a href="../Vips/Image.html#xoffset%3AInt32-instance-method" class="tooltip">
+      <span>xoffset : Int32</span>
+    xoffset</a>, 
+    
+  
+    <a href="../Vips/Image.html#xres%3AFloat64-instance-method" class="tooltip">
+      <span>xres : Float64</span>
+    xres</a>, 
+    
+  
+    <a href="../Vips/Image.html#xyz2cmyk-instance-method" class="tooltip">
+      <span>xyz2cmyk</span>
+    xyz2cmyk</a>, 
+    
+  
+    <a href="../Vips/Image.html#xyz2lab%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>xyz2lab(**kwargs)</span>
+    xyz2lab</a>, 
+    
+  
+    <a href="../Vips/Image.html#xyz2scrgb-instance-method" class="tooltip">
+      <span>xyz2scrgb</span>
+    xyz2scrgb</a>, 
+    
+  
+    <a href="../Vips/Image.html#xyz2yxy-instance-method" class="tooltip">
+      <span>xyz2yxy</span>
+    xyz2yxy</a>, 
+    
+  
+    <a href="../Vips/Image.html#yoffset%3AInt32-instance-method" class="tooltip">
+      <span>yoffset : Int32</span>
+    yoffset</a>, 
+    
+  
+    <a href="../Vips/Image.html#yres%3AFloat64-instance-method" class="tooltip">
+      <span>yres : Float64</span>
+    yres</a>, 
+    
+  
+    <a href="../Vips/Image.html#yxy2xyz-instance-method" class="tooltip">
+      <span>yxy2xyz</span>
+    yxy2xyz</a>, 
+    
+  
+    <a href="../Vips/Image.html#zoom%28xfac%3AInt32%2Cyfac%3AInt32%29-instance-method" class="tooltip">
+      <span>zoom(xfac : Int32, yfac : Int32)</span>
+    zoom</a>, 
+    
+  
+    <a href="../Vips/Image.html#%7C%28other%29-instance-method" class="tooltip">
+      <span>|(other)</span>
+    |</a>
+    
+  
+
+
+    
+
+  <h3>Constructor methods inherited from class <code><a href="../Vips/Image.html">Vips::Image</a></code></h3>
+  
+  
+    <a href="../Vips/Image.html#imageize%28match_image%3AImage%2Cvalue%29%3AImage-class-method" class="tooltip">
+      <span>imageize(match_image : Image, value) : Image</span>
+    imageize</a>, 
+    
+  
+    <a href="../Vips/Image.html#new_from_array%28array%3AArray%2Cscale%3D1.0%2Coffset%3D0.0%29%3AImage-class-method" class="tooltip">
+      <span>new_from_array(array : Array, scale = <span class="n">1.0</span>, offset = <span class="n">0.0</span>) : Image</span>
+    new_from_array</a>, 
+    
+  
+    <a href="../Vips/Image.html#new_from_buffer%28data%3AString%7CBytes%7CIO%2Coption_string%3AString%3D%22%22%2Caccess%3AEnums%3A%3AAccess%3F%3Dnil%2Cfailon%3AEnums%3A%3AFailOn%3F%3Dnil%2C%2A%2Aopts%29%3AImage-class-method" class="tooltip">
+      <span>new_from_buffer(data : String | Bytes | IO, option_string : String = <span class="s">&quot;&quot;</span>, access : Enums::Access? = <span class="n">nil</span>, failon : Enums::FailOn? = <span class="n">nil</span>, **opts) : Image</span>
+    new_from_buffer</a>, 
+    
+  
+    <a href="../Vips/Image.html#new_from_file%28name%3AString%2Cmemory%3ABool%3F%3Dnil%2Caccess%3AEnums%3A%3AAccess%3F%3Dnil%2Cfailon%3AEnums%3A%3AFailOn%3F%3Dnil%2C%2A%2Aopts%29%3AImage-class-method" class="tooltip">
+      <span>new_from_file(name : String, memory : Bool? = <span class="n">nil</span>, access : Enums::Access? = <span class="n">nil</span>, failon : Enums::FailOn? = <span class="n">nil</span>, **opts) : Image</span>
+    new_from_file</a>, 
+    
+  
+    <a href="../Vips/Image.html#new_from_memory%28data%3ABytes%2Cwidth%3AInt32%2Cheight%3AInt32%2Cbands%3AInt32%2Cformat%3AEnums%3A%3ABandFormat%29%3AImage-class-method" class="tooltip">
+      <span>new_from_memory(data : Bytes, width : Int32, height : Int32, bands : Int32, format : Enums::BandFormat) : Image</span>
+    new_from_memory</a>, 
+    
+  
+    <a href="../Vips/Image.html#new_from_memory_copy%28data%3APointer%28Void%29%2Csize%3AUInt64%2Cwidth%3AInt32%2Cheight%3AInt32%2Cbands%3AInt32%2Cformat%3AEnums%3A%3ABandFormat%29%3AImage-class-method" class="tooltip">
+      <span>new_from_memory_copy(data : Pointer(Void), size : UInt64, width : Int32, height : Int32, bands : Int32, format : Enums::BandFormat) : Image</span>
+    new_from_memory_copy</a>, 
+    
+  
+    <a href="../Vips/Image.html#new_from_source%28source%3ASource%2Coption_string%3AString%3D%22%22%2Caccess%3AEnums%3A%3AAccess%3F%3Dnil%2Cfailon%3AEnums%3A%3AFailOn%3F%3Dnil%2C%2A%2Aopts%29%3AImage-class-method" class="tooltip">
+      <span>new_from_source(source : Source, option_string : String = <span class="s">&quot;&quot;</span>, access : Enums::Access? = <span class="n">nil</span>, failon : Enums::FailOn? = <span class="n">nil</span>, **opts) : Image</span>
+    new_from_source</a>, 
+    
+  
+    <a href="../Vips/Image.html#new_from_stream%28stream%3AIO%2Coption_string%3AString%3D%22%22%2Caccess%3AEnums%3A%3AAccess%3F%3Dnil%2Cfailon%3AEnums%3A%3AFailOn%3F%3Dnil%2C%2A%2Aopts%29%3AImage-class-method" class="tooltip">
+      <span>new_from_stream(stream : IO, option_string : String = <span class="s">&quot;&quot;</span>, access : Enums::Access? = <span class="n">nil</span>, failon : Enums::FailOn? = <span class="n">nil</span>, **opts) : Image</span>
+    new_from_stream</a>, 
+    
+  
+    <a href="../Vips/Image.html#new_temp_file%28format%3AString%29%3AImage-class-method" class="tooltip">
+      <span>new_temp_file(format : String) : Image</span>
+    new_temp_file</a>
+    
+  
+
+
+    
+
+  <h3>Class methods inherited from class <code><a href="../Vips/Image.html">Vips::Image</a></code></h3>
+  
+  
+    <a href="../Vips/Image.html#analyzeload%28filename%3AString%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>analyzeload(filename : String, **kwargs)</span>
+    analyzeload</a>, 
+    
+  
+    <a href="../Vips/Image.html#arrayjoin%28in_%3AArray%28Image%29%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>arrayjoin(in_ : Array(Image), **kwargs)</span>
+    arrayjoin</a>, 
+    
+  
+    <a href="../Vips/Image.html#black%28width%3AInt32%2Cheight%3AInt32%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>black(width : Int32, height : Int32, **kwargs)</span>
+    black</a>, 
+    
+  
+    <a href="../Vips/Image.html#csvload%28filename%3AString%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>csvload(filename : String, **kwargs)</span>
+    csvload</a>, 
+    
+  
+    <a href="../Vips/Image.html#csvload_source%28source%3ASource%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>csvload_source(source : Source, **kwargs)</span>
+    csvload_source</a>, 
+    
+  
+    <a href="../Vips/Image.html#csvload_stream%28stream%3AIO%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>csvload_stream(stream : IO, **kwargs)</span>
+    csvload_stream</a>, 
+    
+  
+    <a href="../Vips/Image.html#eye%28width%3AInt32%2Cheight%3AInt32%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>eye(width : Int32, height : Int32, **kwargs)</span>
+    eye</a>, 
+    
+  
+    <a href="../Vips/Image.html#find_load%28filename%3AString%29-class-method" class="tooltip">
+      <span>find_load(filename : String)</span>
+    find_load</a>, 
+    
+  
+    <a href="../Vips/Image.html#find_load_buffer%28data%3ABytes%29-class-method" class="tooltip">
+      <span>find_load_buffer(data : Bytes)<br/>find_load_buffer(data : String)</span>
+    find_load_buffer</a>, 
+    
+  
+    <a href="../Vips/Image.html#find_load_source%28source%3ASource%29-class-method" class="tooltip">
+      <span>find_load_source(source : Source)</span>
+    find_load_source</a>, 
+    
+  
+    <a href="../Vips/Image.html#find_load_stream%28stream%3AStream%29-class-method" class="tooltip">
+      <span>find_load_stream(stream : Stream)</span>
+    find_load_stream</a>, 
+    
+  
+    <a href="../Vips/Image.html#fitsload%28filename%3AString%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>fitsload(filename : String, **kwargs)</span>
+    fitsload</a>, 
+    
+  
+    <a href="../Vips/Image.html#fitsload_source%28source%3ASource%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>fitsload_source(source : Source, **kwargs)</span>
+    fitsload_source</a>, 
+    
+  
+    <a href="../Vips/Image.html#fitsload_stream%28stream%3AIO%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>fitsload_stream(stream : IO, **kwargs)</span>
+    fitsload_stream</a>, 
+    
+  
+    <a href="../Vips/Image.html#fractsurf%28width%3AInt32%2Cheight%3AInt32%2Cfractal_dimension%3AFloat64%29-class-method" class="tooltip">
+      <span>fractsurf(width : Int32, height : Int32, fractal_dimension : Float64)</span>
+    fractsurf</a>, 
+    
+  
+    <a href="../Vips/Image.html#gaussmat%28sigma%3AFloat64%2Cmin_ampl%3AFloat64%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>gaussmat(sigma : Float64, min_ampl : Float64, **kwargs)</span>
+    gaussmat</a>, 
+    
+  
+    <a href="../Vips/Image.html#gaussnoise%28width%3AInt32%2Cheight%3AInt32%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>gaussnoise(width : Int32, height : Int32, **kwargs)</span>
+    gaussnoise</a>, 
+    
+  
+    <a href="../Vips/Image.html#gifload%28filename%3AString%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>gifload(filename : String, **kwargs)</span>
+    gifload</a>, 
+    
+  
+    <a href="../Vips/Image.html#gifload_buffer%28buffer%3ABytes%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>gifload_buffer(buffer : Bytes, **kwargs)</span>
+    gifload_buffer</a>, 
+    
+  
+    <a href="../Vips/Image.html#gifload_source%28source%3ASource%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>gifload_source(source : Source, **kwargs)</span>
+    gifload_source</a>, 
+    
+  
+    <a href="../Vips/Image.html#gifload_stream%28stream%3AIO%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>gifload_stream(stream : IO, **kwargs)</span>
+    gifload_stream</a>, 
+    
+  
+    <a href="../Vips/Image.html#grey%28width%3AInt32%2Cheight%3AInt32%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>grey(width : Int32, height : Int32, **kwargs)</span>
+    grey</a>, 
+    
+  
+    <a href="../Vips/Image.html#heifload%28filename%3AString%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>heifload(filename : String, **kwargs)</span>
+    heifload</a>, 
+    
+  
+    <a href="../Vips/Image.html#heifload_buffer%28buffer%3ABytes%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>heifload_buffer(buffer : Bytes, **kwargs)</span>
+    heifload_buffer</a>, 
+    
+  
+    <a href="../Vips/Image.html#heifload_source%28source%3ASource%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>heifload_source(source : Source, **kwargs)</span>
+    heifload_source</a>, 
+    
+  
+    <a href="../Vips/Image.html#heifload_stream%28stream%3AIO%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>heifload_stream(stream : IO, **kwargs)</span>
+    heifload_stream</a>, 
+    
+  
+    <a href="../Vips/Image.html#identity%28%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>identity(**kwargs)</span>
+    identity</a>, 
+    
+  
+    <a href="../Vips/Image.html#jp2kload%28filename%3AString%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>jp2kload(filename : String, **kwargs)</span>
+    jp2kload</a>, 
+    
+  
+    <a href="../Vips/Image.html#jp2kload_buffer%28buffer%3ABytes%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>jp2kload_buffer(buffer : Bytes, **kwargs)</span>
+    jp2kload_buffer</a>, 
+    
+  
+    <a href="../Vips/Image.html#jp2kload_source%28source%3ASource%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>jp2kload_source(source : Source, **kwargs)</span>
+    jp2kload_source</a>, 
+    
+  
+    <a href="../Vips/Image.html#jp2kload_stream%28stream%3AIO%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>jp2kload_stream(stream : IO, **kwargs)</span>
+    jp2kload_stream</a>, 
+    
+  
+    <a href="../Vips/Image.html#jpegload%28filename%3AString%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>jpegload(filename : String, **kwargs)</span>
+    jpegload</a>, 
+    
+  
+    <a href="../Vips/Image.html#jpegload_buffer%28buffer%3ABytes%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>jpegload_buffer(buffer : Bytes, **kwargs)</span>
+    jpegload_buffer</a>, 
+    
+  
+    <a href="../Vips/Image.html#jpegload_source%28source%3ASource%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>jpegload_source(source : Source, **kwargs)</span>
+    jpegload_source</a>, 
+    
+  
+    <a href="../Vips/Image.html#jpegload_stream%28stream%3AIO%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>jpegload_stream(stream : IO, **kwargs)</span>
+    jpegload_stream</a>, 
+    
+  
+    <a href="../Vips/Image.html#jxlload%28filename%3AString%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>jxlload(filename : String, **kwargs)</span>
+    jxlload</a>, 
+    
+  
+    <a href="../Vips/Image.html#jxlload_buffer%28buffer%3ABytes%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>jxlload_buffer(buffer : Bytes, **kwargs)</span>
+    jxlload_buffer</a>, 
+    
+  
+    <a href="../Vips/Image.html#jxlload_source%28source%3ASource%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>jxlload_source(source : Source, **kwargs)</span>
+    jxlload_source</a>, 
+    
+  
+    <a href="../Vips/Image.html#jxlload_stream%28stream%3AIO%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>jxlload_stream(stream : IO, **kwargs)</span>
+    jxlload_stream</a>, 
+    
+  
+    <a href="../Vips/Image.html#logmat%28sigma%3AFloat64%2Cmin_ampl%3AFloat64%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>logmat(sigma : Float64, min_ampl : Float64, **kwargs)</span>
+    logmat</a>, 
+    
+  
+    <a href="../Vips/Image.html#magickload%28filename%3AString%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>magickload(filename : String, **kwargs)</span>
+    magickload</a>, 
+    
+  
+    <a href="../Vips/Image.html#magickload_buffer%28buffer%3ABytes%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>magickload_buffer(buffer : Bytes, **kwargs)</span>
+    magickload_buffer</a>, 
+    
+  
+    <a href="../Vips/Image.html#mask_butterworth%28width%3AInt32%2Cheight%3AInt32%2Corder%3AFloat64%2Cfrequency_cutoff%3AFloat64%2Camplitude_cutoff%3AFloat64%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>mask_butterworth(width : Int32, height : Int32, order : Float64, frequency_cutoff : Float64, amplitude_cutoff : Float64, **kwargs)</span>
+    mask_butterworth</a>, 
+    
+  
+    <a href="../Vips/Image.html#mask_butterworth_band%28width%3AInt32%2Cheight%3AInt32%2Corder%3AFloat64%2Cfrequency_cutoff_x%3AFloat64%2Cfrequency_cutoff_y%3AFloat64%2Cradius%3AFloat64%2Camplitude_cutoff%3AFloat64%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>mask_butterworth_band(width : Int32, height : Int32, order : Float64, frequency_cutoff_x : Float64, frequency_cutoff_y : Float64, radius : Float64, amplitude_cutoff : Float64, **kwargs)</span>
+    mask_butterworth_band</a>, 
+    
+  
+    <a href="../Vips/Image.html#mask_butterworth_ring%28width%3AInt32%2Cheight%3AInt32%2Corder%3AFloat64%2Cfrequency_cutoff%3AFloat64%2Camplitude_cutoff%3AFloat64%2Cringwidth%3AFloat64%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>mask_butterworth_ring(width : Int32, height : Int32, order : Float64, frequency_cutoff : Float64, amplitude_cutoff : Float64, ringwidth : Float64, **kwargs)</span>
+    mask_butterworth_ring</a>, 
+    
+  
+    <a href="../Vips/Image.html#mask_fractal%28width%3AInt32%2Cheight%3AInt32%2Cfractal_dimension%3AFloat64%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>mask_fractal(width : Int32, height : Int32, fractal_dimension : Float64, **kwargs)</span>
+    mask_fractal</a>, 
+    
+  
+    <a href="../Vips/Image.html#mask_gaussian%28width%3AInt32%2Cheight%3AInt32%2Cfrequency_cutoff%3AFloat64%2Camplitude_cutoff%3AFloat64%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>mask_gaussian(width : Int32, height : Int32, frequency_cutoff : Float64, amplitude_cutoff : Float64, **kwargs)</span>
+    mask_gaussian</a>, 
+    
+  
+    <a href="../Vips/Image.html#mask_gaussian_band%28width%3AInt32%2Cheight%3AInt32%2Cfrequency_cutoff_x%3AFloat64%2Cfrequency_cutoff_y%3AFloat64%2Cradius%3AFloat64%2Camplitude_cutoff%3AFloat64%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>mask_gaussian_band(width : Int32, height : Int32, frequency_cutoff_x : Float64, frequency_cutoff_y : Float64, radius : Float64, amplitude_cutoff : Float64, **kwargs)</span>
+    mask_gaussian_band</a>, 
+    
+  
+    <a href="../Vips/Image.html#mask_gaussian_ring%28width%3AInt32%2Cheight%3AInt32%2Cfrequency_cutoff%3AFloat64%2Camplitude_cutoff%3AFloat64%2Cringwidth%3AFloat64%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>mask_gaussian_ring(width : Int32, height : Int32, frequency_cutoff : Float64, amplitude_cutoff : Float64, ringwidth : Float64, **kwargs)</span>
+    mask_gaussian_ring</a>, 
+    
+  
+    <a href="../Vips/Image.html#mask_ideal%28width%3AInt32%2Cheight%3AInt32%2Cfrequency_cutoff%3AFloat64%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>mask_ideal(width : Int32, height : Int32, frequency_cutoff : Float64, **kwargs)</span>
+    mask_ideal</a>, 
+    
+  
+    <a href="../Vips/Image.html#mask_ideal_band%28width%3AInt32%2Cheight%3AInt32%2Cfrequency_cutoff_x%3AFloat64%2Cfrequency_cutoff_y%3AFloat64%2Cradius%3AFloat64%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>mask_ideal_band(width : Int32, height : Int32, frequency_cutoff_x : Float64, frequency_cutoff_y : Float64, radius : Float64, **kwargs)</span>
+    mask_ideal_band</a>, 
+    
+  
+    <a href="../Vips/Image.html#mask_ideal_ring%28width%3AInt32%2Cheight%3AInt32%2Cfrequency_cutoff%3AFloat64%2Cringwidth%3AFloat64%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>mask_ideal_ring(width : Int32, height : Int32, frequency_cutoff : Float64, ringwidth : Float64, **kwargs)</span>
+    mask_ideal_ring</a>, 
+    
+  
+    <a href="../Vips/Image.html#matload%28filename%3AString%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>matload(filename : String, **kwargs)</span>
+    matload</a>, 
+    
+  
+    <a href="../Vips/Image.html#matrixload%28filename%3AString%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>matrixload(filename : String, **kwargs)</span>
+    matrixload</a>, 
+    
+  
+    <a href="../Vips/Image.html#matrixload_source%28source%3ASource%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>matrixload_source(source : Source, **kwargs)</span>
+    matrixload_source</a>, 
+    
+  
+    <a href="../Vips/Image.html#matrixload_stream%28stream%3AIO%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>matrixload_stream(stream : IO, **kwargs)</span>
+    matrixload_stream</a>, 
+    
+  
+    <a href="../Vips/Image.html#openexrload%28filename%3AString%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>openexrload(filename : String, **kwargs)</span>
+    openexrload</a>, 
+    
+  
+    <a href="../Vips/Image.html#openslideload%28filename%3AString%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>openslideload(filename : String, **kwargs)</span>
+    openslideload</a>, 
+    
+  
+    <a href="../Vips/Image.html#openslideload_source%28source%3ASource%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>openslideload_source(source : Source, **kwargs)</span>
+    openslideload_source</a>, 
+    
+  
+    <a href="../Vips/Image.html#openslideload_stream%28stream%3AIO%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>openslideload_stream(stream : IO, **kwargs)</span>
+    openslideload_stream</a>, 
+    
+  
+    <a href="../Vips/Image.html#pdfload%28filename%3AString%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>pdfload(filename : String, **kwargs)</span>
+    pdfload</a>, 
+    
+  
+    <a href="../Vips/Image.html#pdfload_buffer%28buffer%3ABytes%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>pdfload_buffer(buffer : Bytes, **kwargs)</span>
+    pdfload_buffer</a>, 
+    
+  
+    <a href="../Vips/Image.html#pdfload_source%28source%3ASource%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>pdfload_source(source : Source, **kwargs)</span>
+    pdfload_source</a>, 
+    
+  
+    <a href="../Vips/Image.html#pdfload_stream%28stream%3AIO%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>pdfload_stream(stream : IO, **kwargs)</span>
+    pdfload_stream</a>, 
+    
+  
+    <a href="../Vips/Image.html#perlin%28width%3AInt32%2Cheight%3AInt32%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>perlin(width : Int32, height : Int32, **kwargs)</span>
+    perlin</a>, 
+    
+  
+    <a href="../Vips/Image.html#pngload%28filename%3AString%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>pngload(filename : String, **kwargs)</span>
+    pngload</a>, 
+    
+  
+    <a href="../Vips/Image.html#pngload_buffer%28buffer%3ABytes%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>pngload_buffer(buffer : Bytes, **kwargs)</span>
+    pngload_buffer</a>, 
+    
+  
+    <a href="../Vips/Image.html#pngload_source%28source%3ASource%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>pngload_source(source : Source, **kwargs)</span>
+    pngload_source</a>, 
+    
+  
+    <a href="../Vips/Image.html#pngload_stream%28stream%3AIO%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>pngload_stream(stream : IO, **kwargs)</span>
+    pngload_stream</a>, 
+    
+  
+    <a href="../Vips/Image.html#ppmload%28filename%3AString%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>ppmload(filename : String, **kwargs)</span>
+    ppmload</a>, 
+    
+  
+    <a href="../Vips/Image.html#ppmload_source%28source%3ASource%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>ppmload_source(source : Source, **kwargs)</span>
+    ppmload_source</a>, 
+    
+  
+    <a href="../Vips/Image.html#ppmload_stream%28stream%3AIO%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>ppmload_stream(stream : IO, **kwargs)</span>
+    ppmload_stream</a>, 
+    
+  
+    <a href="../Vips/Image.html#profile_load%28name%3AString%29-class-method" class="tooltip">
+      <span>profile_load(name : String)</span>
+    profile_load</a>, 
+    
+  
+    <a href="../Vips/Image.html#radload%28filename%3AString%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>radload(filename : String, **kwargs)</span>
+    radload</a>, 
+    
+  
+    <a href="../Vips/Image.html#radload_buffer%28buffer%3ABytes%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>radload_buffer(buffer : Bytes, **kwargs)</span>
+    radload_buffer</a>, 
+    
+  
+    <a href="../Vips/Image.html#radload_source%28source%3ASource%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>radload_source(source : Source, **kwargs)</span>
+    radload_source</a>, 
+    
+  
+    <a href="../Vips/Image.html#radload_stream%28stream%3AIO%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>radload_stream(stream : IO, **kwargs)</span>
+    radload_stream</a>, 
+    
+  
+    <a href="../Vips/Image.html#rawload%28filename%3AString%2Cwidth%3AInt32%2Cheight%3AInt32%2Cbands%3AInt32%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>rawload(filename : String, width : Int32, height : Int32, bands : Int32, **kwargs)</span>
+    rawload</a>, 
+    
+  
+    <a href="../Vips/Image.html#run_cmplx%28image%3AImage%2C%26block%3AImage-%3EImage%29-class-method" class="tooltip">
+      <span>run_cmplx(image : Image, &block : Image -> Image)</span>
+    run_cmplx</a>, 
+    
+  
+    <a href="../Vips/Image.html#sines%28width%3AInt32%2Cheight%3AInt32%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>sines(width : Int32, height : Int32, **kwargs)</span>
+    sines</a>, 
+    
+  
+    <a href="../Vips/Image.html#sum%28%2Ain_%3AImage%29-class-method" class="tooltip">
+      <span>sum(*in_ : Image)</span>
+    sum</a>, 
+    
+  
+    <a href="../Vips/Image.html#svgload%28filename%3AString%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>svgload(filename : String, **kwargs)</span>
+    svgload</a>, 
+    
+  
+    <a href="../Vips/Image.html#svgload_buffer%28buffer%3ABytes%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>svgload_buffer(buffer : Bytes, **kwargs)</span>
+    svgload_buffer</a>, 
+    
+  
+    <a href="../Vips/Image.html#svgload_source%28source%3ASource%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>svgload_source(source : Source, **kwargs)</span>
+    svgload_source</a>, 
+    
+  
+    <a href="../Vips/Image.html#svgload_stream%28stream%3AIO%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>svgload_stream(stream : IO, **kwargs)</span>
+    svgload_stream</a>, 
+    
+  
+    <a href="../Vips/Image.html#switch%28%2Atests%3AImage%29-class-method" class="tooltip">
+      <span>switch(*tests : Image)</span>
+    switch</a>, 
+    
+  
+    <a href="../Vips/Image.html#system%28cmd_format%3AString%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>system(cmd_format : String, **kwargs)</span>
+    system</a>, 
+    
+  
+    <a href="../Vips/Image.html#text%28text%3AString%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>text(text : String, **kwargs)</span>
+    text</a>, 
+    
+  
+    <a href="../Vips/Image.html#thumbnail%28filename%3AString%2Cwidth%3AInt32%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>thumbnail(filename : String, width : Int32, **kwargs)</span>
+    thumbnail</a>, 
+    
+  
+    <a href="../Vips/Image.html#thumbnail_buffer%28buffer%3ABytes%2Cwidth%3AInt32%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>thumbnail_buffer(buffer : Bytes, width : Int32, **kwargs)</span>
+    thumbnail_buffer</a>, 
+    
+  
+    <a href="../Vips/Image.html#thumbnail_source%28source%3ASource%2Cwidth%3AInt32%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>thumbnail_source(source : Source, width : Int32, **kwargs)</span>
+    thumbnail_source</a>, 
+    
+  
+    <a href="../Vips/Image.html#thumbnail_stream%28stream%3AIO%2Cwidth%3AInt32%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>thumbnail_stream(stream : IO, width : Int32, **kwargs)</span>
+    thumbnail_stream</a>, 
+    
+  
+    <a href="../Vips/Image.html#tiffload%28filename%3AString%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>tiffload(filename : String, **kwargs)</span>
+    tiffload</a>, 
+    
+  
+    <a href="../Vips/Image.html#tiffload_buffer%28buffer%3ABytes%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>tiffload_buffer(buffer : Bytes, **kwargs)</span>
+    tiffload_buffer</a>, 
+    
+  
+    <a href="../Vips/Image.html#tiffload_source%28source%3ASource%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>tiffload_source(source : Source, **kwargs)</span>
+    tiffload_source</a>, 
+    
+  
+    <a href="../Vips/Image.html#tiffload_stream%28stream%3AIO%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>tiffload_stream(stream : IO, **kwargs)</span>
+    tiffload_stream</a>, 
+    
+  
+    <a href="../Vips/Image.html#tonelut%28%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>tonelut(**kwargs)</span>
+    tonelut</a>, 
+    
+  
+    <a href="../Vips/Image.html#vipsload%28filename%3AString%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>vipsload(filename : String, **kwargs)</span>
+    vipsload</a>, 
+    
+  
+    <a href="../Vips/Image.html#vipsload_source%28source%3ASource%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>vipsload_source(source : Source, **kwargs)</span>
+    vipsload_source</a>, 
+    
+  
+    <a href="../Vips/Image.html#vipsload_stream%28stream%3AIO%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>vipsload_stream(stream : IO, **kwargs)</span>
+    vipsload_stream</a>, 
+    
+  
+    <a href="../Vips/Image.html#webpload%28filename%3AString%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>webpload(filename : String, **kwargs)</span>
+    webpload</a>, 
+    
+  
+    <a href="../Vips/Image.html#webpload_buffer%28buffer%3ABytes%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>webpload_buffer(buffer : Bytes, **kwargs)</span>
+    webpload_buffer</a>, 
+    
+  
+    <a href="../Vips/Image.html#webpload_source%28source%3ASource%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>webpload_source(source : Source, **kwargs)</span>
+    webpload_source</a>, 
+    
+  
+    <a href="../Vips/Image.html#webpload_stream%28stream%3AIO%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>webpload_stream(stream : IO, **kwargs)</span>
+    webpload_stream</a>, 
+    
+  
+    <a href="../Vips/Image.html#worley%28width%3AInt32%2Cheight%3AInt32%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>worley(width : Int32, height : Int32, **kwargs)</span>
+    worley</a>, 
+    
+  
+    <a href="../Vips/Image.html#xyz%28width%3AInt32%2Cheight%3AInt32%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>xyz(width : Int32, height : Int32, **kwargs)</span>
+    xyz</a>, 
+    
+  
+    <a href="../Vips/Image.html#zone%28width%3AInt32%2Cheight%3AInt32%2C%2A%2Akwargs%29-class-method" class="tooltip">
+      <span>zone(width : Int32, height : Int32, **kwargs)</span>
+    zone</a>
+    
+  
+
+
+  
+    
+
+  <h3>Instance methods inherited from class <code><a href="../Vips/VipsObject.html">Vips::VipsObject</a></code></h3>
+  
+  
+    <a href="../Vips/VipsObject.html#get%28name%3AString%29-instance-method" class="tooltip">
+      <span>get(name : String)</span>
+    get</a>, 
+    
+  
+    <a href="../Vips/VipsObject.html#get_blurb%28name%3AString%29-instance-method" class="tooltip">
+      <span>get_blurb(name : String)</span>
+    get_blurb</a>, 
+    
+  
+    <a href="../Vips/VipsObject.html#get_description-instance-method" class="tooltip">
+      <span>get_description</span>
+    get_description</a>, 
+    
+  
+    <a href="../Vips/VipsObject.html#get_pspec%28name%3AString%29%3ALibVips%3A%3AGParamSpec%3F-instance-method" class="tooltip">
+      <span>get_pspec(name : String) : LibVips::GParamSpec?</span>
+    get_pspec</a>, 
+    
+  
+    <a href="../Vips/VipsObject.html#get_typeof%28name%3AString%29-instance-method" class="tooltip">
+      <span>get_typeof(name : String)</span>
+    get_typeof</a>, 
+    
+  
+    <a href="../Vips/VipsObject.html#post_close%28%26block%3A-%3E%29-instance-method" class="tooltip">
+      <span>post_close(&block :  -> )</span>
+    post_close</a>, 
+    
+  
+    <a href="../Vips/VipsObject.html#print_all-instance-method" class="tooltip">
+      <span>print_all</span>
+    print_all</a>, 
+    
+  
+    <a href="../Vips/VipsObject.html#set%28gtype%2Cname%2Cvalue%29-instance-method" class="tooltip">
+      <span>set(gtype, name, value)<br/>set(options : String)</span>
+    set</a>
+    
+  
+
+
+    
+
+
+    
+
+
+  
+    
+
+  <h3>Instance methods inherited from class <code><a href="../Vips/GObject.html">Vips::GObject</a></code></h3>
+  
+  
+    <a href="../Vips/GObject.html#get%28name%3AString%2Cgval%3AGValue%29-instance-method" class="tooltip">
+      <span>get(name : String, gval : GValue)</span>
+    get</a>, 
+    
+  
+    <a href="../Vips/GObject.html#object_ref-instance-method" class="tooltip">
+      <span>object_ref</span>
+    object_ref</a>, 
+    
+  
+    <a href="../Vips/GObject.html#ref_count-instance-method" class="tooltip">
+      <span>ref_count</span>
+    ref_count</a>, 
+    
+  
+    <a href="../Vips/GObject.html#release_handle-instance-method" class="tooltip">
+      <span>release_handle</span>
+    release_handle</a>, 
+    
+  
+    <a href="../Vips/GObject.html#set%28name%3AString%2Cgval%3AGValue%29-instance-method" class="tooltip">
+      <span>set(name : String, gval : GValue)</span>
+    set</a>, 
+    
+  
+    <a href="../Vips/GObject.html#signal_connect%28signal%3AString%2Ccallback%3AProc%2Cdata%3APointer%28Void%29%3DPointer%28Void%29.null%29%3ALibVips%3A%3AGulong-instance-method" class="tooltip">
+      <span>signal_connect(signal : String, callback : Proc, data : Pointer(Void) = <span class="t">Pointer</span>(<span class="t">Void</span>).null) : LibVips::Gulong</span>
+    signal_connect</a>, 
+    
+  
+    <a href="../Vips/GObject.html#signal_disconnect%28handler_id%3ALibVips%3A%3AGulong%29-instance-method" class="tooltip">
+      <span>signal_disconnect(handler_id : LibVips::Gulong)<br/>signal_disconnect(func : Proc, data : Pointer(Void) = <span class="t">Pointer</span>(<span class="t">Void</span>).null)<br/>signal_disconnect(data : LibVips::Gpointer)</span>
+    signal_disconnect</a>
+    
+  
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="[]=(index,value)-instance-method">
+      <div class="signature">
+        
+        def <strong>[]=</strong>(index, value)
+
+        <a class="method-permalink" href="#%5B%5D%3D%28index%2Cvalue%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Use <code>[]</code> to set band elements on an image. For example</p>
+<pre><code class="language-crystal">img <span class="o">=</span> image.mutate { <span class="o">|</span>x<span class="o">|</span> x[<span class="n">1</span>] <span class="o">=</span> green }</code></pre>
+<p>will change band 1 ( the middle band)</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/crystal-vips/blob/adb3c42333182aee3afbb6e4760d875a0b54abd7/src/vips/mutableimage.cr#L44" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="draw_circle(ink:Array(Float64),cx:Int32,cy:Int32,radius:Int32,**kwargs):Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>draw_circle</strong>(ink : Array(Float64), cx : Int32, cy : Int32, radius : Int32, **kwargs) : Nil
+
+        <a class="method-permalink" href="#draw_circle%28ink%3AArray%28Float64%29%2Ccx%3AInt32%2Ccy%3AInt32%2Cradius%3AInt32%2C%2A%2Akwargs%29%3ANil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Draw a circle on an image</p>
+<pre><code class="language-crystal"><span class="c"># image.mutate { |x| x.draw_circle(ink, cx, cy, radius, {fill: Bool} }</span></code></pre>
+<p>Input Parameters</p>
+<p><strong>Required</strong></p>
+<p><em>ink</em> : Array(Float64) - Color for pixels</p>
+<p><em>cx</em> : Int32 - Centre of draw_circle</p>
+<p><em>cy</em> : Int32 - Centre of draw_circle</p>
+<p><em>radius</em> : Int32 - Radius in pixels</p>
+<p><em>Optionals</em></p>
+<p><em>fill</em> : Bool - Draw a solid object</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/crystal-vips/blob/adb3c42333182aee3afbb6e4760d875a0b54abd7/src/vips/ext/mutableimage.cr#L37" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="draw_flood(ink:Array(Float64),x:Int32,y:Int32,**kwargs):Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>draw_flood</strong>(ink : Array(Float64), x : Int32, y : Int32, **kwargs) : Nil
+
+        <a class="method-permalink" href="#draw_flood%28ink%3AArray%28Float64%29%2Cx%3AInt32%2Cy%3AInt32%2C%2A%2Akwargs%29%3ANil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Flood-fill an area</p>
+<pre><code class="language-crystal"><span class="c"># image.mutate { |x| x.draw_flood(ink, x, y, {test: Image, equal: Bool} }</span></code></pre>
+<p>Input Parameters</p>
+<p><strong>Required</strong></p>
+<p><em>ink</em> : Array(Float64) - Color for pixels</p>
+<p><em>x</em> : Int32 - DrawFlood start point</p>
+<p><em>y</em> : Int32 - DrawFlood start point</p>
+<p><em>Optionals</em></p>
+<p><em>test</em> : Image - Test pixels in this image</p>
+<p><em>equal</em> : Bool - DrawFlood while equal to edge</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/crystal-vips/blob/adb3c42333182aee3afbb6e4760d875a0b54abd7/src/vips/ext/mutableimage.cr#L65" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="draw_image(sub:Image,x:Int32,y:Int32,**kwargs):Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>draw_image</strong>(sub : <a href="../Vips/Image.html">Image</a>, x : Int32, y : Int32, **kwargs) : Nil
+
+        <a class="method-permalink" href="#draw_image%28sub%3AImage%2Cx%3AInt32%2Cy%3AInt32%2C%2A%2Akwargs%29%3ANil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Paint an image into another image</p>
+<pre><code class="language-crystal"><span class="c"># image.mutate { |x| x.draw_image(sub, x, y, {mode: Enums::CombineMode} }</span></code></pre>
+<p>Input Parameters</p>
+<p><strong>Required</strong></p>
+<p><em>sub</em> : Image - Sub-image to insert into main image</p>
+<p><em>x</em> : Int32 - Draw image here</p>
+<p><em>y</em> : Int32 - Draw image here</p>
+<p><em>Optionals</em></p>
+<p><em>mode</em> : Enums::CombineMode - Combining mode</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/crystal-vips/blob/adb3c42333182aee3afbb6e4760d875a0b54abd7/src/vips/ext/mutableimage.cr#L91" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="draw_line(ink:Array(Float64),x1:Int32,y1:Int32,x2:Int32,y2:Int32):Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>draw_line</strong>(ink : Array(Float64), x1 : Int32, y1 : Int32, x2 : Int32, y2 : Int32) : Nil
+
+        <a class="method-permalink" href="#draw_line%28ink%3AArray%28Float64%29%2Cx1%3AInt32%2Cy1%3AInt32%2Cx2%3AInt32%2Cy2%3AInt32%29%3ANil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Draw a line on an image</p>
+<pre><code class="language-crystal"><span class="c"># image.mutate { |x| x.draw_line(ink, x1, y1, x2, y2 }</span></code></pre>
+<p>Input Parameters</p>
+<p><strong>Required</strong></p>
+<p><em>ink</em> : Array(Float64) - Color for pixels</p>
+<p><em>x1</em> : Int32 - Start of draw_line</p>
+<p><em>y1</em> : Int32 - Start of draw_line</p>
+<p><em>x2</em> : Int32 - End of draw_line</p>
+<p><em>y2</em> : Int32 - End of draw_line</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/crystal-vips/blob/adb3c42333182aee3afbb6e4760d875a0b54abd7/src/vips/ext/mutableimage.cr#L117" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="draw_mask(ink:Array(Float64),mask:Image,x:Int32,y:Int32):Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>draw_mask</strong>(ink : Array(Float64), mask : <a href="../Vips/Image.html">Image</a>, x : Int32, y : Int32) : Nil
+
+        <a class="method-permalink" href="#draw_mask%28ink%3AArray%28Float64%29%2Cmask%3AImage%2Cx%3AInt32%2Cy%3AInt32%29%3ANil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Draw a mask on an image</p>
+<pre><code class="language-crystal"><span class="c"># image.mutate { |x| x.draw_mask(ink, mask, x, y }</span></code></pre>
+<p>Input Parameters</p>
+<p><strong>Required</strong></p>
+<p><em>ink</em> : Array(Float64) - Color for pixels</p>
+<p><em>mask</em> : Image - Mask of pixels to draw</p>
+<p><em>x</em> : Int32 - Draw mask here</p>
+<p><em>y</em> : Int32 - Draw mask here</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/crystal-vips/blob/adb3c42333182aee3afbb6e4760d875a0b54abd7/src/vips/ext/mutableimage.cr#L140" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="draw_rect(ink:Array(Float64),left:Int32,top:Int32,width:Int32,height:Int32,**kwargs):Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>draw_rect</strong>(ink : Array(Float64), left : Int32, top : Int32, width : Int32, height : Int32, **kwargs) : Nil
+
+        <a class="method-permalink" href="#draw_rect%28ink%3AArray%28Float64%29%2Cleft%3AInt32%2Ctop%3AInt32%2Cwidth%3AInt32%2Cheight%3AInt32%2C%2A%2Akwargs%29%3ANil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Paint a rectangle on an image</p>
+<pre><code class="language-crystal"><span class="c"># image.mutate { |x| x.draw_rect(ink, left, top, width, height, {fill: Bool} }</span></code></pre>
+<p>Input Parameters</p>
+<p><strong>Required</strong></p>
+<p><em>ink</em> : Array(Float64) - Color for pixels</p>
+<p><em>left</em> : Int32 - Rect to fill</p>
+<p><em>top</em> : Int32 - Rect to fill</p>
+<p><em>width</em> : Int32 - Rect to fill</p>
+<p><em>height</em> : Int32 - Rect to fill</p>
+<p><em>Optionals</em></p>
+<p><em>fill</em> : Bool - Draw a solid object</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/crystal-vips/blob/adb3c42333182aee3afbb6e4760d875a0b54abd7/src/vips/ext/mutableimage.cr#L169" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="draw_smudge(left:Int32,top:Int32,width:Int32,height:Int32):Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>draw_smudge</strong>(left : Int32, top : Int32, width : Int32, height : Int32) : Nil
+
+        <a class="method-permalink" href="#draw_smudge%28left%3AInt32%2Ctop%3AInt32%2Cwidth%3AInt32%2Cheight%3AInt32%29%3ANil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Blur a rectangle on an image</p>
+<pre><code class="language-crystal"><span class="c"># image.mutate { |x| x.draw_smudge(left, top, width, height }</span></code></pre>
+<p>Input Parameters</p>
+<p><strong>Required</strong></p>
+<p><em>left</em> : Int32 - Rect to fill</p>
+<p><em>top</em> : Int32 - Rect to fill</p>
+<p><em>width</em> : Int32 - Rect to fill</p>
+<p><em>height</em> : Int32 - Rect to fill</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/crystal-vips/blob/adb3c42333182aee3afbb6e4760d875a0b54abd7/src/vips/ext/mutableimage.cr#L193" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="mutate(&amp;)-instance-method">
+      <div class="signature">
+        
+        def <strong>mutate</strong>(&)
+
+        <a class="method-permalink" href="#mutate%28%26%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+            <div class="doc-inherited">
+              Description copied from class <a href="../Vips/Image.html">Vips::Image</a>
+            </div>
+          
+          <p>Mutate an image with a block. Inside the block, you can call methods
+which modify the image, such as setting or removing metadata, or
+modifying pixels.</p>
+<p>For example:</p>
+<pre><code class="language-crystal">image <span class="o">=</span> image.mutate <span class="k">do</span> <span class="o">|</span>x<span class="o">|</span>
+  (<span class="n">0</span>..<span class="n">1</span>).step <span class="n">0.01</span> <span class="k">do</span> <span class="o">|</span>i<span class="o">|</span>
+    x.draw_line([<span class="n">255.0</span>], (x.width <span class="o">*</span> i).to_i, <span class="n">0</span>, <span class="n">0</span>, (x.height <span class="o">*</span> (<span class="n">1</span> <span class="o">-</span> i)).to_i)
+  <span class="k">end</span>
+<span class="k">end</span></code></pre>
+<p>See <code><a href="../Vips/MutableImage.html">MutableImage</a></code>.</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/crystal-vips/blob/adb3c42333182aee3afbb6e4760d875a0b54abd7/src/vips/mutableimage.cr#L59" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="remove(name:String)-instance-method">
+      <div class="signature">
+        
+        def <strong>remove</strong>(name : String)
+
+        <a class="method-permalink" href="#remove%28name%3AString%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Remove a metadata item from an image.
+named metadata item is removed</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/crystal-vips/blob/adb3c42333182aee3afbb6e4760d875a0b54abd7/src/vips/mutableimage.cr#L34" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="set(gtype:LibVips::GType,name:String,value)-instance-method">
+      <div class="signature">
+        
+        def <strong>set</strong>(gtype : LibVips::GType, name : String, value)
+
+        <a class="method-permalink" href="#set%28gtype%3ALibVips%3A%3AGType%2Cname%3AString%2Cvalue%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Sets the type and value of an item of metadata. Any old item of the
+same name is removed. See <code><a href="../Vips/GValue.html">GValue</a></code> for types</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/crystal-vips/blob/adb3c42333182aee3afbb6e4760d875a0b54abd7/src/vips/mutableimage.cr#L18" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="set(name:String,value)-instance-method">
+      <div class="signature">
+        
+        def <strong>set</strong>(name : String, value)
+
+        <a class="method-permalink" href="#set%28name%3AString%2Cvalue%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Sets the value of an item of metadata. The metadata item must already exists</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/crystal-vips/blob/adb3c42333182aee3afbb6e4760d875a0b54abd7/src/vips/mutableimage.cr#L26" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="to_s(io:IO)-instance-method">
+      <div class="signature">
+        
+        def <strong>to_s</strong>(io : IO)
+
+        <a class="method-permalink" href="#to_s%28io%3AIO%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+            <div class="doc-inherited">
+              Description copied from class Reference
+            </div>
+          
+          <p>Appends a short String representation of this object
+which includes its class name and its object address.</p>
+<pre><code class="language-crystal"><span class="k">class</span> <span class="t">Person</span>
+  <span class="k">def</span> <span class="m">initialize</span>(@name : <span class="t">String</span>, @age : <span class="t">Int32</span>)
+  <span class="k">end</span>
+<span class="k">end</span>
+
+<span class="t">Person</span>.<span class="k">new</span>(<span class="s">&quot;John&quot;</span>, <span class="n">32</span>).to_s <span class="c"># =&gt; #&lt;Person:0x10a199f20&gt;</span></code></pre>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/crystal-vips/blob/adb3c42333182aee3afbb6e4760d875a0b54abd7/src/vips/mutableimage.cr#L64" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>

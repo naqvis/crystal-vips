@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Crystal Docs 1.3.2">
+<meta name="crystal_docs.project_version" content="main">
+<meta name="crystal_docs.project_name" content="vips">
+
+
+
+<link href="../css/style.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="../js/doc.js"></script>
+
+  <meta name="repository-name" content="vips">
+  <title>Vips::GValue - vips main</title>
+  <script type="text/javascript">
+    CrystalDocs.base_path = "../";
+  </script>
+</head>
+<body>
+
+<svg class="hidden">
+  <symbol id="octicon-link" viewBox="0 0 16 16">
+    <path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path>
+  </symbol>
+</svg>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <div class="search-box">
+      <input type="search" class="search-input" placeholder="Search..." spellcheck="false" aria-label="Search">
+    </div>
+
+    <div class="project-summary">
+      <h1 class="project-name">
+        <a href="../index.html">
+          vips
+        </a>
+      </h1>
+
+      <span class="project-version">
+        main
+      </span>
+    </div>
+  </div>
+
+  <div class="search-results hidden">
+    <ul class="search-list"></ul>
+  </div>
+
+  <div class="types-list">
+    <ul>
+  
+  <li class="parent open current" data-id="vips/Vips" data-name="vips">
+      <a href="../Vips.html">Vips</a>
+      
+        <ul>
+  
+  <li class=" " data-id="vips/Vips/Cache" data-name="vips::cache">
+      <a href="../Vips/Cache.html">Cache</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Connection" data-name="vips::connection">
+      <a href="../Vips/Connection.html">Connection</a>
+      
+    </li>
+  
+  <li class="parent " data-id="vips/Vips/Enums" data-name="vips::enums">
+      <a href="../Vips/Enums.html">Enums</a>
+      
+        <ul>
+  
+  <li class=" " data-id="vips/Vips/Enums/Access" data-name="vips::enums::access">
+      <a href="../Vips/Enums/Access.html">Access</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/Align" data-name="vips::enums::align">
+      <a href="../Vips/Enums/Align.html">Align</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/Angle" data-name="vips::enums::angle">
+      <a href="../Vips/Enums/Angle.html">Angle</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/Angle45" data-name="vips::enums::angle45">
+      <a href="../Vips/Enums/Angle45.html">Angle45</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/BandFormat" data-name="vips::enums::bandformat">
+      <a href="../Vips/Enums/BandFormat.html">BandFormat</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/BlendMode" data-name="vips::enums::blendmode">
+      <a href="../Vips/Enums/BlendMode.html">BlendMode</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/Coding" data-name="vips::enums::coding">
+      <a href="../Vips/Enums/Coding.html">Coding</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/Combine" data-name="vips::enums::combine">
+      <a href="../Vips/Enums/Combine.html">Combine</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/CombineMode" data-name="vips::enums::combinemode">
+      <a href="../Vips/Enums/CombineMode.html">CombineMode</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/CompassDirection" data-name="vips::enums::compassdirection">
+      <a href="../Vips/Enums/CompassDirection.html">CompassDirection</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/DemandStyle" data-name="vips::enums::demandstyle">
+      <a href="../Vips/Enums/DemandStyle.html">DemandStyle</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/Direction" data-name="vips::enums::direction">
+      <a href="../Vips/Enums/Direction.html">Direction</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/Extend" data-name="vips::enums::extend">
+      <a href="../Vips/Enums/Extend.html">Extend</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/FailOn" data-name="vips::enums::failon">
+      <a href="../Vips/Enums/FailOn.html">FailOn</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/ForeignDzContainer" data-name="vips::enums::foreigndzcontainer">
+      <a href="../Vips/Enums/ForeignDzContainer.html">ForeignDzContainer</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/ForeignDzDepth" data-name="vips::enums::foreigndzdepth">
+      <a href="../Vips/Enums/ForeignDzDepth.html">ForeignDzDepth</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/ForeignDzLayout" data-name="vips::enums::foreigndzlayout">
+      <a href="../Vips/Enums/ForeignDzLayout.html">ForeignDzLayout</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/ForeignFlags" data-name="vips::enums::foreignflags">
+      <a href="../Vips/Enums/ForeignFlags.html">ForeignFlags</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/ForeignHeifCompression" data-name="vips::enums::foreignheifcompression">
+      <a href="../Vips/Enums/ForeignHeifCompression.html">ForeignHeifCompression</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/ForeignJpegSubsample" data-name="vips::enums::foreignjpegsubsample">
+      <a href="../Vips/Enums/ForeignJpegSubsample.html">ForeignJpegSubsample</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/ForeignPpmFormat" data-name="vips::enums::foreignppmformat">
+      <a href="../Vips/Enums/ForeignPpmFormat.html">ForeignPpmFormat</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/ForeignSubsample" data-name="vips::enums::foreignsubsample">
+      <a href="../Vips/Enums/ForeignSubsample.html">ForeignSubsample</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/ForeignTiffCompression" data-name="vips::enums::foreigntiffcompression">
+      <a href="../Vips/Enums/ForeignTiffCompression.html">ForeignTiffCompression</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/ForeignTiffPredictor" data-name="vips::enums::foreigntiffpredictor">
+      <a href="../Vips/Enums/ForeignTiffPredictor.html">ForeignTiffPredictor</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/ForeignTiffResunit" data-name="vips::enums::foreigntiffresunit">
+      <a href="../Vips/Enums/ForeignTiffResunit.html">ForeignTiffResunit</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/ForeignWebpPreset" data-name="vips::enums::foreignwebppreset">
+      <a href="../Vips/Enums/ForeignWebpPreset.html">ForeignWebpPreset</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/ImageType" data-name="vips::enums::imagetype">
+      <a href="../Vips/Enums/ImageType.html">ImageType</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/Intent" data-name="vips::enums::intent">
+      <a href="../Vips/Enums/Intent.html">Intent</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/Interesting" data-name="vips::enums::interesting">
+      <a href="../Vips/Enums/Interesting.html">Interesting</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/Interpretation" data-name="vips::enums::interpretation">
+      <a href="../Vips/Enums/Interpretation.html">Interpretation</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/Kernel" data-name="vips::enums::kernel">
+      <a href="../Vips/Enums/Kernel.html">Kernel</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/OperationBoolean" data-name="vips::enums::operationboolean">
+      <a href="../Vips/Enums/OperationBoolean.html">OperationBoolean</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/OperationComplex" data-name="vips::enums::operationcomplex">
+      <a href="../Vips/Enums/OperationComplex.html">OperationComplex</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/OperationComplex2" data-name="vips::enums::operationcomplex2">
+      <a href="../Vips/Enums/OperationComplex2.html">OperationComplex2</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/OperationComplexget" data-name="vips::enums::operationcomplexget">
+      <a href="../Vips/Enums/OperationComplexget.html">OperationComplexget</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/OperationFlags" data-name="vips::enums::operationflags">
+      <a href="../Vips/Enums/OperationFlags.html">OperationFlags</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/OperationMath" data-name="vips::enums::operationmath">
+      <a href="../Vips/Enums/OperationMath.html">OperationMath</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/OperationMath2" data-name="vips::enums::operationmath2">
+      <a href="../Vips/Enums/OperationMath2.html">OperationMath2</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/OperationMorphology" data-name="vips::enums::operationmorphology">
+      <a href="../Vips/Enums/OperationMorphology.html">OperationMorphology</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/OperationRelational" data-name="vips::enums::operationrelational">
+      <a href="../Vips/Enums/OperationRelational.html">OperationRelational</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/OperationRound" data-name="vips::enums::operationround">
+      <a href="../Vips/Enums/OperationRound.html">OperationRound</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/PCS" data-name="vips::enums::pcs">
+      <a href="../Vips/Enums/PCS.html">PCS</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/Precision" data-name="vips::enums::precision">
+      <a href="../Vips/Enums/Precision.html">Precision</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/RegionShrink" data-name="vips::enums::regionshrink">
+      <a href="../Vips/Enums/RegionShrink.html">RegionShrink</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/Saveable" data-name="vips::enums::saveable">
+      <a href="../Vips/Enums/Saveable.html">Saveable</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/Signal" data-name="vips::enums::signal">
+      <a href="../Vips/Enums/Signal.html">Signal</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/Size" data-name="vips::enums::size">
+      <a href="../Vips/Enums/Size.html">Size</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Enums/Token" data-name="vips::enums::token">
+      <a href="../Vips/Enums/Token.html">Token</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/GObject" data-name="vips::gobject">
+      <a href="../Vips/GObject.html">GObject</a>
+      
+    </li>
+  
+  <li class=" current" data-id="vips/Vips/GValue" data-name="vips::gvalue">
+      <a href="../Vips/GValue.html">GValue</a>
+      
+    </li>
+  
+  <li class="parent " data-id="vips/Vips/Image" data-name="vips::image">
+      <a href="../Vips/Image.html">Image</a>
+      
+        <ul>
+  
+  <li class=" " data-id="vips/Vips/Image/EvalProc" data-name="vips::image::evalproc">
+      <a href="../Vips/Image/EvalProc.html">EvalProc</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Interpolate" data-name="vips::interpolate">
+      <a href="../Vips/Interpolate.html">Interpolate</a>
+      
+    </li>
+  
+  <li class="parent " data-id="vips/Vips/Introspect" data-name="vips::introspect">
+      <a href="../Vips/Introspect.html">Introspect</a>
+      
+        <ul>
+  
+  <li class=" " data-id="vips/Vips/Introspect/Argument" data-name="vips::introspect::argument">
+      <a href="../Vips/Introspect/Argument.html">Argument</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/MutableImage" data-name="vips::mutableimage">
+      <a href="../Vips/MutableImage.html">MutableImage</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Operation" data-name="vips::operation">
+      <a href="../Vips/Operation.html">Operation</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Region" data-name="vips::region">
+      <a href="../Vips/Region.html">Region</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Source" data-name="vips::source">
+      <a href="../Vips/Source.html">Source</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/SourceCustom" data-name="vips::sourcecustom">
+      <a href="../Vips/SourceCustom.html">SourceCustom</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/SourceStream" data-name="vips::sourcestream">
+      <a href="../Vips/SourceStream.html">SourceStream</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Stats" data-name="vips::stats">
+      <a href="../Vips/Stats.html">Stats</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Target" data-name="vips::target">
+      <a href="../Vips/Target.html">Target</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/TargetCustom" data-name="vips::targetcustom">
+      <a href="../Vips/TargetCustom.html">TargetCustom</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/TargetStream" data-name="vips::targetstream">
+      <a href="../Vips/TargetStream.html">TargetStream</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/Type" data-name="vips::type">
+      <a href="../Vips/Type.html">Type</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/VipsBlob" data-name="vips::vipsblob">
+      <a href="../Vips/VipsBlob.html">VipsBlob</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/VipsException" data-name="vips::vipsexception">
+      <a href="../Vips/VipsException.html">VipsException</a>
+      
+    </li>
+  
+  <li class=" " data-id="vips/Vips/VipsObject" data-name="vips::vipsobject">
+      <a href="../Vips/VipsObject.html">VipsObject</a>
+      
+    </li>
+  
+</ul>
+
+      
+    </li>
+  
+</ul>
+
+  </div>
+</div>
+
+
+<div class="main-content">
+<h1 class="type-name">
+
+  <span class="kind">class</span> Vips::GValue
+
+</h1>
+
+
+  <ul class="superclass-hierarchy"><li class="superclass"><a href="../Vips/GValue.html">Vips::GValue</a></li><li class="superclass">Reference</li><li class="superclass">Object</li></ul>
+
+
+
+
+  <h2>
+    <a id="overview" class="anchor" href="#overview">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Overview
+  </h2>
+
+  <p>Class to wrap <code>LibVips::GValue</code> in a Crystal class.
+This class wraps <code>LibVips::GValue</code> in a convenient interface. You can use
+instances of this class to get and set <code><a href="../Vips/GValue.html#GObject">GObject</a></code> properties.
+On construction, <code>LibVips::GValue</code> is all zero (empty). You can pass it to
+a get function to have it filled by <code><a href="../Vips/GValue.html#GObject">GObject</a></code>, or use <code>initialize(gvalue)</code> to
+set a type, <code><a href="../Vips/GValue.html#set%28value%29-instance-method">#set</a></code> to set a value, then use it to set an object property.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <h2>
+    <a id="defined-in" class="anchor" href="#defined-in">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Defined in:
+  </h2>
+  
+    
+      <a href="https://github.com/naqvis/crystal-vips/blob/adb3c42333182aee3afbb6e4760d875a0b54abd7/src/vips/gvalue.cr#L8" target="_blank">
+        vips/gvalue.cr
+      </a>
+    
+    <br/>
+  
+
+
+
+  
+    <h2>
+      <a id="constant-summary" class="anchor" href="#constant-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+      Constant Summary
+    </h2>
+  
+  <dl>
+    
+      <dt class="entry-const" id="GBool">
+        <strong>GBool</strong> = <code><span class="t">Vips</span>.type_from_name(<span class="s">&quot;gboolean&quot;</span>)</code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>The fundamental type corresponding to gboolean</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="GDouble">
+        <strong>GDouble</strong> = <code><span class="t">Vips</span>.type_from_name(<span class="s">&quot;gdouble&quot;</span>)</code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>The fundamental type corresponding to gdouble</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="GEnum">
+        <strong>GEnum</strong> = <code><span class="t">Vips</span>.type_from_name(<span class="s">&quot;GEnum&quot;</span>)</code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>The fundamental type from which all enumeration types are derived</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="GFlags">
+        <strong>GFlags</strong> = <code><span class="t">Vips</span>.type_from_name(<span class="s">&quot;GFlags&quot;</span>)</code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>The fundamental type from which all flags types are derived</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="GInt">
+        <strong>GInt</strong> = <code><span class="t">Vips</span>.type_from_name(<span class="s">&quot;gint&quot;</span>)</code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>The fundamental type corresponding to gint</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="GObject">
+        <strong>GObject</strong> = <code><span class="t">Vips</span>.type_from_name(<span class="s">&quot;GObject&quot;</span>)</code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>The fundamental type for GObject</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="GString">
+        <strong>GString</strong> = <code><span class="t">Vips</span>.type_from_name(<span class="s">&quot;gchararray&quot;</span>)</code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>The fundamental type corresponding to null-terminated C strings.</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="GUint64">
+        <strong>GUint64</strong> = <code><span class="t">Vips</span>.type_from_name(<span class="s">&quot;guint64&quot;</span>)</code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>The fundamental type corresponding to guint64</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="VArrayDouble">
+        <strong>VArrayDouble</strong> = <code><span class="t">Vips</span>.type_from_name(<span class="s">&quot;VipsArrayDouble&quot;</span>)</code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>The fundamental type for VipsArrayDouble</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="VArrayImage">
+        <strong>VArrayImage</strong> = <code><span class="t">Vips</span>.type_from_name(<span class="s">&quot;VipsArrayImage&quot;</span>)</code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>The fundamental type for VipsArrayImage</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="VArrayInt">
+        <strong>VArrayInt</strong> = <code><span class="t">Vips</span>.type_from_name(<span class="s">&quot;VipsArrayInt&quot;</span>)</code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>The fundamental type for VipsArrayInt</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="VBandFormat">
+        <strong>VBandFormat</strong> = <code><span class="t">LibVips</span>.vips_band_format_get_type</code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>The fundamental type for VipsBandFormat</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="VBlendMode">
+        <strong>VBlendMode</strong> = <code><span class="t">Vips</span>.at_least_libvips?(<span class="n">8</span>, <span class="n">6</span>) ? <span class="t">LibVips</span>.vips_blend_mode_get_type : <span class="n">0</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>The fundamental type for VipsBlendMode</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="VBlob">
+        <strong>VBlob</strong> = <code><span class="t">Vips</span>.type_from_name(<span class="s">&quot;VipsBlob&quot;</span>)</code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>The fundamental type for VipsBlob</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="VImageType">
+        <strong>VImageType</strong> = <code><span class="t">Vips</span>.type_from_name(<span class="s">&quot;VipsImage&quot;</span>)</code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>The fundamental type for VipsImage</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="VRefStr">
+        <strong>VRefStr</strong> = <code><span class="t">Vips</span>.type_from_name(<span class="s">&quot;VipsRefString&quot;</span>)</code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>The fundamental type for VipsRefString</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="VSource">
+        <strong>VSource</strong> = <code><span class="t">Vips</span>.at_least_libvips?(<span class="n">8</span>, <span class="n">9</span>) ? <span class="t">Vips</span>.type_from_name(<span class="s">&quot;VipsSource&quot;</span>) : <span class="n">0</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>The fundamental type for VipsSource</p>
+      </dd>
+      
+    
+      <dt class="entry-const" id="VTarget">
+        <strong>VTarget</strong> = <code><span class="t">Vips</span>.at_least_libvips?(<span class="n">8</span>, <span class="n">9</span>) ? <span class="t">Vips</span>.type_from_name(<span class="s">&quot;VipsTarget&quot;</span>) : <span class="n">0</span></code>
+      </dt>
+      
+      <dd class="entry-const-doc">
+        <p>The fundamental type for VipsTarget</p>
+      </dd>
+      
+    
+  </dl>
+
+
+
+  <h2>
+    <a id="constructors" class="anchor" href="#constructors">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructors
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#new%28value%3AGValue%29-class-method" class="signature"><strong>.new</strong>(value : GValue)</a>
+        
+          <div class="summary"><p>Initialize new instance with specified <code><a href="../Vips/GValue.html">GValue</a></code></p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#new-class-method" class="signature"><strong>.new</strong></a>
+        
+          <div class="summary"><p>Initialize new instance of <code><a href="../Vips/GValue.html">GValue</a></code></p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+  <h2>
+    <a id="instance-method-summary" class="anchor" href="#instance-method-summary">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Summary
+  </h2>
+  <ul class="list-summary">
+    
+      <li class="entry-summary">
+        <a href="#get%3AType-instance-method" class="signature"><strong>#get</strong> : Type</a>
+        
+          <div class="summary"><p>Get the contents of a GValue The contents of the GValue are read out as a Crystal type</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#get_type-instance-method" class="signature"><strong>#get_type</strong></a>
+        
+          <div class="summary"><p>Get the GType of this GValue</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#set%28value%29-instance-method" class="signature"><strong>#set</strong>(value)</a>
+        
+          <div class="summary"><p>Set a GValue The value is converted to the type of the GValue, if possible, and assigned</p></div>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#set_type%28type%29%3ANil-instance-method" class="signature"><strong>#set_type</strong>(type) : Nil</a>
+        
+          <div class="summary"><p>Set the type of a GValue GValues have a set type, fixed at creation time.</p></div>
+        
+      </li>
+    
+  </ul>
+
+
+
+
+
+<div class="methods-inherited">
+  
+    
+
+
+    
+
+
+    
+
+
+  
+    
+
+
+    
+
+
+    
+
+
+  
+</div>
+
+
+  <h2>
+    <a id="constructor-detail" class="anchor" href="#constructor-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Constructor Detail
+  </h2>
+  
+    <div class="entry-detail" id="new(value:GValue)-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>(value : <a href="../Vips/GValue.html">GValue</a>)
+
+        <a class="method-permalink" href="#new%28value%3AGValue%29-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Initialize new instance with specified <code><a href="../Vips/GValue.html">GValue</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/crystal-vips/blob/adb3c42333182aee3afbb6e4760d875a0b54abd7/src/vips/gvalue.cr#L18" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="new-class-method">
+      <div class="signature">
+        
+        def self.<strong>new</strong>
+
+        <a class="method-permalink" href="#new-class-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Initialize new instance of <code><a href="../Vips/GValue.html">GValue</a></code></p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/crystal-vips/blob/adb3c42333182aee3afbb6e4760d875a0b54abd7/src/vips/gvalue.cr#L12" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+
+  <h2>
+    <a id="instance-method-detail" class="anchor" href="#instance-method-detail">
+  <svg class="octicon-link" aria-hidden="true">
+    <use href="#octicon-link"/>
+  </svg>
+</a>
+    Instance Method Detail
+  </h2>
+  
+    <div class="entry-detail" id="get:Type-instance-method">
+      <div class="signature">
+        
+        def <strong>get</strong> : <a href="../Vips/Type.html">Type</a>
+
+        <a class="method-permalink" href="#get%3AType-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Get the contents of a GValue
+The contents of the GValue are read out as a Crystal type</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/crystal-vips/blob/adb3c42333182aee3afbb6e4760d875a0b54abd7/src/vips/gvalue.cr#L113" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="get_type-instance-method">
+      <div class="signature">
+        
+        def <strong>get_type</strong>
+
+        <a class="method-permalink" href="#get_type-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Get the GType of this GValue</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/crystal-vips/blob/adb3c42333182aee3afbb6e4760d875a0b54abd7/src/vips/gvalue.cr#L170" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="set(value)-instance-method">
+      <div class="signature">
+        
+        def <strong>set</strong>(value)
+
+        <a class="method-permalink" href="#set%28value%29-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Set a GValue
+The value is converted to the type of the GValue, if possible, and assigned</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/crystal-vips/blob/adb3c42333182aee3afbb6e4760d875a0b54abd7/src/vips/gvalue.cr#L35" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="set_type(type):Nil-instance-method">
+      <div class="signature">
+        
+        def <strong>set_type</strong>(type) : Nil
+
+        <a class="method-permalink" href="#set_type%28type%29%3ANil-instance-method">#</a>
+      </div>
+      
+        <div class="doc">
+          
+          <p>Set the type of a GValue
+GValues have a set type, fixed at creation time. Use this method to set
+the type of GValue before assiging to it.</p>
+<p>GTypes are 32 or 64-bit integers (depending on platform).</p>
+        </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/crystal-vips/blob/adb3c42333182aee3afbb6e4760d875a0b54abd7/src/vips/gvalue.cr#L28" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+
+
+
+
+</div>
+
+</body>
+</html>
