@@ -23,5 +23,5 @@ require "./vips/ext/**"
 # operations starting from a source image. When the pipe is connected to a destination, the whole pipeline executes
 # at once and in parallel, streaming the image from source to destination in a set of small fragments.
 module Vips
-  VERSION = "0.1.0"
+  VERSION = "0.1.1"
 end
