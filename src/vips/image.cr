@@ -793,7 +793,7 @@ module Vips
     def composite(images : Array(Image), modes : Array(Enums::BlendMode), **kwargs)
       options = Optional.new(**kwargs)
 
-      Operation.call("composite", options, images.unshift(self), mode).as(Type).as_image
+      Operation.call("composite", options, images.unshift(self), modes).as(Type).as_image
     end
 
     # A synonym for `composite2`
