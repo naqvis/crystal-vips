@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.4.1">
+<meta name="generator" content="Crystal Docs 1.6.2">
 <meta name="crystal_docs.project_version" content="main">
 <meta name="crystal_docs.project_name" content="vips">
 
@@ -497,7 +497,7 @@ im <span class="o">=</span> <span class="t">Vips</span><span class="t">::</span>
 im <span class="o">=</span> im.embed(<span class="n">100</span>, <span class="n">100</span>, <span class="n">3000</span>, <span class="n">3000</span>, <span class="k">extend</span>: <span class="t">Vips</span><span class="t">::</span><span class="t">Enums</span><span class="t">::</span><span class="t">Extend</span><span class="t">::</span><span class="t">Mirror</span>)
 
 <span class="c"># multiply the green (middle) band by 2, leave the other two alone</span>
-im *= [<span class="n">1</span>, <span class="n">2</span>, <span class="n">1</span>]
+im <span class="o">*=</span> [<span class="n">1</span>, <span class="n">2</span>, <span class="n">1</span>]
 
 <span class="c"># make an image from an array constant, convolve with it</span>
 mask <span class="o">=</span> <span class="t">Vips</span><span class="t">::</span><span class="t">Image</span>.new_from_array([

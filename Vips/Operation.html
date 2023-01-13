@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.4.1">
+<meta name="generator" content="Crystal Docs 1.6.2">
 <meta name="crystal_docs.project_version" content="main">
 <meta name="crystal_docs.project_name" content="vips">
 
@@ -478,7 +478,7 @@
   </h2>
   
     
-      <a href="https://github.com/naqvis/crystal-vips/blob/6c8eb9604565553d9f62df6ffcfcb47141fb3c6b/src/vips/operation.cr#L2" target="_blank">
+      <a href="https://github.com/naqvis/crystal-vips/blob/381c4ba25b31be4094fe8bc6acf740c13fc595ae/src/vips/operation.cr#L2" target="_blank">
         vips/operation.cr
       </a>
     
@@ -531,7 +531,7 @@
       </li>
     
       <li class="entry-summary">
-        <a href="#call%28operation_name%3AString%2Ckwargs%3AOptional%3F%2Cmatch_image%3AImage%3F%2C%2Aargs%29-class-method" class="signature"><strong>.call</strong>(operation_name : String, kwargs : Optional?, match_image : Image?, *args)</a>
+        <a href="#call%28operation_name%3AString%2Ckwargs%3AOptional%7CNil%2Cmatch_image%3AImage%7CNil%2C%2Aargs%29-class-method" class="signature"><strong>.call</strong>(operation_name : String, kwargs : Optional | Nil, match_image : Image | Nil, *args)</a>
         
       </li>
     
@@ -599,8 +599,8 @@
     get_description</a>, 
     
   
-    <a href="../Vips/VipsObject.html#get_pspec%28name%3AString%29%3ALibVips%3A%3AGParamSpec%3F-instance-method" class="tooltip">
-      <span>get_pspec(name : String) : LibVips::GParamSpec?</span>
+    <a href="../Vips/VipsObject.html#get_pspec%28name%3AString%29%3ALibVips%3A%3AGParamSpec%7CNil-instance-method" class="tooltip">
+      <span>get_pspec(name : String) : LibVips::GParamSpec | Nil</span>
     get_pspec</a>, 
     
   
@@ -731,7 +731,7 @@ You'll need to set any arguments and build the operation before you can use it.<
       <br/>
       <div>
         
-          [<a href="https://github.com/naqvis/crystal-vips/blob/6c8eb9604565553d9f62df6ffcfcb47141fb3c6b/src/vips/operation.cr#L11" target="_blank">View source</a>]
+          [<a href="https://github.com/naqvis/crystal-vips/blob/381c4ba25b31be4094fe8bc6acf740c13fc595ae/src/vips/operation.cr#L11" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -747,7 +747,7 @@ You'll need to set any arguments and build the operation before you can use it.<
       <br/>
       <div>
         
-          [<a href="https://github.com/naqvis/crystal-vips/blob/6c8eb9604565553d9f62df6ffcfcb47141fb3c6b/src/vips/operation.cr#L5" target="_blank">View source</a>]
+          [<a href="https://github.com/naqvis/crystal-vips/blob/381c4ba25b31be4094fe8bc6acf740c13fc595ae/src/vips/operation.cr#L5" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -775,23 +775,23 @@ You'll need to set any arguments and build the operation before you can use it.<
       <br/>
       <div>
         
-          [<a href="https://github.com/naqvis/crystal-vips/blob/6c8eb9604565553d9f62df6ffcfcb47141fb3c6b/src/vips/operation.cr#L17" target="_blank">View source</a>]
+          [<a href="https://github.com/naqvis/crystal-vips/blob/381c4ba25b31be4094fe8bc6acf740c13fc595ae/src/vips/operation.cr#L17" target="_blank">View source</a>]
         
       </div>
     </div>
   
-    <div class="entry-detail" id="call(operation_name:String,kwargs:Optional?,match_image:Image?,*args)-class-method">
+    <div class="entry-detail" id="call(operation_name:String,kwargs:Optional|Nil,match_image:Image|Nil,*args)-class-method">
       <div class="signature">
         
-        def self.<strong>call</strong>(operation_name : String, kwargs : Optional?, match_image : <a href="../Vips/Image.html">Image</a>?, *args)
+        def self.<strong>call</strong>(operation_name : String, kwargs : Optional | Nil, match_image : <a href="../Vips/Image.html">Image</a> | Nil, *args)
 
-        <a class="method-permalink" href="#call%28operation_name%3AString%2Ckwargs%3AOptional%3F%2Cmatch_image%3AImage%3F%2C%2Aargs%29-class-method">#</a>
+        <a class="method-permalink" href="#call%28operation_name%3AString%2Ckwargs%3AOptional%7CNil%2Cmatch_image%3AImage%7CNil%2C%2Aargs%29-class-method">#</a>
       </div>
       
       <br/>
       <div>
         
-          [<a href="https://github.com/naqvis/crystal-vips/blob/6c8eb9604565553d9f62df6ffcfcb47141fb3c6b/src/vips/operation.cr#L53" target="_blank">View source</a>]
+          [<a href="https://github.com/naqvis/crystal-vips/blob/381c4ba25b31be4094fe8bc6acf740c13fc595ae/src/vips/operation.cr#L53" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -807,7 +807,7 @@ You'll need to set any arguments and build the operation before you can use it.<
       <br/>
       <div>
         
-          [<a href="https://github.com/naqvis/crystal-vips/blob/6c8eb9604565553d9f62df6ffcfcb47141fb3c6b/src/vips/operation.cr#L117" target="_blank">View source</a>]
+          [<a href="https://github.com/naqvis/crystal-vips/blob/381c4ba25b31be4094fe8bc6acf740c13fc595ae/src/vips/operation.cr#L117" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -823,7 +823,7 @@ You'll need to set any arguments and build the operation before you can use it.<
       <br/>
       <div>
         
-          [<a href="https://github.com/naqvis/crystal-vips/blob/6c8eb9604565553d9f62df6ffcfcb47141fb3c6b/src/vips/operation.cr#L121" target="_blank">View source</a>]
+          [<a href="https://github.com/naqvis/crystal-vips/blob/381c4ba25b31be4094fe8bc6acf740c13fc595ae/src/vips/operation.cr#L121" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -856,7 +856,7 @@ You'll need to set any arguments and build the operation before you can use it.<
       <br/>
       <div>
         
-          [<a href="https://github.com/naqvis/crystal-vips/blob/6c8eb9604565553d9f62df6ffcfcb47141fb3c6b/src/vips/operation.cr#L49" target="_blank">View source</a>]
+          [<a href="https://github.com/naqvis/crystal-vips/blob/381c4ba25b31be4094fe8bc6acf740c13fc595ae/src/vips/operation.cr#L49" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -872,7 +872,7 @@ You'll need to set any arguments and build the operation before you can use it.<
       <br/>
       <div>
         
-          [<a href="https://github.com/naqvis/crystal-vips/blob/6c8eb9604565553d9f62df6ffcfcb47141fb3c6b/src/vips/operation.cr#L130" target="_blank">View source</a>]
+          [<a href="https://github.com/naqvis/crystal-vips/blob/381c4ba25b31be4094fe8bc6acf740c13fc595ae/src/vips/operation.cr#L130" target="_blank">View source</a>]
         
       </div>
     </div>

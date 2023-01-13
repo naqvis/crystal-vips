@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.4.1">
+<meta name="generator" content="Crystal Docs 1.6.2">
 <meta name="crystal_docs.project_version" content="main">
 <meta name="crystal_docs.project_name" content="vips">
 
@@ -468,7 +468,7 @@
 custom input types.</p>
 <p>For example:</p>
 <pre><code class="language-crystal">file <span class="o">=</span> <span class="t">File</span>.open(<span class="s">&quot;some/file/name&quot;</span>, <span class="s">&quot;rb&quot;</span>)
-source <span class="o">=</span> <span class="t">Vips</span><span class="t">::</span><span class="t">SourceCustom</span>.<span class="k">new</span>
+source <span class="o">=</span> <span class="t">Vips</span><span class="t">::</span><span class="t">SourceCustom</span>.new
 source.on_read { <span class="o">|</span>slice<span class="o">|</span> file.read(slice) }
 image <span class="o">=</span> <span class="t">Vips</span><span class="t">::</span><span class="t">Image</span>.new_from_source(source)</code></pre>
 <p>(just an example -- of course in practice you'd use <code><a href="../Vips/Source.html#new_from_file%28filename%3AString%29-class-method">Source#new_from_file</a></code>
@@ -511,7 +511,7 @@ to read from a named file)</p>
   </h2>
   
     
-      <a href="https://github.com/naqvis/crystal-vips/blob/6c8eb9604565553d9f62df6ffcfcb47141fb3c6b/src/vips/source.cr#L79" target="_blank">
+      <a href="https://github.com/naqvis/crystal-vips/blob/381c4ba25b31be4094fe8bc6acf740c13fc595ae/src/vips/source.cr#L79" target="_blank">
         vips/source.cr
       </a>
     
@@ -618,13 +618,13 @@ to read from a named file)</p>
   <h3>Instance methods inherited from class <code><a href="../Vips/Connection.html">Vips::Connection</a></code></h3>
   
   
-    <a href="../Vips/Connection.html#filename%3AString%3F-instance-method" class="tooltip">
-      <span>filename : String?</span>
+    <a href="../Vips/Connection.html#filename%3AString%7CNil-instance-method" class="tooltip">
+      <span>filename : String | Nil</span>
     filename</a>, 
     
   
-    <a href="../Vips/Connection.html#nick%3AString%3F-instance-method" class="tooltip">
-      <span>nick : String?</span>
+    <a href="../Vips/Connection.html#nick%3AString%7CNil-instance-method" class="tooltip">
+      <span>nick : String | Nil</span>
     nick</a>
     
   
@@ -657,8 +657,8 @@ to read from a named file)</p>
     get_description</a>, 
     
   
-    <a href="../Vips/VipsObject.html#get_pspec%28name%3AString%29%3ALibVips%3A%3AGParamSpec%3F-instance-method" class="tooltip">
-      <span>get_pspec(name : String) : LibVips::GParamSpec?</span>
+    <a href="../Vips/VipsObject.html#get_pspec%28name%3AString%29%3ALibVips%3A%3AGParamSpec%7CNil-instance-method" class="tooltip">
+      <span>get_pspec(name : String) : LibVips::GParamSpec | Nil</span>
     get_pspec</a>, 
     
   
@@ -783,7 +783,7 @@ to read from a named file)</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/naqvis/crystal-vips/blob/6c8eb9604565553d9f62df6ffcfcb47141fb3c6b/src/vips/source.cr#L82" target="_blank">View source</a>]
+          [<a href="https://github.com/naqvis/crystal-vips/blob/381c4ba25b31be4094fe8bc6acf740c13fc595ae/src/vips/source.cr#L82" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -821,7 +821,7 @@ at end of file.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/naqvis/crystal-vips/blob/6c8eb9604565553d9f62df6ffcfcb47141fb3c6b/src/vips/source.cr#L93" target="_blank">View source</a>]
+          [<a href="https://github.com/naqvis/crystal-vips/blob/381c4ba25b31be4094fe8bc6acf740c13fc595ae/src/vips/source.cr#L93" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -847,7 +847,7 @@ do extra caching.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/naqvis/crystal-vips/blob/6c8eb9604565553d9f62df6ffcfcb47141fb3c6b/src/vips/source.cr#L112" target="_blank">View source</a>]
+          [<a href="https://github.com/naqvis/crystal-vips/blob/381c4ba25b31be4094fe8bc6acf740c13fc595ae/src/vips/source.cr#L112" target="_blank">View source</a>]
         
       </div>
     </div>
