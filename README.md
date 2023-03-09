@@ -67,7 +67,7 @@ im = im.conv(mask, precision: Vips::Enums::Precision::Integer)
 im.write_to_file("output.jpg")
 ```
 
-Refer to [samples](samples) folder for more samples
+Refer to [example](example) folder for more samples
 
 ## Development
 
