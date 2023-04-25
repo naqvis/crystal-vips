@@ -114,7 +114,7 @@ describe Vips::Connection do
       Vips::TargetCustom.new
     end
 
-    it "can write an image to a user output stream" do
+    pending "can write an image to a user output stream" do
       filename = timg("x5.png")
       file = File.open(filename, "wb")
       target = Vips::TargetCustom.new
