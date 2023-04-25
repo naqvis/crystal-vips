@@ -20,6 +20,6 @@ jobs:
           # we only need the library
           sudo apt-get install --fix-missing -qq -o Acquire::Retries=3 libvips-dev
       - name: Run tests
-        run: crystal spec
+        run: crystal spec --error-trace -v spec
       - name: Check formatting
         run: crystal tool format --check

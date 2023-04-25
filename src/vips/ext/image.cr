@@ -2,7 +2,7 @@
 #
 #   scripts/gen_ext.cr
 #
-# libvips version: 8.12.2
+# libvips version: 8.14.2
 #
 # DO NOT EDIT
 #
@@ -220,77 +220,6 @@ module Vips
       self.call("avg").as(Type).as_f64
     end
 
-    # Save image in avif format
-    #
-    # ```
-    # in.avifsave_target(target, {q: Int32, lossless: Bool, compression: Enums::ForeignHeifCompression, effort: Int32, subsample_mode: Enums::ForeignSubsample, strip: Bool, background: Array(Float64), page_height: Int32})
-    #
-    # ```
-    #
-    #
-    # Input Parameters
-    #
-    # **Required**
-    #
-    # *target* : Target - Target to save to
-    #
-    # _Optionals_
-    #
-    # *q* : Int32 - Q factor
-    #
-    # *lossless* : Bool - Enable lossless compression
-    #
-    # *compression* : Enums::ForeignHeifCompression - Compression format
-    #
-    # *effort* : Int32 - CPU effort
-    #
-    # *subsample_mode* : Enums::ForeignSubsample - Select chroma subsample operation mode
-    #
-    # *strip* : Bool - Strip all metadata from image
-    #
-    # *background* : Array(Float64) - Background value
-    #
-    # *page_height* : Int32 - Set page height for multipage save
-    #
-    def avifsave_target(target : Target, **kwargs)
-      options = Optional.new(**kwargs)
-      self.call("avifsave_target", options, target)
-    end
-
-    # Save image in avif format
-    #
-    # ```
-    # in.avifsave_stream(stream, {q: Int32, lossless: Bool, compression: Enums::ForeignHeifCompression, effort: Int32, subsample_mode: Enums::ForeignSubsample, strip: Bool, background: Array(Float64), page_height: Int32})
-    #
-    # ```
-    #
-    # **Input Parameters**
-    #
-    # _Required_
-    #
-    # *stream* : IO - Stream to save to
-    # _Optionals_
-    #
-    # *q* : Int32 - Q factor
-    #
-    # *lossless* : Bool - Enable lossless compression
-    #
-    # *compression* : Enums::ForeignHeifCompression - Compression format
-    #
-    # *effort* : Int32 - CPU effort
-    #
-    # *subsample_mode* : Enums::ForeignSubsample - Select chroma subsample operation mode
-    #
-    # *strip* : Bool - Strip all metadata from image
-    #
-    # *background* : Array(Float64) - Background value
-    #
-    # *page_height* : Int32 - Set page height for multipage save
-    def avifsave_stream(stream : IO, **kwargs)
-      target = TargetStream.new_from_stream(stream)
-      avifsave_target(target, **kwargs)
-    end
-
     # Boolean operation across image bands
     #
     # ```
@@ -302,7 +231,7 @@ module Vips
     #
     # **Required**
     #
-    # *boolean* : Enums::OperationBoolean - boolean to perform
+    # *boolean* : Enums::OperationBoolean - Boolean to perform
     #
     #
     # **Returns**
@@ -441,7 +370,7 @@ module Vips
     #
     # *right* : Image - Right-hand image argument
     #
-    # *boolean* : Enums::OperationBoolean - boolean to perform
+    # *boolean* : Enums::OperationBoolean - Boolean to perform
     #
     #
     # **Returns**
@@ -463,7 +392,7 @@ module Vips
     #
     # **Required**
     #
-    # *boolean* : Enums::OperationBoolean - boolean to perform
+    # *boolean* : Enums::OperationBoolean - Boolean to perform
     #
     # *c* : Array(Float64) - Array of constants
     #
@@ -695,7 +624,7 @@ module Vips
     #
     # **Required**
     #
-    # *cmplx* : Enums::OperationComplex - complex to perform
+    # *cmplx* : Enums::OperationComplex - Complex to perform
     #
     #
     # **Returns**
@@ -719,7 +648,7 @@ module Vips
     #
     # *right* : Image - Right-hand image argument
     #
-    # *cmplx* : Enums::OperationComplex2 - binary complex operation to perform
+    # *cmplx* : Enums::OperationComplex2 - Binary complex operation to perform
     #
     #
     # **Returns**
@@ -763,7 +692,7 @@ module Vips
     #
     # **Required**
     #
-    # *get* : Enums::OperationComplexget - complex to perform
+    # *get* : Enums::OperationComplexget - Complex to perform
     #
     #
     # **Returns**
@@ -1370,7 +1299,7 @@ module Vips
     # Save image to deepzoom file
     #
     # ```
-    # in.dzsave(filename, {basename: String, layout: Enums::ForeignDzLayout, suffix: String, overlap: Int32, tile_size: Int32, centre: Bool, depth: Enums::ForeignDzDepth, angle: Enums::Angle, container: Enums::ForeignDzContainer, properties: Bool, compression: Int32, region_shrink: Enums::RegionShrink, skip_blanks: Int32, no_strip: Bool, id: String, strip: Bool, background: Array(Float64), page_height: Int32})
+    # in.dzsave(filename, {basename: String, layout: Enums::ForeignDzLayout, suffix: String, overlap: Int32, tile_size: Int32, centre: Bool, depth: Enums::ForeignDzDepth, angle: Enums::Angle, container: Enums::ForeignDzContainer, compression: Int32, region_shrink: Enums::RegionShrink, skip_blanks: Int32, no_strip: Bool, id: String, strip: Bool, background: Array(Float64), page_height: Int32})
     #
     # ```
     #
@@ -1401,8 +1330,6 @@ module Vips
     #
     # *container* : Enums::ForeignDzContainer - Pyramid container type
     #
-    # *properties* : Bool - Write a properties file to the output directory
-    #
     # *compression* : Int32 - ZIP deflate compression level
     #
     # *region_shrink* : Enums::RegionShrink - Method to shrink regions
@@ -1427,7 +1354,7 @@ module Vips
     # Save image to dz buffer
     #
     # ```
-    # # buffer = in.dzsave_buffer({basename: String, layout: Enums::ForeignDzLayout, suffix: String, overlap: Int32, tile_size: Int32, centre: Bool, depth: Enums::ForeignDzDepth, angle: Enums::Angle, container: Enums::ForeignDzContainer, properties: Bool, compression: Int32, region_shrink: Enums::RegionShrink, skip_blanks: Int32, no_strip: Bool, id: String, strip: Bool, background: Array(Float64), page_height: Int32})
+    # # buffer = in.dzsave_buffer({basename: String, layout: Enums::ForeignDzLayout, suffix: String, overlap: Int32, tile_size: Int32, centre: Bool, depth: Enums::ForeignDzDepth, angle: Enums::Angle, container: Enums::ForeignDzContainer, compression: Int32, region_shrink: Enums::RegionShrink, skip_blanks: Int32, no_strip: Bool, id: String, strip: Bool, background: Array(Float64), page_height: Int32})
     # ```
     #
     #
@@ -1452,8 +1379,6 @@ module Vips
     # *angle* : Enums::Angle - Rotate image during save
     #
     # *container* : Enums::ForeignDzContainer - Pyramid container type
-    #
-    # *properties* : Bool - Write a properties file to the output directory
     #
     # *compression* : Int32 - ZIP deflate compression level
     #
@@ -1480,6 +1405,113 @@ module Vips
       options = Optional.new(**kwargs)
 
       self.call("dzsave_buffer", options).as(Type).as_bytes
+    end
+
+    # Save image to deepzoom target
+    #
+    # ```
+    # in.dzsave_target(target, {basename: String, layout: Enums::ForeignDzLayout, suffix: String, overlap: Int32, tile_size: Int32, centre: Bool, depth: Enums::ForeignDzDepth, angle: Enums::Angle, container: Enums::ForeignDzContainer, compression: Int32, region_shrink: Enums::RegionShrink, skip_blanks: Int32, no_strip: Bool, id: String, strip: Bool, background: Array(Float64), page_height: Int32})
+    #
+    # ```
+    #
+    #
+    # Input Parameters
+    #
+    # **Required**
+    #
+    # *target* : Target - Target to save to
+    #
+    # _Optionals_
+    #
+    # *basename* : String - Base name to save to
+    #
+    # *layout* : Enums::ForeignDzLayout - Directory layout
+    #
+    # *suffix* : String - Filename suffix for tiles
+    #
+    # *overlap* : Int32 - Tile overlap in pixels
+    #
+    # *tile_size* : Int32 - Tile size in pixels
+    #
+    # *centre* : Bool - Center image in tile
+    #
+    # *depth* : Enums::ForeignDzDepth - Pyramid depth
+    #
+    # *angle* : Enums::Angle - Rotate image during save
+    #
+    # *container* : Enums::ForeignDzContainer - Pyramid container type
+    #
+    # *compression* : Int32 - ZIP deflate compression level
+    #
+    # *region_shrink* : Enums::RegionShrink - Method to shrink regions
+    #
+    # *skip_blanks* : Int32 - Skip tiles which are nearly equal to the background
+    #
+    # *no_strip* : Bool - Don't strip tile metadata
+    #
+    # *id* : String - Resource ID
+    #
+    # *strip* : Bool - Strip all metadata from image
+    #
+    # *background* : Array(Float64) - Background value
+    #
+    # *page_height* : Int32 - Set page height for multipage save
+    #
+    def dzsave_target(target : Target, **kwargs)
+      options = Optional.new(**kwargs)
+      self.call("dzsave_target", options, target)
+    end
+
+    # Save image to deepzoom stream
+    #
+    # ```
+    # in.dzsave_stream(stream, {basename: String, layout: Enums::ForeignDzLayout, suffix: String, overlap: Int32, tile_size: Int32, centre: Bool, depth: Enums::ForeignDzDepth, angle: Enums::Angle, container: Enums::ForeignDzContainer, compression: Int32, region_shrink: Enums::RegionShrink, skip_blanks: Int32, no_strip: Bool, id: String, strip: Bool, background: Array(Float64), page_height: Int32})
+    #
+    # ```
+    #
+    # **Input Parameters**
+    #
+    # _Required_
+    #
+    # *stream* : IO - Stream to save to
+    # _Optionals_
+    #
+    # *basename* : String - Base name to save to
+    #
+    # *layout* : Enums::ForeignDzLayout - Directory layout
+    #
+    # *suffix* : String - Filename suffix for tiles
+    #
+    # *overlap* : Int32 - Tile overlap in pixels
+    #
+    # *tile_size* : Int32 - Tile size in pixels
+    #
+    # *centre* : Bool - Center image in tile
+    #
+    # *depth* : Enums::ForeignDzDepth - Pyramid depth
+    #
+    # *angle* : Enums::Angle - Rotate image during save
+    #
+    # *container* : Enums::ForeignDzContainer - Pyramid container type
+    #
+    # *compression* : Int32 - ZIP deflate compression level
+    #
+    # *region_shrink* : Enums::RegionShrink - Method to shrink regions
+    #
+    # *skip_blanks* : Int32 - Skip tiles which are nearly equal to the background
+    #
+    # *no_strip* : Bool - Don't strip tile metadata
+    #
+    # *id* : String - Resource ID
+    #
+    # *strip* : Bool - Strip all metadata from image
+    #
+    # *background* : Array(Float64) - Background value
+    #
+    # *page_height* : Int32 - Set page height for multipage save
+    def dzsave_stream(stream : IO, **kwargs)
+      target = TargetStream.new_from_stream(stream)
+      dzsave_target(target, **kwargs)
     end
 
     # Embed an image in a larger image
@@ -2132,9 +2164,9 @@ module Vips
     #
     # _Optionals_
     #
-    # *n* : Int32 - Load this many pages
+    # *n* : Int32 - Number of pages to load, -1 for all
     #
-    # *page* : Int32 - Load this page from the file
+    # *page* : Int32 - First page to load
     #
     # *memory* : Bool - Force open via memory
     #
@@ -2179,9 +2211,9 @@ module Vips
     #
     # _Optionals_
     #
-    # *n* : Int32 - Load this many pages
+    # *n* : Int32 - Number of pages to load, -1 for all
     #
-    # *page* : Int32 - Load this page from the file
+    # *page* : Int32 - First page to load
     #
     # *memory* : Bool - Force open via memory
     #
@@ -2226,9 +2258,9 @@ module Vips
     #
     # _Optionals_
     #
-    # *n* : Int32 - Load this many pages
+    # *n* : Int32 - Number of pages to load, -1 for all
     #
-    # *page* : Int32 - Load this page from the file
+    # *page* : Int32 - First page to load
     #
     # *memory* : Bool - Force open via memory
     #
@@ -2271,9 +2303,9 @@ module Vips
     # *stream* : IO - Stream to load from
     # _Optionals_
     #
-    # *n* : Int32 - Load this many pages
+    # *n* : Int32 - Number of pages to load, -1 for all
     #
-    # *page* : Int32 - Load this page from the file
+    # *page* : Int32 - First page to load
     #
     # *memory* : Bool - Force open via memory
     #
@@ -2295,7 +2327,7 @@ module Vips
     # Save as gif
     #
     # ```
-    # in.gifsave(filename, {dither: Float64, effort: Int32, bitdepth: Int32, strip: Bool, background: Array(Float64), page_height: Int32})
+    # in.gifsave(filename, {dither: Float64, effort: Int32, bitdepth: Int32, interframe_maxerror: Float64, reuse: Bool, interpalette_maxerror: Float64, interlace: Bool, strip: Bool, background: Array(Float64), page_height: Int32})
     #
     # ```
     #
@@ -2314,6 +2346,14 @@ module Vips
     #
     # *bitdepth* : Int32 - Number of bits per pixel
     #
+    # *interframe_maxerror* : Float64 - Maximum inter-frame error for transparency
+    #
+    # *reuse* : Bool - Reuse palette from input
+    #
+    # *interpalette_maxerror* : Float64 - Maximum inter-palette error for palette reusage
+    #
+    # *interlace* : Bool - Generate an interlaced (progressive) GIF
+    #
     # *strip* : Bool - Strip all metadata from image
     #
     # *background* : Array(Float64) - Background value
@@ -2328,7 +2368,7 @@ module Vips
     # Save as gif
     #
     # ```
-    # # buffer = in.gifsave_buffer({dither: Float64, effort: Int32, bitdepth: Int32, strip: Bool, background: Array(Float64), page_height: Int32})
+    # # buffer = in.gifsave_buffer({dither: Float64, effort: Int32, bitdepth: Int32, interframe_maxerror: Float64, reuse: Bool, interpalette_maxerror: Float64, interlace: Bool, strip: Bool, background: Array(Float64), page_height: Int32})
     # ```
     #
     #
@@ -2341,6 +2381,14 @@ module Vips
     # *effort* : Int32 - Quantisation effort
     #
     # *bitdepth* : Int32 - Number of bits per pixel
+    #
+    # *interframe_maxerror* : Float64 - Maximum inter-frame error for transparency
+    #
+    # *reuse* : Bool - Reuse palette from input
+    #
+    # *interpalette_maxerror* : Float64 - Maximum inter-palette error for palette reusage
+    #
+    # *interlace* : Bool - Generate an interlaced (progressive) GIF
     #
     # *strip* : Bool - Strip all metadata from image
     #
@@ -2362,7 +2410,7 @@ module Vips
     # Save as gif
     #
     # ```
-    # in.gifsave_target(target, {dither: Float64, effort: Int32, bitdepth: Int32, strip: Bool, background: Array(Float64), page_height: Int32})
+    # in.gifsave_target(target, {dither: Float64, effort: Int32, bitdepth: Int32, interframe_maxerror: Float64, reuse: Bool, interpalette_maxerror: Float64, interlace: Bool, strip: Bool, background: Array(Float64), page_height: Int32})
     #
     # ```
     #
@@ -2381,6 +2429,14 @@ module Vips
     #
     # *bitdepth* : Int32 - Number of bits per pixel
     #
+    # *interframe_maxerror* : Float64 - Maximum inter-frame error for transparency
+    #
+    # *reuse* : Bool - Reuse palette from input
+    #
+    # *interpalette_maxerror* : Float64 - Maximum inter-palette error for palette reusage
+    #
+    # *interlace* : Bool - Generate an interlaced (progressive) GIF
+    #
     # *strip* : Bool - Strip all metadata from image
     #
     # *background* : Array(Float64) - Background value
@@ -2395,7 +2451,7 @@ module Vips
     # Save as gif
     #
     # ```
-    # in.gifsave_stream(stream, {dither: Float64, effort: Int32, bitdepth: Int32, strip: Bool, background: Array(Float64), page_height: Int32})
+    # in.gifsave_stream(stream, {dither: Float64, effort: Int32, bitdepth: Int32, interframe_maxerror: Float64, reuse: Bool, interpalette_maxerror: Float64, interlace: Bool, strip: Bool, background: Array(Float64), page_height: Int32})
     #
     # ```
     #
@@ -2411,6 +2467,14 @@ module Vips
     # *effort* : Int32 - Quantisation effort
     #
     # *bitdepth* : Int32 - Number of bits per pixel
+    #
+    # *interframe_maxerror* : Float64 - Maximum inter-frame error for transparency
+    #
+    # *reuse* : Bool - Reuse palette from input
+    #
+    # *interpalette_maxerror* : Float64 - Maximum inter-palette error for palette reusage
+    #
+    # *interlace* : Bool - Generate an interlaced (progressive) GIF
     #
     # *strip* : Bool - Strip all metadata from image
     #
@@ -2459,7 +2523,7 @@ module Vips
     #
     # **Required**
     #
-    # *direction* : Enums::CompassDirection - direction to place image within width/height
+    # *direction* : Enums::CompassDirection - Direction to place image within width/height
     #
     # *width* : Int32 - Image width in pixels
     #
@@ -2523,11 +2587,11 @@ module Vips
     #
     # **Required**
     #
-    # *tile_height* : Int32 - chop into tiles this high
+    # *tile_height* : Int32 - Chop into tiles this high
     #
-    # *across* : Int32 - number of tiles across
+    # *across* : Int32 - Number of tiles across
     #
-    # *down* : Int32 - number of tiles down
+    # *down* : Int32 - Number of tiles down
     #
     #
     # **Returns**
@@ -2541,7 +2605,7 @@ module Vips
     # Load a heif image
     #
     # ```
-    # # out_, flags = Vips::Image.heifload(filename, {page: Int32, n: Int32, thumbnail: Bool, memory: Bool, access: Enums::Access, fail_on: Enums::FailOn})
+    # # out_, flags = Vips::Image.heifload(filename, {page: Int32, n: Int32, thumbnail: Bool, unlimited: Bool, memory: Bool, access: Enums::Access, fail_on: Enums::FailOn})
     # ```
     #
     #
@@ -2553,11 +2617,13 @@ module Vips
     #
     # _Optionals_
     #
-    # *page* : Int32 - Load this page from the file
+    # *page* : Int32 - First page to load
     #
-    # *n* : Int32 - Load this many pages
+    # *n* : Int32 - Number of pages to load, -1 for all
     #
     # *thumbnail* : Bool - Fetch thumbnail image
+    #
+    # *unlimited* : Bool - Remove all denial of service limits
     #
     # *memory* : Bool - Force open via memory
     #
@@ -2590,7 +2656,7 @@ module Vips
     # Load a heif image
     #
     # ```
-    # # out_, flags = Vips::Image.heifload_buffer(buffer, {page: Int32, n: Int32, thumbnail: Bool, memory: Bool, access: Enums::Access, fail_on: Enums::FailOn})
+    # # out_, flags = Vips::Image.heifload_buffer(buffer, {page: Int32, n: Int32, thumbnail: Bool, unlimited: Bool, memory: Bool, access: Enums::Access, fail_on: Enums::FailOn})
     # ```
     #
     #
@@ -2602,11 +2668,13 @@ module Vips
     #
     # _Optionals_
     #
-    # *page* : Int32 - Load this page from the file
+    # *page* : Int32 - First page to load
     #
-    # *n* : Int32 - Load this many pages
+    # *n* : Int32 - Number of pages to load, -1 for all
     #
     # *thumbnail* : Bool - Fetch thumbnail image
+    #
+    # *unlimited* : Bool - Remove all denial of service limits
     #
     # *memory* : Bool - Force open via memory
     #
@@ -2639,7 +2707,7 @@ module Vips
     # Load a heif image
     #
     # ```
-    # # out_, flags = Vips::Image.heifload_source(source, {page: Int32, n: Int32, thumbnail: Bool, memory: Bool, access: Enums::Access, fail_on: Enums::FailOn})
+    # # out_, flags = Vips::Image.heifload_source(source, {page: Int32, n: Int32, thumbnail: Bool, unlimited: Bool, memory: Bool, access: Enums::Access, fail_on: Enums::FailOn})
     # ```
     #
     #
@@ -2651,11 +2719,13 @@ module Vips
     #
     # _Optionals_
     #
-    # *page* : Int32 - Load this page from the file
+    # *page* : Int32 - First page to load
     #
-    # *n* : Int32 - Load this many pages
+    # *n* : Int32 - Number of pages to load, -1 for all
     #
     # *thumbnail* : Bool - Fetch thumbnail image
+    #
+    # *unlimited* : Bool - Remove all denial of service limits
     #
     # *memory* : Bool - Force open via memory
     #
@@ -2688,7 +2758,7 @@ module Vips
     # Load a heif image
     #
     # ```
-    # # out_, flags = Vips::Image.heifload_stream(stream, {page: Int32, n: Int32, thumbnail: Bool, memory: Bool, access: Enums::Access, fail_on: Enums::FailOn})
+    # # out_, flags = Vips::Image.heifload_stream(stream, {page: Int32, n: Int32, thumbnail: Bool, unlimited: Bool, memory: Bool, access: Enums::Access, fail_on: Enums::FailOn})
     # ```
     #
     # **Input Parameters**
@@ -2698,11 +2768,13 @@ module Vips
     # *stream* : IO - Stream to load from
     # _Optionals_
     #
-    # *page* : Int32 - Load this page from the file
+    # *page* : Int32 - First page to load
     #
-    # *n* : Int32 - Load this many pages
+    # *n* : Int32 - Number of pages to load, -1 for all
     #
     # *thumbnail* : Bool - Fetch thumbnail image
+    #
+    # *unlimited* : Bool - Remove all denial of service limits
     #
     # *memory* : Bool - Force open via memory
     #
@@ -2719,152 +2791,6 @@ module Vips
     def self.heifload_stream(stream : IO, **kwargs)
       source = SourceStream.new_from_stream(stream)
       heifload_source(source, **kwargs)
-    end
-
-    # Save image in heif format
-    #
-    # ```
-    # in.heifsave(filename, {q: Int32, lossless: Bool, compression: Enums::ForeignHeifCompression, effort: Int32, subsample_mode: Enums::ForeignSubsample, strip: Bool, background: Array(Float64), page_height: Int32})
-    #
-    # ```
-    #
-    #
-    # Input Parameters
-    #
-    # **Required**
-    #
-    # *filename* : String - Filename to save to
-    #
-    # _Optionals_
-    #
-    # *q* : Int32 - Q factor
-    #
-    # *lossless* : Bool - Enable lossless compression
-    #
-    # *compression* : Enums::ForeignHeifCompression - Compression format
-    #
-    # *effort* : Int32 - CPU effort
-    #
-    # *subsample_mode* : Enums::ForeignSubsample - Select chroma subsample operation mode
-    #
-    # *strip* : Bool - Strip all metadata from image
-    #
-    # *background* : Array(Float64) - Background value
-    #
-    # *page_height* : Int32 - Set page height for multipage save
-    #
-    def heifsave(filename : String, **kwargs)
-      options = Optional.new(**kwargs)
-      self.call("heifsave", options, filename)
-    end
-
-    # Save image in heif format
-    #
-    # ```
-    # # buffer = in.heifsave_buffer({q: Int32, lossless: Bool, compression: Enums::ForeignHeifCompression, effort: Int32, subsample_mode: Enums::ForeignSubsample, strip: Bool, background: Array(Float64), page_height: Int32})
-    # ```
-    #
-    #
-    # Input Parameters
-    #
-    # _Optionals_
-    #
-    # *q* : Int32 - Q factor
-    #
-    # *lossless* : Bool - Enable lossless compression
-    #
-    # *compression* : Enums::ForeignHeifCompression - Compression format
-    #
-    # *effort* : Int32 - CPU effort
-    #
-    # *subsample_mode* : Enums::ForeignSubsample - Select chroma subsample operation mode
-    #
-    # *strip* : Bool - Strip all metadata from image
-    #
-    # *background* : Array(Float64) - Background value
-    #
-    # *page_height* : Int32 - Set page height for multipage save
-    #
-    #
-    # **Returns**
-    #
-    # Buffer to save to
-    #
-    def heifsave_buffer(**kwargs)
-      options = Optional.new(**kwargs)
-
-      self.call("heifsave_buffer", options).as(Type).as_bytes
-    end
-
-    # Save image in heif format
-    #
-    # ```
-    # in.heifsave_target(target, {q: Int32, lossless: Bool, compression: Enums::ForeignHeifCompression, effort: Int32, subsample_mode: Enums::ForeignSubsample, strip: Bool, background: Array(Float64), page_height: Int32})
-    #
-    # ```
-    #
-    #
-    # Input Parameters
-    #
-    # **Required**
-    #
-    # *target* : Target - Target to save to
-    #
-    # _Optionals_
-    #
-    # *q* : Int32 - Q factor
-    #
-    # *lossless* : Bool - Enable lossless compression
-    #
-    # *compression* : Enums::ForeignHeifCompression - Compression format
-    #
-    # *effort* : Int32 - CPU effort
-    #
-    # *subsample_mode* : Enums::ForeignSubsample - Select chroma subsample operation mode
-    #
-    # *strip* : Bool - Strip all metadata from image
-    #
-    # *background* : Array(Float64) - Background value
-    #
-    # *page_height* : Int32 - Set page height for multipage save
-    #
-    def heifsave_target(target : Target, **kwargs)
-      options = Optional.new(**kwargs)
-      self.call("heifsave_target", options, target)
-    end
-
-    # Save image in heif format
-    #
-    # ```
-    # in.heifsave_stream(stream, {q: Int32, lossless: Bool, compression: Enums::ForeignHeifCompression, effort: Int32, subsample_mode: Enums::ForeignSubsample, strip: Bool, background: Array(Float64), page_height: Int32})
-    #
-    # ```
-    #
-    # **Input Parameters**
-    #
-    # _Required_
-    #
-    # *stream* : IO - Stream to save to
-    # _Optionals_
-    #
-    # *q* : Int32 - Q factor
-    #
-    # *lossless* : Bool - Enable lossless compression
-    #
-    # *compression* : Enums::ForeignHeifCompression - Compression format
-    #
-    # *effort* : Int32 - CPU effort
-    #
-    # *subsample_mode* : Enums::ForeignSubsample - Select chroma subsample operation mode
-    #
-    # *strip* : Bool - Strip all metadata from image
-    #
-    # *background* : Array(Float64) - Background value
-    #
-    # *page_height* : Int32 - Set page height for multipage save
-    def heifsave_stream(stream : IO, **kwargs)
-      target = TargetStream.new_from_stream(stream)
-      heifsave_target(target, **kwargs)
     end
 
     # Form cumulative histogram
@@ -3133,7 +3059,7 @@ module Vips
     #
     # _Optionals_
     #
-    # *width* : Int32 - horizontal size of parameter space
+    # *width* : Int32 - Horizontal size of parameter space
     #
     # *height* : Int32 - Vertical size of parameter space
     #
@@ -3742,7 +3668,7 @@ module Vips
     # Load jpeg from file
     #
     # ```
-    # # out_, flags = Vips::Image.jpegload(filename, {shrink: Int32, autorotate: Bool, memory: Bool, access: Enums::Access, fail_on: Enums::FailOn})
+    # # out_, flags = Vips::Image.jpegload(filename, {shrink: Int32, autorotate: Bool, unlimited: Bool, memory: Bool, access: Enums::Access, fail_on: Enums::FailOn})
     # ```
     #
     #
@@ -3757,6 +3683,8 @@ module Vips
     # *shrink* : Int32 - Shrink factor on load
     #
     # *autorotate* : Bool - Rotate image using exif orientation
+    #
+    # *unlimited* : Bool - Remove all denial of service limits
     #
     # *memory* : Bool - Force open via memory
     #
@@ -3789,7 +3717,7 @@ module Vips
     # Load jpeg from buffer
     #
     # ```
-    # # out_, flags = Vips::Image.jpegload_buffer(buffer, {shrink: Int32, autorotate: Bool, memory: Bool, access: Enums::Access, fail_on: Enums::FailOn})
+    # # out_, flags = Vips::Image.jpegload_buffer(buffer, {shrink: Int32, autorotate: Bool, unlimited: Bool, memory: Bool, access: Enums::Access, fail_on: Enums::FailOn})
     # ```
     #
     #
@@ -3804,6 +3732,8 @@ module Vips
     # *shrink* : Int32 - Shrink factor on load
     #
     # *autorotate* : Bool - Rotate image using exif orientation
+    #
+    # *unlimited* : Bool - Remove all denial of service limits
     #
     # *memory* : Bool - Force open via memory
     #
@@ -3836,7 +3766,7 @@ module Vips
     # Load image from jpeg source
     #
     # ```
-    # # out_, flags = Vips::Image.jpegload_source(source, {shrink: Int32, autorotate: Bool, memory: Bool, access: Enums::Access, fail_on: Enums::FailOn})
+    # # out_, flags = Vips::Image.jpegload_source(source, {shrink: Int32, autorotate: Bool, unlimited: Bool, memory: Bool, access: Enums::Access, fail_on: Enums::FailOn})
     # ```
     #
     #
@@ -3851,6 +3781,8 @@ module Vips
     # *shrink* : Int32 - Shrink factor on load
     #
     # *autorotate* : Bool - Rotate image using exif orientation
+    #
+    # *unlimited* : Bool - Remove all denial of service limits
     #
     # *memory* : Bool - Force open via memory
     #
@@ -3883,7 +3815,7 @@ module Vips
     # Load image from jpeg stream
     #
     # ```
-    # # out_, flags = Vips::Image.jpegload_stream(stream, {shrink: Int32, autorotate: Bool, memory: Bool, access: Enums::Access, fail_on: Enums::FailOn})
+    # # out_, flags = Vips::Image.jpegload_stream(stream, {shrink: Int32, autorotate: Bool, unlimited: Bool, memory: Bool, access: Enums::Access, fail_on: Enums::FailOn})
     # ```
     #
     # **Input Parameters**
@@ -3896,6 +3828,8 @@ module Vips
     # *shrink* : Int32 - Shrink factor on load
     #
     # *autorotate* : Bool - Rotate image using exif orientation
+    #
+    # *unlimited* : Bool - Remove all denial of service limits
     #
     # *memory* : Bool - Force open via memory
     #
@@ -4530,7 +4464,7 @@ module Vips
     #
     # _Optionals_
     #
-    # *segments* : Int32? - Number of discrete contigious regions
+    # *segments* : Int32? - Number of discrete contiguous regions
     #
     def labelregions
       optional_output = Optional.new(**{segments: true})
@@ -4758,9 +4692,9 @@ module Vips
     #
     # *density* : String - Canvas resolution for rendering vector formats like SVG
     #
-    # *page* : Int32 - Load this page from the file
+    # *page* : Int32 - First page to load
     #
-    # *n* : Int32 - Load this many pages
+    # *n* : Int32 - Number of pages to load, -1 for all
     #
     # *memory* : Bool - Force open via memory
     #
@@ -4807,9 +4741,9 @@ module Vips
     #
     # *density* : String - Canvas resolution for rendering vector formats like SVG
     #
-    # *page* : Int32 - Load this page from the file
+    # *page* : Int32 - First page to load
     #
-    # *n* : Int32 - Load this many pages
+    # *n* : Int32 - Number of pages to load, -1 for all
     #
     # *memory* : Bool - Force open via memory
     #
@@ -4842,7 +4776,7 @@ module Vips
     # Save file with imagemagick
     #
     # ```
-    # in.magicksave(filename, {format: String, quality: Int32, optimize_gif_frames: Bool, optimize_gif_transparency: Bool, strip: Bool, background: Array(Float64), page_height: Int32})
+    # in.magicksave(filename, {format: String, quality: Int32, optimize_gif_frames: Bool, optimize_gif_transparency: Bool, bitdepth: Int32, strip: Bool, background: Array(Float64), page_height: Int32})
     #
     # ```
     #
@@ -4862,6 +4796,8 @@ module Vips
     # *optimize_gif_frames* : Bool - Apply GIF frames optimization
     #
     # *optimize_gif_transparency* : Bool - Apply GIF transparency optimization
+    #
+    # *bitdepth* : Int32 - Number of bits per pixel
     #
     # *strip* : Bool - Strip all metadata from image
     #
@@ -4877,7 +4813,7 @@ module Vips
     # Save bmp image with imagemagick
     #
     # ```
-    # in.magicksave_bmp(filename, {format: String, quality: Int32, optimize_gif_frames: Bool, optimize_gif_transparency: Bool, strip: Bool, background: Array(Float64), page_height: Int32})
+    # in.magicksave_bmp(filename, {format: String, quality: Int32, optimize_gif_frames: Bool, optimize_gif_transparency: Bool, bitdepth: Int32, strip: Bool, background: Array(Float64), page_height: Int32})
     #
     # ```
     #
@@ -4898,6 +4834,8 @@ module Vips
     #
     # *optimize_gif_transparency* : Bool - Apply GIF transparency optimization
     #
+    # *bitdepth* : Int32 - Number of bits per pixel
+    #
     # *strip* : Bool - Strip all metadata from image
     #
     # *background* : Array(Float64) - Background value
@@ -4912,7 +4850,7 @@ module Vips
     # Save bmp image to magick buffer
     #
     # ```
-    # # buffer = in.magicksave_bmp_buffer({format: String, quality: Int32, optimize_gif_frames: Bool, optimize_gif_transparency: Bool, strip: Bool, background: Array(Float64), page_height: Int32})
+    # # buffer = in.magicksave_bmp_buffer({format: String, quality: Int32, optimize_gif_frames: Bool, optimize_gif_transparency: Bool, bitdepth: Int32, strip: Bool, background: Array(Float64), page_height: Int32})
     # ```
     #
     #
@@ -4927,6 +4865,8 @@ module Vips
     # *optimize_gif_frames* : Bool - Apply GIF frames optimization
     #
     # *optimize_gif_transparency* : Bool - Apply GIF transparency optimization
+    #
+    # *bitdepth* : Int32 - Number of bits per pixel
     #
     # *strip* : Bool - Strip all metadata from image
     #
@@ -4948,7 +4888,7 @@ module Vips
     # Save image to magick buffer
     #
     # ```
-    # # buffer = in.magicksave_buffer({format: String, quality: Int32, optimize_gif_frames: Bool, optimize_gif_transparency: Bool, strip: Bool, background: Array(Float64), page_height: Int32})
+    # # buffer = in.magicksave_buffer({format: String, quality: Int32, optimize_gif_frames: Bool, optimize_gif_transparency: Bool, bitdepth: Int32, strip: Bool, background: Array(Float64), page_height: Int32})
     # ```
     #
     #
@@ -4963,6 +4903,8 @@ module Vips
     # *optimize_gif_frames* : Bool - Apply GIF frames optimization
     #
     # *optimize_gif_transparency* : Bool - Apply GIF transparency optimization
+    #
+    # *bitdepth* : Int32 - Number of bits per pixel
     #
     # *strip* : Bool - Strip all metadata from image
     #
@@ -4981,81 +4923,10 @@ module Vips
       self.call("magicksave_buffer", options).as(Type).as_bytes
     end
 
-    # Save gif image with imagemagick
-    #
-    # ```
-    # in.magicksave_gif(filename, {format: String, quality: Int32, optimize_gif_frames: Bool, optimize_gif_transparency: Bool, strip: Bool, background: Array(Float64), page_height: Int32})
-    #
-    # ```
-    #
-    #
-    # Input Parameters
-    #
-    # **Required**
-    #
-    # *filename* : String - Filename to save to
-    #
-    # _Optionals_
-    #
-    # *format* : String - Format to save in
-    #
-    # *quality* : Int32 - Quality to use
-    #
-    # *optimize_gif_frames* : Bool - Apply GIF frames optimization
-    #
-    # *optimize_gif_transparency* : Bool - Apply GIF transparency optimization
-    #
-    # *strip* : Bool - Strip all metadata from image
-    #
-    # *background* : Array(Float64) - Background value
-    #
-    # *page_height* : Int32 - Set page height for multipage save
-    #
-    def magicksave_gif(filename : String, **kwargs)
-      options = Optional.new(**kwargs)
-      self.call("magicksave_gif", options, filename)
-    end
-
-    # Save gif image to magick buffer
-    #
-    # ```
-    # # buffer = in.magicksave_gif_buffer({format: String, quality: Int32, optimize_gif_frames: Bool, optimize_gif_transparency: Bool, strip: Bool, background: Array(Float64), page_height: Int32})
-    # ```
-    #
-    #
-    # Input Parameters
-    #
-    # _Optionals_
-    #
-    # *format* : String - Format to save in
-    #
-    # *quality* : Int32 - Quality to use
-    #
-    # *optimize_gif_frames* : Bool - Apply GIF frames optimization
-    #
-    # *optimize_gif_transparency* : Bool - Apply GIF transparency optimization
-    #
-    # *strip* : Bool - Strip all metadata from image
-    #
-    # *background* : Array(Float64) - Background value
-    #
-    # *page_height* : Int32 - Set page height for multipage save
-    #
-    #
-    # **Returns**
-    #
-    # Buffer to save to
-    #
-    def magicksave_gif_buffer(**kwargs)
-      options = Optional.new(**kwargs)
-
-      self.call("magicksave_gif_buffer", options).as(Type).as_bytes
-    end
-
     # Resample with a map image
     #
     # ```
-    # # out_ = in.mapim(index, {interpolate: Interpolate})
+    # # out_ = in.mapim(index, {interpolate: Interpolate, background: Array(Float64), premultiplied: Bool, extend: Enums::Extend})
     # ```
     #
     #
@@ -5068,6 +4939,12 @@ module Vips
     # _Optionals_
     #
     # *interpolate* : Interpolate - Interpolate pixels with this
+    #
+    # *background* : Array(Float64) - Background value
+    #
+    # *premultiplied* : Bool - Images have premultiplied alpha
+    #
+    # *extend* : Enums::Extend - How to generate the extra pixels
     #
     #
     # **Returns**
@@ -5095,7 +4972,7 @@ module Vips
     #
     # _Optionals_
     #
-    # *band* : Int32 - apply one-band lut to this band of in
+    # *band* : Int32 - Apply one-band lut to this band of in
     #
     #
     # **Returns**
@@ -5171,7 +5048,7 @@ module Vips
     #
     # *frequency_cutoff_y* : Float64 - Frequency cutoff y
     #
-    # *radius* : Float64 - radius of circle
+    # *radius* : Float64 - Radius of circle
     #
     # *amplitude_cutoff* : Float64 - Amplitude cutoff
     #
@@ -5337,7 +5214,7 @@ module Vips
     #
     # *frequency_cutoff_y* : Float64 - Frequency cutoff y
     #
-    # *radius* : Float64 - radius of circle
+    # *radius* : Float64 - Radius of circle
     #
     # *amplitude_cutoff* : Float64 - Amplitude cutoff
     #
@@ -5461,7 +5338,7 @@ module Vips
     #
     # *frequency_cutoff_y* : Float64 - Frequency cutoff y
     #
-    # *radius* : Float64 - radius of circle
+    # *radius* : Float64 - Radius of circle
     #
     # _Optionals_
     #
@@ -5585,7 +5462,7 @@ module Vips
     #
     # **Required**
     #
-    # *math* : Enums::OperationMath - math to perform
+    # *math* : Enums::OperationMath - Math to perform
     #
     #
     # **Returns**
@@ -5609,7 +5486,7 @@ module Vips
     #
     # *right* : Image - Right-hand image argument
     #
-    # *math2* : Enums::OperationMath2 - math to perform
+    # *math2* : Enums::OperationMath2 - Math to perform
     #
     #
     # **Returns**
@@ -5631,7 +5508,7 @@ module Vips
     #
     # **Required**
     #
-    # *math2* : Enums::OperationMath2 - math to perform
+    # *math2* : Enums::OperationMath2 - Math to perform
     #
     # *c* : Array(Float64) - Array of constants
     #
@@ -6193,7 +6070,7 @@ module Vips
     # First-order mosaic of two images
     #
     # ```
-    # # out_ = ref.mosaic1(sec, direction, xr1, yr1, xs1, ys1, xr2, yr2, xs2, ys2, {hwindow: Int32, harea: Int32, search: Bool, interpolate: Interpolate, mblend: Int32, bandno: Int32})
+    # # out_ = ref.mosaic1(sec, direction, xr1, yr1, xs1, ys1, xr2, yr2, xs2, ys2, {hwindow: Int32, harea: Int32, search: Bool, interpolate: Interpolate, mblend: Int32})
     # ```
     #
     #
@@ -6232,8 +6109,6 @@ module Vips
     # *interpolate* : Interpolate - Interpolate pixels with this
     #
     # *mblend* : Int32 - Maximum blend size
-    #
-    # *bandno* : Int32 - Band to search for features on
     #
     #
     # **Returns**
@@ -6338,7 +6213,7 @@ module Vips
     # Load file with openslide
     #
     # ```
-    # # out_, flags = Vips::Image.openslideload(filename, {attach_associated: Bool, level: Int32, autocrop: Bool, associated: String, memory: Bool, access: Enums::Access, fail_on: Enums::FailOn})
+    # # out_, flags = Vips::Image.openslideload(filename, {level: Int32, autocrop: Bool, associated: String, attach_associated: Bool, rgb: Bool, memory: Bool, access: Enums::Access, fail_on: Enums::FailOn})
     # ```
     #
     #
@@ -6350,13 +6225,15 @@ module Vips
     #
     # _Optionals_
     #
-    # *attach_associated* : Bool - Attach all associated images
-    #
     # *level* : Int32 - Load this level from the file
     #
     # *autocrop* : Bool - Crop to image bounds
     #
     # *associated* : String - Load this associated image
+    #
+    # *attach_associated* : Bool - Attach all associated images
+    #
+    # *rgb* : Bool - Output RGB (not RGBA)
     #
     # *memory* : Bool - Force open via memory
     #
@@ -6389,7 +6266,7 @@ module Vips
     # Load source with openslide
     #
     # ```
-    # # out_, flags = Vips::Image.openslideload_source(source, {attach_associated: Bool, level: Int32, autocrop: Bool, associated: String, memory: Bool, access: Enums::Access, fail_on: Enums::FailOn})
+    # # out_, flags = Vips::Image.openslideload_source(source, {level: Int32, autocrop: Bool, associated: String, attach_associated: Bool, rgb: Bool, memory: Bool, access: Enums::Access, fail_on: Enums::FailOn})
     # ```
     #
     #
@@ -6401,13 +6278,15 @@ module Vips
     #
     # _Optionals_
     #
-    # *attach_associated* : Bool - Attach all associated images
-    #
     # *level* : Int32 - Load this level from the file
     #
     # *autocrop* : Bool - Crop to image bounds
     #
     # *associated* : String - Load this associated image
+    #
+    # *attach_associated* : Bool - Attach all associated images
+    #
+    # *rgb* : Bool - Output RGB (not RGBA)
     #
     # *memory* : Bool - Force open via memory
     #
@@ -6440,7 +6319,7 @@ module Vips
     # Load stream with openslide
     #
     # ```
-    # # out_, flags = Vips::Image.openslideload_stream(stream, {attach_associated: Bool, level: Int32, autocrop: Bool, associated: String, memory: Bool, access: Enums::Access, fail_on: Enums::FailOn})
+    # # out_, flags = Vips::Image.openslideload_stream(stream, {level: Int32, autocrop: Bool, associated: String, attach_associated: Bool, rgb: Bool, memory: Bool, access: Enums::Access, fail_on: Enums::FailOn})
     # ```
     #
     # **Input Parameters**
@@ -6450,13 +6329,15 @@ module Vips
     # *stream* : IO - Stream to load from
     # _Optionals_
     #
-    # *attach_associated* : Bool - Attach all associated images
-    #
     # *level* : Int32 - Load this level from the file
     #
     # *autocrop* : Bool - Crop to image bounds
     #
     # *associated* : String - Load this associated image
+    #
+    # *attach_associated* : Bool - Attach all associated images
+    #
+    # *rgb* : Bool - Output RGB (not RGBA)
     #
     # *memory* : Bool - Force open via memory
     #
@@ -6493,9 +6374,9 @@ module Vips
     #
     # *format* : Enums::ForeignPpmFormat - Format to save in
     #
-    # *ascii* : Bool - save as ascii
+    # *ascii* : Bool - Save as ascii
     #
-    # *bitdepth* : Int32 - set to 1 to write as a 1 bit image
+    # *bitdepth* : Int32 - Set to 1 to write as a 1 bit image
     #
     # *strip* : Bool - Strip all metadata from image
     #
@@ -6524,9 +6405,9 @@ module Vips
     #
     # *format* : Enums::ForeignPpmFormat - Format to save in
     #
-    # *ascii* : Bool - save as ascii
+    # *ascii* : Bool - Save as ascii
     #
-    # *bitdepth* : Int32 - set to 1 to write as a 1 bit image
+    # *bitdepth* : Int32 - Set to 1 to write as a 1 bit image
     #
     # *strip* : Bool - Strip all metadata from image
     #
@@ -6541,7 +6422,7 @@ module Vips
     # Load pdf from file
     #
     # ```
-    # # out_, flags = Vips::Image.pdfload(filename, {page: Int32, n: Int32, dpi: Float64, scale: Float64, background: Array(Float64), memory: Bool, access: Enums::Access, fail_on: Enums::FailOn})
+    # # out_, flags = Vips::Image.pdfload(filename, {page: Int32, n: Int32, dpi: Float64, scale: Float64, background: Array(Float64), password: String, memory: Bool, access: Enums::Access, fail_on: Enums::FailOn})
     # ```
     #
     #
@@ -6553,15 +6434,17 @@ module Vips
     #
     # _Optionals_
     #
-    # *page* : Int32 - Load this page from the file
+    # *page* : Int32 - First page to load
     #
-    # *n* : Int32 - Load this many pages
+    # *n* : Int32 - Number of pages to load, -1 for all
     #
-    # *dpi* : Float64 - Render at this DPI
+    # *dpi* : Float64 - DPI to render at
     #
-    # *scale* : Float64 - Scale output by this factor
+    # *scale* : Float64 - Factor to scale by
     #
-    # *background* : Array(Float64) - Background value
+    # *background* : Array(Float64) - Background colour
+    #
+    # *password* : String - Password to decrypt with
     #
     # *memory* : Bool - Force open via memory
     #
@@ -6594,7 +6477,7 @@ module Vips
     # Load pdf from buffer
     #
     # ```
-    # # out_, flags = Vips::Image.pdfload_buffer(buffer, {page: Int32, n: Int32, dpi: Float64, scale: Float64, background: Array(Float64), memory: Bool, access: Enums::Access, fail_on: Enums::FailOn})
+    # # out_, flags = Vips::Image.pdfload_buffer(buffer, {page: Int32, n: Int32, dpi: Float64, scale: Float64, background: Array(Float64), password: String, memory: Bool, access: Enums::Access, fail_on: Enums::FailOn})
     # ```
     #
     #
@@ -6606,15 +6489,17 @@ module Vips
     #
     # _Optionals_
     #
-    # *page* : Int32 - Load this page from the file
+    # *page* : Int32 - First page to load
     #
-    # *n* : Int32 - Load this many pages
+    # *n* : Int32 - Number of pages to load, -1 for all
     #
-    # *dpi* : Float64 - Render at this DPI
+    # *dpi* : Float64 - DPI to render at
     #
-    # *scale* : Float64 - Scale output by this factor
+    # *scale* : Float64 - Factor to scale by
     #
-    # *background* : Array(Float64) - Background value
+    # *background* : Array(Float64) - Background colour
+    #
+    # *password* : String - Password to decrypt with
     #
     # *memory* : Bool - Force open via memory
     #
@@ -6647,7 +6532,7 @@ module Vips
     # Load pdf from source
     #
     # ```
-    # # out_, flags = Vips::Image.pdfload_source(source, {page: Int32, n: Int32, dpi: Float64, scale: Float64, background: Array(Float64), memory: Bool, access: Enums::Access, fail_on: Enums::FailOn})
+    # # out_, flags = Vips::Image.pdfload_source(source, {page: Int32, n: Int32, dpi: Float64, scale: Float64, background: Array(Float64), password: String, memory: Bool, access: Enums::Access, fail_on: Enums::FailOn})
     # ```
     #
     #
@@ -6659,15 +6544,17 @@ module Vips
     #
     # _Optionals_
     #
-    # *page* : Int32 - Load this page from the file
+    # *page* : Int32 - First page to load
     #
-    # *n* : Int32 - Load this many pages
+    # *n* : Int32 - Number of pages to load, -1 for all
     #
-    # *dpi* : Float64 - Render at this DPI
+    # *dpi* : Float64 - DPI to render at
     #
-    # *scale* : Float64 - Scale output by this factor
+    # *scale* : Float64 - Factor to scale by
     #
-    # *background* : Array(Float64) - Background value
+    # *background* : Array(Float64) - Background colour
+    #
+    # *password* : String - Password to decrypt with
     #
     # *memory* : Bool - Force open via memory
     #
@@ -6700,7 +6587,7 @@ module Vips
     # Load pdf from stream
     #
     # ```
-    # # out_, flags = Vips::Image.pdfload_stream(stream, {page: Int32, n: Int32, dpi: Float64, scale: Float64, background: Array(Float64), memory: Bool, access: Enums::Access, fail_on: Enums::FailOn})
+    # # out_, flags = Vips::Image.pdfload_stream(stream, {page: Int32, n: Int32, dpi: Float64, scale: Float64, background: Array(Float64), password: String, memory: Bool, access: Enums::Access, fail_on: Enums::FailOn})
     # ```
     #
     # **Input Parameters**
@@ -6710,15 +6597,17 @@ module Vips
     # *stream* : IO - Stream to load from
     # _Optionals_
     #
-    # *page* : Int32 - Load this page from the file
+    # *page* : Int32 - First page to load
     #
-    # *n* : Int32 - Load this many pages
+    # *n* : Int32 - Number of pages to load, -1 for all
     #
-    # *dpi* : Float64 - Render at this DPI
+    # *dpi* : Float64 - DPI to render at
     #
-    # *scale* : Float64 - Scale output by this factor
+    # *scale* : Float64 - Factor to scale by
     #
-    # *background* : Array(Float64) - Background value
+    # *background* : Array(Float64) - Background colour
+    #
+    # *password* : String - Password to decrypt with
     #
     # *memory* : Bool - Force open via memory
     #
@@ -6811,9 +6700,9 @@ module Vips
     #
     # *format* : Enums::ForeignPpmFormat - Format to save in
     #
-    # *ascii* : Bool - save as ascii
+    # *ascii* : Bool - Save as ascii
     #
-    # *bitdepth* : Int32 - set to 1 to write as a 1 bit image
+    # *bitdepth* : Int32 - Set to 1 to write as a 1 bit image
     #
     # *strip* : Bool - Strip all metadata from image
     #
@@ -6842,9 +6731,9 @@ module Vips
     #
     # *format* : Enums::ForeignPpmFormat - Format to save in
     #
-    # *ascii* : Bool - save as ascii
+    # *ascii* : Bool - Save as ascii
     #
-    # *bitdepth* : Int32 - set to 1 to write as a 1 bit image
+    # *bitdepth* : Int32 - Set to 1 to write as a 1 bit image
     #
     # *strip* : Bool - Strip all metadata from image
     #
@@ -6874,9 +6763,9 @@ module Vips
     #
     # *format* : Enums::ForeignPpmFormat - Format to save in
     #
-    # *ascii* : Bool - save as ascii
+    # *ascii* : Bool - Save as ascii
     #
-    # *bitdepth* : Int32 - set to 1 to write as a 1 bit image
+    # *bitdepth* : Int32 - Set to 1 to write as a 1 bit image
     #
     # *strip* : Bool - Strip all metadata from image
     #
@@ -6905,9 +6794,9 @@ module Vips
     #
     # *format* : Enums::ForeignPpmFormat - Format to save in
     #
-    # *ascii* : Bool - save as ascii
+    # *ascii* : Bool - Save as ascii
     #
-    # *bitdepth* : Int32 - set to 1 to write as a 1 bit image
+    # *bitdepth* : Int32 - Set to 1 to write as a 1 bit image
     #
     # *strip* : Bool - Strip all metadata from image
     #
@@ -7108,7 +6997,7 @@ module Vips
       pngload_source(source, **kwargs)
     end
 
-    # Save image to png file
+    # Save image to file as png
     #
     # ```
     # in.pngsave(filename, {compression: Int32, interlace: Bool, profile: String, filter: Enums::ForeignPngFilter, palette: Bool, q: Int32, dither: Float64, bitdepth: Int32, effort: Int32, strip: Bool, background: Array(Float64), page_height: Int32})
@@ -7130,7 +7019,7 @@ module Vips
     #
     # *profile* : String - ICC profile to embed
     #
-    # *filter* : Enums::ForeignPngFilter - libpng row filter flag(s)
+    # *filter* : Enums::ForeignPngFilter - libspng row filter flag(s)
     #
     # *palette* : Bool - Quantise to 8bpp palette
     #
@@ -7153,7 +7042,7 @@ module Vips
       self.call("pngsave", options, filename)
     end
 
-    # Save image to png buffer
+    # Save image to buffer as png
     #
     # ```
     # # buffer = in.pngsave_buffer({compression: Int32, interlace: Bool, profile: String, filter: Enums::ForeignPngFilter, palette: Bool, q: Int32, dither: Float64, bitdepth: Int32, effort: Int32, strip: Bool, background: Array(Float64), page_height: Int32})
@@ -7170,7 +7059,7 @@ module Vips
     #
     # *profile* : String - ICC profile to embed
     #
-    # *filter* : Enums::ForeignPngFilter - libpng row filter flag(s)
+    # *filter* : Enums::ForeignPngFilter - libspng row filter flag(s)
     #
     # *palette* : Bool - Quantise to 8bpp palette
     #
@@ -7221,7 +7110,7 @@ module Vips
     #
     # *profile* : String - ICC profile to embed
     #
-    # *filter* : Enums::ForeignPngFilter - libpng row filter flag(s)
+    # *filter* : Enums::ForeignPngFilter - libspng row filter flag(s)
     #
     # *palette* : Bool - Quantise to 8bpp palette
     #
@@ -7264,7 +7153,7 @@ module Vips
     #
     # *profile* : String - ICC profile to embed
     #
-    # *filter* : Enums::ForeignPngFilter - libpng row filter flag(s)
+    # *filter* : Enums::ForeignPngFilter - libspng row filter flag(s)
     #
     # *palette* : Bool - Quantise to 8bpp palette
     #
@@ -7284,6 +7173,69 @@ module Vips
     def pngsave_stream(stream : IO, **kwargs)
       target = TargetStream.new_from_stream(stream)
       pngsave_target(target, **kwargs)
+    end
+
+    # Save image in pnm format
+    #
+    # ```
+    # in.pnmsave_target(target, {format: Enums::ForeignPpmFormat, ascii: Bool, bitdepth: Int32, strip: Bool, background: Array(Float64), page_height: Int32})
+    #
+    # ```
+    #
+    #
+    # Input Parameters
+    #
+    # **Required**
+    #
+    # *target* : Target - Target to save to
+    #
+    # _Optionals_
+    #
+    # *format* : Enums::ForeignPpmFormat - Format to save in
+    #
+    # *ascii* : Bool - Save as ascii
+    #
+    # *bitdepth* : Int32 - Set to 1 to write as a 1 bit image
+    #
+    # *strip* : Bool - Strip all metadata from image
+    #
+    # *background* : Array(Float64) - Background value
+    #
+    # *page_height* : Int32 - Set page height for multipage save
+    #
+    def pnmsave_target(target : Target, **kwargs)
+      options = Optional.new(**kwargs)
+      self.call("pnmsave_target", options, target)
+    end
+
+    # Save image in pnm format
+    #
+    # ```
+    # in.pnmsave_stream(stream, {format: Enums::ForeignPpmFormat, ascii: Bool, bitdepth: Int32, strip: Bool, background: Array(Float64), page_height: Int32})
+    #
+    # ```
+    #
+    # **Input Parameters**
+    #
+    # _Required_
+    #
+    # *stream* : IO - Stream to save to
+    # _Optionals_
+    #
+    # *format* : Enums::ForeignPpmFormat - Format to save in
+    #
+    # *ascii* : Bool - Save as ascii
+    #
+    # *bitdepth* : Int32 - Set to 1 to write as a 1 bit image
+    #
+    # *strip* : Bool - Strip all metadata from image
+    #
+    # *background* : Array(Float64) - Background value
+    #
+    # *page_height* : Int32 - Set page height for multipage save
+    def pnmsave_stream(stream : IO, **kwargs)
+      target = TargetStream.new_from_stream(stream)
+      pnmsave_target(target, **kwargs)
     end
 
     # Load ppm from file
@@ -7420,9 +7372,9 @@ module Vips
     #
     # *format* : Enums::ForeignPpmFormat - Format to save in
     #
-    # *ascii* : Bool - save as ascii
+    # *ascii* : Bool - Save as ascii
     #
-    # *bitdepth* : Int32 - set to 1 to write as a 1 bit image
+    # *bitdepth* : Int32 - Set to 1 to write as a 1 bit image
     #
     # *strip* : Bool - Strip all metadata from image
     #
@@ -7453,9 +7405,9 @@ module Vips
     #
     # *format* : Enums::ForeignPpmFormat - Format to save in
     #
-    # *ascii* : Bool - save as ascii
+    # *ascii* : Bool - Save as ascii
     #
-    # *bitdepth* : Int32 - set to 1 to write as a 1 bit image
+    # *bitdepth* : Int32 - Set to 1 to write as a 1 bit image
     #
     # *strip* : Bool - Strip all metadata from image
     #
@@ -7484,9 +7436,9 @@ module Vips
     #
     # *format* : Enums::ForeignPpmFormat - Format to save in
     #
-    # *ascii* : Bool - save as ascii
+    # *ascii* : Bool - Save as ascii
     #
-    # *bitdepth* : Int32 - set to 1 to write as a 1 bit image
+    # *bitdepth* : Int32 - Set to 1 to write as a 1 bit image
     #
     # *strip* : Bool - Strip all metadata from image
     #
@@ -8036,7 +7988,7 @@ module Vips
     #
     # **Required**
     #
-    # *m* : Image - matrix of coefficients
+    # *m* : Image - Matrix of coefficients
     #
     #
     # **Returns**
@@ -8050,7 +8002,7 @@ module Vips
     # Reduce an image
     #
     # ```
-    # # out_ = in.reduce(hshrink, vshrink, {kernel: Enums::Kernel})
+    # # out_ = in.reduce(hshrink, vshrink, {kernel: Enums::Kernel, gap: Float64})
     # ```
     #
     #
@@ -8065,6 +8017,8 @@ module Vips
     # _Optionals_
     #
     # *kernel* : Enums::Kernel - Resampling kernel
+    #
+    # *gap* : Float64 - Reducing gap
     #
     #
     # **Returns**
@@ -8080,7 +8034,7 @@ module Vips
     # Shrink an image horizontally
     #
     # ```
-    # # out_ = in.reduceh(hshrink, {kernel: Enums::Kernel})
+    # # out_ = in.reduceh(hshrink, {kernel: Enums::Kernel, gap: Float64})
     # ```
     #
     #
@@ -8093,6 +8047,8 @@ module Vips
     # _Optionals_
     #
     # *kernel* : Enums::Kernel - Resampling kernel
+    #
+    # *gap* : Float64 - Reducing gap
     #
     #
     # **Returns**
@@ -8108,7 +8064,7 @@ module Vips
     # Shrink an image vertically
     #
     # ```
-    # # out_ = in.reducev(vshrink, {kernel: Enums::Kernel})
+    # # out_ = in.reducev(vshrink, {kernel: Enums::Kernel, gap: Float64})
     # ```
     #
     #
@@ -8121,6 +8077,8 @@ module Vips
     # _Optionals_
     #
     # *kernel* : Enums::Kernel - Resampling kernel
+    #
+    # *gap* : Float64 - Reducing gap
     #
     #
     # **Returns**
@@ -8146,7 +8104,7 @@ module Vips
     #
     # *right* : Image - Right-hand image argument
     #
-    # *relational* : Enums::OperationRelational - relational to perform
+    # *relational* : Enums::OperationRelational - Relational to perform
     #
     #
     # **Returns**
@@ -8168,7 +8126,7 @@ module Vips
     #
     # **Required**
     #
-    # *relational* : Enums::OperationRelational - relational to perform
+    # *relational* : Enums::OperationRelational - Relational to perform
     #
     # *c* : Array(Float64) - Array of constants
     #
@@ -8252,7 +8210,7 @@ module Vips
     # Resize an image
     #
     # ```
-    # # out_ = in.resize(scale, {kernel: Enums::Kernel, vscale: Float64})
+    # # out_ = in.resize(scale, {kernel: Enums::Kernel, gap: Float64, vscale: Float64})
     # ```
     #
     #
@@ -8265,6 +8223,8 @@ module Vips
     # _Optionals_
     #
     # *kernel* : Enums::Kernel - Resampling kernel
+    #
+    # *gap* : Float64 - Reducing gap
     #
     # *vscale* : Float64 - Vertical scale image by this factor
     #
@@ -8374,7 +8334,7 @@ module Vips
     #
     # **Required**
     #
-    # *round* : Enums::OperationRound - rounding operation to perform
+    # *round* : Enums::OperationRound - Rounding operation to perform
     #
     #
     # **Returns**
@@ -8509,7 +8469,7 @@ module Vips
     # Shrink an image
     #
     # ```
-    # # out_ = in.shrink(hshrink, vshrink)
+    # # out_ = in.shrink(hshrink, vshrink, {ceil: Bool})
     # ```
     #
     #
@@ -8521,19 +8481,25 @@ module Vips
     #
     # *vshrink* : Float64 - Vertical shrink factor
     #
+    # _Optionals_
+    #
+    # *ceil* : Bool - Round-up output dimensions
+    #
     #
     # **Returns**
     #
     # Output image
     #
-    def shrink(hshrink : Float64, vshrink : Float64)
-      self.call("shrink", hshrink, vshrink).as(Type).as_image
+    def shrink(hshrink : Float64, vshrink : Float64, **kwargs)
+      options = Optional.new(**kwargs)
+
+      self.call("shrink", options, hshrink, vshrink).as(Type).as_image
     end
 
     # Shrink an image horizontally
     #
     # ```
-    # # out_ = in.shrinkh(hshrink)
+    # # out_ = in.shrinkh(hshrink, {ceil: Bool})
     # ```
     #
     #
@@ -8543,19 +8509,25 @@ module Vips
     #
     # *hshrink* : Int32 - Horizontal shrink factor
     #
+    # _Optionals_
+    #
+    # *ceil* : Bool - Round-up output dimensions
+    #
     #
     # **Returns**
     #
     # Output image
     #
-    def shrinkh(hshrink : Int32)
-      self.call("shrinkh", hshrink).as(Type).as_image
+    def shrinkh(hshrink : Int32, **kwargs)
+      options = Optional.new(**kwargs)
+
+      self.call("shrinkh", options, hshrink).as(Type).as_image
     end
 
     # Shrink an image vertically
     #
     # ```
-    # # out_ = in.shrinkv(vshrink)
+    # # out_ = in.shrinkv(vshrink, {ceil: Bool})
     # ```
     #
     #
@@ -8565,13 +8537,19 @@ module Vips
     #
     # *vshrink* : Int32 - Vertical shrink factor
     #
+    # _Optionals_
+    #
+    # *ceil* : Bool - Round-up output dimensions
+    #
     #
     # **Returns**
     #
     # Output image
     #
-    def shrinkv(vshrink : Int32)
-      self.call("shrinkv", vshrink).as(Type).as_image
+    def shrinkv(vshrink : Int32, **kwargs)
+      options = Optional.new(**kwargs)
+
+      self.call("shrinkv", options, vshrink).as(Type).as_image
     end
 
     # Unit vector of pixel
@@ -8664,7 +8642,7 @@ module Vips
     # Extract an area from an image
     #
     # ```
-    # # out_ = input.smartcrop(width, height, {interesting: Enums::Interesting})
+    # # out_, attention_x, attention_y = input.smartcrop(width, height, {interesting: Enums::Interesting})
     # ```
     #
     #
@@ -8685,10 +8663,25 @@ module Vips
     #
     # Output image
     #
+    # _Optionals_
+    #
+    # *attention_x* : Int32? - Horizontal position of attention centre
+    #
+    # *attention_y* : Int32? - Vertical position of attention centre
+    #
     def smartcrop(width : Int32, height : Int32, **kwargs)
       options = Optional.new(**kwargs)
+      options["attention_x"] = true
+      options["attention_y"] = true
 
-      self.call("smartcrop", options, width, height).as(Type).as_image
+      results = self.call("smartcrop", options, width, height).as(Array(Type))
+      final_result = results.first.as(Type).as_image
+
+      opts = results[1]?.try &.as_h
+
+      attention_x = ((o = opts) && (val = o["attention_x"]?)) ? val.as_i32 : nil
+      attention_y = ((o = opts) && (val = o["attention_y"]?)) ? val.as_i32 : nil
+      {final_result, attention_x, attention_y}
     end
 
     # Sobel edge detector
@@ -9142,65 +9135,10 @@ module Vips
       optsOperation.call("system", options, cmd_format).as(Type).as_h
     end
 
-    # Make a text image
-    #
-    # ```
-    # # out_, autofit_dpi = Vips::Image.text(text, {font: String, width: Int32, height: Int32, align: Enums::Align, rgba: Bool, dpi: Int32, justify: Bool, spacing: Int32, fontfile: String})
-    # ```
-    #
-    #
-    # Input Parameters
-    #
-    # **Required**
-    #
-    # *text* : String - Text to render
-    #
-    # _Optionals_
-    #
-    # *font* : String - Font to render with
-    #
-    # *width* : Int32 - Maximum image width in pixels
-    #
-    # *height* : Int32 - Maximum image height in pixels
-    #
-    # *align* : Enums::Align - Align on the low, centre or high edge
-    #
-    # *rgba* : Bool - Enable RGBA output
-    #
-    # *dpi* : Int32 - DPI to render at
-    #
-    # *justify* : Bool - Justify lines
-    #
-    # *spacing* : Int32 - Line spacing
-    #
-    # *fontfile* : String - Load this font file
-    #
-    #
-    # **Returns**
-    #
-    # Output image
-    #
-    # _Optionals_
-    #
-    # *autofit_dpi* : Int32? - DPI selected by autofit
-    #
-    def self.text(text : String, **kwargs)
-      options = Optional.new(**kwargs)
-      options["autofit_dpi"] = true
-
-      results = Operation.call("text", options, text).as(Array(Type))
-      final_result = results.first.as(Type).as_image
-
-      opts = results[1]?.try &.as_h
-
-      autofit_dpi = ((o = opts) && (val = o["autofit_dpi"]?)) ? val.as_i32 : nil
-      {final_result, autofit_dpi}
-    end
-
     # Generate thumbnail from file
     #
     # ```
-    # # out_ = Vips::Image.thumbnail(filename, width, {height: Int32, size: Enums::Size, no_rotate: Bool, crop: Enums::Interesting, linear: Bool, import_profile: String, export_profile: String, intent: Enums::Intent})
+    # # out_ = Vips::Image.thumbnail(filename, width, {height: Int32, size: Enums::Size, no_rotate: Bool, crop: Enums::Interesting, linear: Bool, import_profile: String, export_profile: String, intent: Enums::Intent, fail_on: Enums::FailOn})
     # ```
     #
     #
@@ -9230,6 +9168,8 @@ module Vips
     #
     # *intent* : Enums::Intent - Rendering intent
     #
+    # *fail_on* : Enums::FailOn - Error level to fail on
+    #
     #
     # **Returns**
     #
@@ -9244,7 +9184,7 @@ module Vips
     # Generate thumbnail from buffer
     #
     # ```
-    # # out_ = Vips::Image.thumbnail_buffer(buffer, width, {option_string: String, height: Int32, size: Enums::Size, no_rotate: Bool, crop: Enums::Interesting, linear: Bool, import_profile: String, export_profile: String, intent: Enums::Intent})
+    # # out_ = Vips::Image.thumbnail_buffer(buffer, width, {option_string: String, height: Int32, size: Enums::Size, no_rotate: Bool, crop: Enums::Interesting, linear: Bool, import_profile: String, export_profile: String, intent: Enums::Intent, fail_on: Enums::FailOn})
     # ```
     #
     #
@@ -9276,6 +9216,8 @@ module Vips
     #
     # *intent* : Enums::Intent - Rendering intent
     #
+    # *fail_on* : Enums::FailOn - Error level to fail on
+    #
     #
     # **Returns**
     #
@@ -9290,7 +9232,7 @@ module Vips
     # Generate thumbnail from image
     #
     # ```
-    # # out_ = in.thumbnail_image(width, {height: Int32, size: Enums::Size, no_rotate: Bool, crop: Enums::Interesting, linear: Bool, import_profile: String, export_profile: String, intent: Enums::Intent})
+    # # out_ = in.thumbnail_image(width, {height: Int32, size: Enums::Size, no_rotate: Bool, crop: Enums::Interesting, linear: Bool, import_profile: String, export_profile: String, intent: Enums::Intent, fail_on: Enums::FailOn})
     # ```
     #
     #
@@ -9318,6 +9260,8 @@ module Vips
     #
     # *intent* : Enums::Intent - Rendering intent
     #
+    # *fail_on* : Enums::FailOn - Error level to fail on
+    #
     #
     # **Returns**
     #
@@ -9332,7 +9276,7 @@ module Vips
     # Generate thumbnail from source
     #
     # ```
-    # # out_ = Vips::Image.thumbnail_source(source, width, {option_string: String, height: Int32, size: Enums::Size, no_rotate: Bool, crop: Enums::Interesting, linear: Bool, import_profile: String, export_profile: String, intent: Enums::Intent})
+    # # out_ = Vips::Image.thumbnail_source(source, width, {option_string: String, height: Int32, size: Enums::Size, no_rotate: Bool, crop: Enums::Interesting, linear: Bool, import_profile: String, export_profile: String, intent: Enums::Intent, fail_on: Enums::FailOn})
     # ```
     #
     #
@@ -9364,6 +9308,8 @@ module Vips
     #
     # *intent* : Enums::Intent - Rendering intent
     #
+    # *fail_on* : Enums::FailOn - Error level to fail on
+    #
     #
     # **Returns**
     #
@@ -9378,7 +9324,7 @@ module Vips
     # Generate thumbnail from stream
     #
     # ```
-    # # out_ = Vips::Image.thumbnail_stream(stream, width, {option_string: String, height: Int32, size: Enums::Size, no_rotate: Bool, crop: Enums::Interesting, linear: Bool, import_profile: String, export_profile: String, intent: Enums::Intent})
+    # # out_ = Vips::Image.thumbnail_stream(stream, width, {option_string: String, height: Int32, size: Enums::Size, no_rotate: Bool, crop: Enums::Interesting, linear: Bool, import_profile: String, export_profile: String, intent: Enums::Intent, fail_on: Enums::FailOn})
     # ```
     #
     # **Input Parameters**
@@ -9408,6 +9354,8 @@ module Vips
     #
     # *intent* : Enums::Intent - Rendering intent
     #
+    # *fail_on* : Enums::FailOn - Error level to fail on
+    #
     # **Returns**
     #
     # *out* : Image - Output image
@@ -9432,11 +9380,11 @@ module Vips
     #
     # _Optionals_
     #
-    # *page* : Int32 - Load this page from the image
+    # *page* : Int32 - First page to load
     #
-    # *subifd* : Int32 - Select subifd index
+    # *subifd* : Int32 - Subifd index
     #
-    # *n* : Int32 - Load this many pages
+    # *n* : Int32 - Number of pages to load, -1 for all
     #
     # *autorotate* : Bool - Rotate image using orientation tag
     #
@@ -9483,11 +9431,11 @@ module Vips
     #
     # _Optionals_
     #
-    # *page* : Int32 - Load this page from the image
+    # *page* : Int32 - First page to load
     #
-    # *subifd* : Int32 - Select subifd index
+    # *subifd* : Int32 - Subifd index
     #
-    # *n* : Int32 - Load this many pages
+    # *n* : Int32 - Number of pages to load, -1 for all
     #
     # *autorotate* : Bool - Rotate image using orientation tag
     #
@@ -9534,11 +9482,11 @@ module Vips
     #
     # _Optionals_
     #
-    # *page* : Int32 - Load this page from the image
+    # *page* : Int32 - First page to load
     #
-    # *subifd* : Int32 - Select subifd index
+    # *subifd* : Int32 - Subifd index
     #
-    # *n* : Int32 - Load this many pages
+    # *n* : Int32 - Number of pages to load, -1 for all
     #
     # *autorotate* : Bool - Rotate image using orientation tag
     #
@@ -9583,11 +9531,11 @@ module Vips
     # *stream* : IO - Stream to load from
     # _Optionals_
     #
-    # *page* : Int32 - Load this page from the image
+    # *page* : Int32 - First page to load
     #
-    # *subifd* : Int32 - Select subifd index
+    # *subifd* : Int32 - Subifd index
     #
-    # *n* : Int32 - Load this many pages
+    # *n* : Int32 - Number of pages to load, -1 for all
     #
     # *autorotate* : Bool - Rotate image using orientation tag
     #
@@ -9745,6 +9693,141 @@ module Vips
       options = Optional.new(**kwargs)
 
       self.call("tiffsave_buffer", options).as(Type).as_bytes
+    end
+
+    # Save image to tiff target
+    #
+    # ```
+    # in.tiffsave_target(target, {compression: Enums::ForeignTiffCompression, q: Int32, predictor: Enums::ForeignTiffPredictor, profile: String, tile: Bool, tile_width: Int32, tile_height: Int32, pyramid: Bool, miniswhite: Bool, bitdepth: Int32, resunit: Enums::ForeignTiffResunit, xres: Float64, yres: Float64, bigtiff: Bool, properties: Bool, region_shrink: Enums::RegionShrink, level: Int32, lossless: Bool, depth: Enums::ForeignDzDepth, subifd: Bool, premultiply: Bool, strip: Bool, background: Array(Float64), page_height: Int32})
+    #
+    # ```
+    #
+    #
+    # Input Parameters
+    #
+    # **Required**
+    #
+    # *target* : Target - Target to save to
+    #
+    # _Optionals_
+    #
+    # *compression* : Enums::ForeignTiffCompression - Compression for this file
+    #
+    # *q* : Int32 - Q factor
+    #
+    # *predictor* : Enums::ForeignTiffPredictor - Compression prediction
+    #
+    # *profile* : String - ICC profile to embed
+    #
+    # *tile* : Bool - Write a tiled tiff
+    #
+    # *tile_width* : Int32 - Tile width in pixels
+    #
+    # *tile_height* : Int32 - Tile height in pixels
+    #
+    # *pyramid* : Bool - Write a pyramidal tiff
+    #
+    # *miniswhite* : Bool - Use 0 for white in 1-bit images
+    #
+    # *bitdepth* : Int32 - Write as a 1, 2, 4 or 8 bit image
+    #
+    # *resunit* : Enums::ForeignTiffResunit - Resolution unit
+    #
+    # *xres* : Float64 - Horizontal resolution in pixels/mm
+    #
+    # *yres* : Float64 - Vertical resolution in pixels/mm
+    #
+    # *bigtiff* : Bool - Write a bigtiff image
+    #
+    # *properties* : Bool - Write a properties document to IMAGEDESCRIPTION
+    #
+    # *region_shrink* : Enums::RegionShrink - Method to shrink regions
+    #
+    # *level* : Int32 - ZSTD compression level
+    #
+    # *lossless* : Bool - Enable WEBP lossless mode
+    #
+    # *depth* : Enums::ForeignDzDepth - Pyramid depth
+    #
+    # *subifd* : Bool - Save pyr layers as sub-IFDs
+    #
+    # *premultiply* : Bool - Save with premultiplied alpha
+    #
+    # *strip* : Bool - Strip all metadata from image
+    #
+    # *background* : Array(Float64) - Background value
+    #
+    # *page_height* : Int32 - Set page height for multipage save
+    #
+    def tiffsave_target(target : Target, **kwargs)
+      options = Optional.new(**kwargs)
+      self.call("tiffsave_target", options, target)
+    end
+
+    # Save image to tiff stream
+    #
+    # ```
+    # in.tiffsave_stream(stream, {compression: Enums::ForeignTiffCompression, q: Int32, predictor: Enums::ForeignTiffPredictor, profile: String, tile: Bool, tile_width: Int32, tile_height: Int32, pyramid: Bool, miniswhite: Bool, bitdepth: Int32, resunit: Enums::ForeignTiffResunit, xres: Float64, yres: Float64, bigtiff: Bool, properties: Bool, region_shrink: Enums::RegionShrink, level: Int32, lossless: Bool, depth: Enums::ForeignDzDepth, subifd: Bool, premultiply: Bool, strip: Bool, background: Array(Float64), page_height: Int32})
+    #
+    # ```
+    #
+    # **Input Parameters**
+    #
+    # _Required_
+    #
+    # *stream* : IO - Stream to save to
+    # _Optionals_
+    #
+    # *compression* : Enums::ForeignTiffCompression - Compression for this file
+    #
+    # *q* : Int32 - Q factor
+    #
+    # *predictor* : Enums::ForeignTiffPredictor - Compression prediction
+    #
+    # *profile* : String - ICC profile to embed
+    #
+    # *tile* : Bool - Write a tiled tiff
+    #
+    # *tile_width* : Int32 - Tile width in pixels
+    #
+    # *tile_height* : Int32 - Tile height in pixels
+    #
+    # *pyramid* : Bool - Write a pyramidal tiff
+    #
+    # *miniswhite* : Bool - Use 0 for white in 1-bit images
+    #
+    # *bitdepth* : Int32 - Write as a 1, 2, 4 or 8 bit image
+    #
+    # *resunit* : Enums::ForeignTiffResunit - Resolution unit
+    #
+    # *xres* : Float64 - Horizontal resolution in pixels/mm
+    #
+    # *yres* : Float64 - Vertical resolution in pixels/mm
+    #
+    # *bigtiff* : Bool - Write a bigtiff image
+    #
+    # *properties* : Bool - Write a properties document to IMAGEDESCRIPTION
+    #
+    # *region_shrink* : Enums::RegionShrink - Method to shrink regions
+    #
+    # *level* : Int32 - ZSTD compression level
+    #
+    # *lossless* : Bool - Enable WEBP lossless mode
+    #
+    # *depth* : Enums::ForeignDzDepth - Pyramid depth
+    #
+    # *subifd* : Bool - Save pyr layers as sub-IFDs
+    #
+    # *premultiply* : Bool - Save with premultiplied alpha
+    #
+    # *strip* : Bool - Strip all metadata from image
+    #
+    # *background* : Array(Float64) - Background value
+    #
+    # *page_height* : Int32 - Set page height for multipage save
+    def tiffsave_stream(stream : IO, **kwargs)
+      target = TargetStream.new_from_stream(stream)
+      tiffsave_target(target, **kwargs)
     end
 
     # Cache an image as a set of tiles
@@ -10082,11 +10165,11 @@ module Vips
     #
     # _Optionals_
     #
-    # *page* : Int32 - Load this page from the file
+    # *page* : Int32 - First page to load
     #
-    # *n* : Int32 - Load this many pages
+    # *n* : Int32 - Number of pages to load, -1 for all
     #
-    # *scale* : Float64 - Scale factor on load
+    # *scale* : Float64 - Factor to scale by
     #
     # *memory* : Bool - Force open via memory
     #
@@ -10131,11 +10214,11 @@ module Vips
     #
     # _Optionals_
     #
-    # *page* : Int32 - Load this page from the file
+    # *page* : Int32 - First page to load
     #
-    # *n* : Int32 - Load this many pages
+    # *n* : Int32 - Number of pages to load, -1 for all
     #
-    # *scale* : Float64 - Scale factor on load
+    # *scale* : Float64 - Factor to scale by
     #
     # *memory* : Bool - Force open via memory
     #
@@ -10180,11 +10263,11 @@ module Vips
     #
     # _Optionals_
     #
-    # *page* : Int32 - Load this page from the file
+    # *page* : Int32 - First page to load
     #
-    # *n* : Int32 - Load this many pages
+    # *n* : Int32 - Number of pages to load, -1 for all
     #
-    # *scale* : Float64 - Scale factor on load
+    # *scale* : Float64 - Factor to scale by
     #
     # *memory* : Bool - Force open via memory
     #
@@ -10227,11 +10310,11 @@ module Vips
     # *stream* : IO - Stream to load from
     # _Optionals_
     #
-    # *page* : Int32 - Load this page from the file
+    # *page* : Int32 - First page to load
     #
-    # *n* : Int32 - Load this many pages
+    # *n* : Int32 - Number of pages to load, -1 for all
     #
-    # *scale* : Float64 - Scale factor on load
+    # *scale* : Float64 - Factor to scale by
     #
     # *memory* : Bool - Force open via memory
     #
@@ -10250,10 +10333,10 @@ module Vips
       webpload_source(source, **kwargs)
     end
 
-    # Save image to webp file
+    # Save as webp
     #
     # ```
-    # in.webpsave(filename, {q: Int32, lossless: Bool, preset: Enums::ForeignWebpPreset, smart_subsample: Bool, near_lossless: Bool, alpha_q: Int32, min_size: Bool, kmin: Int32, kmax: Int32, effort: Int32, profile: String, strip: Bool, background: Array(Float64), page_height: Int32})
+    # in.webpsave(filename, {q: Int32, lossless: Bool, preset: Enums::ForeignWebpPreset, smart_subsample: Bool, near_lossless: Bool, alpha_q: Int32, min_size: Bool, kmin: Int32, kmax: Int32, effort: Int32, profile: String, mixed: Bool, strip: Bool, background: Array(Float64), page_height: Int32})
     #
     # ```
     #
@@ -10268,7 +10351,7 @@ module Vips
     #
     # *q* : Int32 - Q factor
     #
-    # *lossless* : Bool - enable lossless compression
+    # *lossless* : Bool - Enable lossless compression
     #
     # *preset* : Enums::ForeignWebpPreset - Preset for lossy compression
     #
@@ -10278,7 +10361,7 @@ module Vips
     #
     # *alpha_q* : Int32 - Change alpha plane fidelity for lossy compression
     #
-    # *min_size* : Bool - Optimise for minium size
+    # *min_size* : Bool - Optimise for minimum size
     #
     # *kmin* : Int32 - Minimum number of frames between key frames
     #
@@ -10287,6 +10370,8 @@ module Vips
     # *effort* : Int32 - Level of CPU effort to reduce file size
     #
     # *profile* : String - ICC profile to embed
+    #
+    # *mixed* : Bool - Allow mixed encoding (might reduce file size)
     #
     # *strip* : Bool - Strip all metadata from image
     #
@@ -10299,10 +10384,10 @@ module Vips
       self.call("webpsave", options, filename)
     end
 
-    # Save image to webp buffer
+    # Save as webp
     #
     # ```
-    # # buffer = in.webpsave_buffer({q: Int32, lossless: Bool, preset: Enums::ForeignWebpPreset, smart_subsample: Bool, near_lossless: Bool, alpha_q: Int32, min_size: Bool, kmin: Int32, kmax: Int32, effort: Int32, profile: String, strip: Bool, background: Array(Float64), page_height: Int32})
+    # # buffer = in.webpsave_buffer({q: Int32, lossless: Bool, preset: Enums::ForeignWebpPreset, smart_subsample: Bool, near_lossless: Bool, alpha_q: Int32, min_size: Bool, kmin: Int32, kmax: Int32, effort: Int32, profile: String, mixed: Bool, strip: Bool, background: Array(Float64), page_height: Int32})
     # ```
     #
     #
@@ -10312,7 +10397,7 @@ module Vips
     #
     # *q* : Int32 - Q factor
     #
-    # *lossless* : Bool - enable lossless compression
+    # *lossless* : Bool - Enable lossless compression
     #
     # *preset* : Enums::ForeignWebpPreset - Preset for lossy compression
     #
@@ -10322,7 +10407,7 @@ module Vips
     #
     # *alpha_q* : Int32 - Change alpha plane fidelity for lossy compression
     #
-    # *min_size* : Bool - Optimise for minium size
+    # *min_size* : Bool - Optimise for minimum size
     #
     # *kmin* : Int32 - Minimum number of frames between key frames
     #
@@ -10331,6 +10416,8 @@ module Vips
     # *effort* : Int32 - Level of CPU effort to reduce file size
     #
     # *profile* : String - ICC profile to embed
+    #
+    # *mixed* : Bool - Allow mixed encoding (might reduce file size)
     #
     # *strip* : Bool - Strip all metadata from image
     #
@@ -10349,10 +10436,57 @@ module Vips
       self.call("webpsave_buffer", options).as(Type).as_bytes
     end
 
-    # Save image to webp target
+    # Save image to webp mime
     #
     # ```
-    # in.webpsave_target(target, {q: Int32, lossless: Bool, preset: Enums::ForeignWebpPreset, smart_subsample: Bool, near_lossless: Bool, alpha_q: Int32, min_size: Bool, kmin: Int32, kmax: Int32, effort: Int32, profile: String, strip: Bool, background: Array(Float64), page_height: Int32})
+    # in.webpsave_mime({q: Int32, lossless: Bool, preset: Enums::ForeignWebpPreset, smart_subsample: Bool, near_lossless: Bool, alpha_q: Int32, min_size: Bool, kmin: Int32, kmax: Int32, effort: Int32, profile: String, mixed: Bool, strip: Bool, background: Array(Float64), page_height: Int32})
+    #
+    # ```
+    #
+    #
+    # Input Parameters
+    #
+    # _Optionals_
+    #
+    # *q* : Int32 - Q factor
+    #
+    # *lossless* : Bool - Enable lossless compression
+    #
+    # *preset* : Enums::ForeignWebpPreset - Preset for lossy compression
+    #
+    # *smart_subsample* : Bool - Enable high quality chroma subsampling
+    #
+    # *near_lossless* : Bool - Enable preprocessing in lossless mode (uses Q)
+    #
+    # *alpha_q* : Int32 - Change alpha plane fidelity for lossy compression
+    #
+    # *min_size* : Bool - Optimise for minimum size
+    #
+    # *kmin* : Int32 - Minimum number of frames between key frames
+    #
+    # *kmax* : Int32 - Maximum number of frames between key frames
+    #
+    # *effort* : Int32 - Level of CPU effort to reduce file size
+    #
+    # *profile* : String - ICC profile to embed
+    #
+    # *mixed* : Bool - Allow mixed encoding (might reduce file size)
+    #
+    # *strip* : Bool - Strip all metadata from image
+    #
+    # *background* : Array(Float64) - Background value
+    #
+    # *page_height* : Int32 - Set page height for multipage save
+    #
+    def webpsave_mime(**kwargs)
+      options = Optional.new(**kwargs)
+      self.call("webpsave_mime", options)
+    end
+
+    # Save as webp
+    #
+    # ```
+    # in.webpsave_target(target, {q: Int32, lossless: Bool, preset: Enums::ForeignWebpPreset, smart_subsample: Bool, near_lossless: Bool, alpha_q: Int32, min_size: Bool, kmin: Int32, kmax: Int32, effort: Int32, profile: String, mixed: Bool, strip: Bool, background: Array(Float64), page_height: Int32})
     #
     # ```
     #
@@ -10367,7 +10501,7 @@ module Vips
     #
     # *q* : Int32 - Q factor
     #
-    # *lossless* : Bool - enable lossless compression
+    # *lossless* : Bool - Enable lossless compression
     #
     # *preset* : Enums::ForeignWebpPreset - Preset for lossy compression
     #
@@ -10377,7 +10511,7 @@ module Vips
     #
     # *alpha_q* : Int32 - Change alpha plane fidelity for lossy compression
     #
-    # *min_size* : Bool - Optimise for minium size
+    # *min_size* : Bool - Optimise for minimum size
     #
     # *kmin* : Int32 - Minimum number of frames between key frames
     #
@@ -10386,6 +10520,8 @@ module Vips
     # *effort* : Int32 - Level of CPU effort to reduce file size
     #
     # *profile* : String - ICC profile to embed
+    #
+    # *mixed* : Bool - Allow mixed encoding (might reduce file size)
     #
     # *strip* : Bool - Strip all metadata from image
     #
@@ -10398,10 +10534,10 @@ module Vips
       self.call("webpsave_target", options, target)
     end
 
-    # Save image to webp stream
+    # Save as webp
     #
     # ```
-    # in.webpsave_stream(stream, {q: Int32, lossless: Bool, preset: Enums::ForeignWebpPreset, smart_subsample: Bool, near_lossless: Bool, alpha_q: Int32, min_size: Bool, kmin: Int32, kmax: Int32, effort: Int32, profile: String, strip: Bool, background: Array(Float64), page_height: Int32})
+    # in.webpsave_stream(stream, {q: Int32, lossless: Bool, preset: Enums::ForeignWebpPreset, smart_subsample: Bool, near_lossless: Bool, alpha_q: Int32, min_size: Bool, kmin: Int32, kmax: Int32, effort: Int32, profile: String, mixed: Bool, strip: Bool, background: Array(Float64), page_height: Int32})
     #
     # ```
     #
@@ -10414,7 +10550,7 @@ module Vips
     #
     # *q* : Int32 - Q factor
     #
-    # *lossless* : Bool - enable lossless compression
+    # *lossless* : Bool - Enable lossless compression
     #
     # *preset* : Enums::ForeignWebpPreset - Preset for lossy compression
     #
@@ -10424,7 +10560,7 @@ module Vips
     #
     # *alpha_q* : Int32 - Change alpha plane fidelity for lossy compression
     #
-    # *min_size* : Bool - Optimise for minium size
+    # *min_size* : Bool - Optimise for minimum size
     #
     # *kmin* : Int32 - Minimum number of frames between key frames
     #
@@ -10433,6 +10569,8 @@ module Vips
     # *effort* : Int32 - Level of CPU effort to reduce file size
     #
     # *profile* : String - ICC profile to embed
+    #
+    # *mixed* : Bool - Allow mixed encoding (might reduce file size)
     #
     # *strip* : Bool - Strip all metadata from image
     #

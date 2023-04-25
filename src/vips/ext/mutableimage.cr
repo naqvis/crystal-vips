@@ -2,7 +2,7 @@
 #
 #   scripts/gen_ext.cr
 #
-# libvips version: 8.12.2
+# libvips version: 8.14.2
 #
 # DO NOT EDIT
 #
