@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Crystal Docs 1.6.2">
+<meta name="generator" content="Crystal Docs 1.7.3">
 <meta name="crystal_docs.project_version" content="main">
 <meta name="crystal_docs.project_name" content="vips">
 
@@ -478,14 +478,14 @@
   </h2>
   
     
-      <a href="https://github.com/naqvis/crystal-vips/blob/7d78acdc6da6529a238effa4bea3f0d6e224ae1e/src/vips/ext/mutableimage.cr#L13" target="_blank">
+      <a href="https://github.com/naqvis/crystal-vips/blob/2d9a985d53ce726f033816a00798baa3a6c275b3/src/vips/ext/mutableimage.cr#L13" target="_blank">
         vips/ext/mutableimage.cr
       </a>
     
     <br/>
   
     
-      <a href="https://github.com/naqvis/crystal-vips/blob/7d78acdc6da6529a238effa4bea3f0d6e224ae1e/src/vips/mutableimage.cr#L4" target="_blank">
+      <a href="https://github.com/naqvis/crystal-vips/blob/2d9a985d53ce726f033816a00798baa3a6c275b3/src/vips/mutableimage.cr#L4" target="_blank">
         vips/mutableimage.cr
       </a>
     
@@ -767,16 +767,6 @@
     <a href="../Vips/Image.html#avg-instance-method" class="tooltip">
       <span>avg</span>
     avg</a>, 
-    
-  
-    <a href="../Vips/Image.html#avifsave_stream%28stream%3AIO%2C%2A%2Akwargs%29-instance-method" class="tooltip">
-      <span>avifsave_stream(stream : IO, **kwargs)</span>
-    avifsave_stream</a>, 
-    
-  
-    <a href="../Vips/Image.html#avifsave_target%28target%3ATarget%2C%2A%2Akwargs%29-instance-method" class="tooltip">
-      <span>avifsave_target(target : Target, **kwargs)</span>
-    avifsave_target</a>, 
     
   
     <a href="../Vips/Image.html#band_exists%3F%28i%3AInt32%29-instance-method" class="tooltip">
@@ -1069,6 +1059,16 @@
     dzsave_buffer</a>, 
     
   
+    <a href="../Vips/Image.html#dzsave_stream%28stream%3AIO%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>dzsave_stream(stream : IO, **kwargs)</span>
+    dzsave_stream</a>, 
+    
+  
+    <a href="../Vips/Image.html#dzsave_target%28target%3ATarget%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>dzsave_target(target : Target, **kwargs)</span>
+    dzsave_target</a>, 
+    
+  
     <a href="../Vips/Image.html#embed%28x%3AInt32%2Cy%3AInt32%2Cwidth%3AInt32%2Cheight%3AInt32%2C%2A%2Akwargs%29-instance-method" class="tooltip">
       <span>embed(x : Int32, y : Int32, width : Int32, height : Int32, **kwargs)</span>
     embed</a>, 
@@ -1242,26 +1242,6 @@
     <a href="../Vips/Image.html#has_alpha%3F%3ABool-instance-method" class="tooltip">
       <span>has_alpha? : Bool</span>
     has_alpha?</a>, 
-    
-  
-    <a href="../Vips/Image.html#heifsave%28filename%3AString%2C%2A%2Akwargs%29-instance-method" class="tooltip">
-      <span>heifsave(filename : String, **kwargs)</span>
-    heifsave</a>, 
-    
-  
-    <a href="../Vips/Image.html#heifsave_buffer%28%2A%2Akwargs%29-instance-method" class="tooltip">
-      <span>heifsave_buffer(**kwargs)</span>
-    heifsave_buffer</a>, 
-    
-  
-    <a href="../Vips/Image.html#heifsave_stream%28stream%3AIO%2C%2A%2Akwargs%29-instance-method" class="tooltip">
-      <span>heifsave_stream(stream : IO, **kwargs)</span>
-    heifsave_stream</a>, 
-    
-  
-    <a href="../Vips/Image.html#heifsave_target%28target%3ATarget%2C%2A%2Akwargs%29-instance-method" class="tooltip">
-      <span>heifsave_target(target : Target, **kwargs)</span>
-    heifsave_target</a>, 
     
   
     <a href="../Vips/Image.html#height%3AInt32-instance-method" class="tooltip">
@@ -1564,16 +1544,6 @@
     magicksave_buffer</a>, 
     
   
-    <a href="../Vips/Image.html#magicksave_gif%28filename%3AString%2C%2A%2Akwargs%29-instance-method" class="tooltip">
-      <span>magicksave_gif(filename : String, **kwargs)</span>
-    magicksave_gif</a>, 
-    
-  
-    <a href="../Vips/Image.html#magicksave_gif_buffer%28%2A%2Akwargs%29-instance-method" class="tooltip">
-      <span>magicksave_gif_buffer(**kwargs)</span>
-    magicksave_gif_buffer</a>, 
-    
-  
     <a href="../Vips/Image.html#mapim%28index%3AImage%2C%2A%2Akwargs%29-instance-method" class="tooltip">
       <span>mapim(index : Image, **kwargs)</span>
     mapim</a>, 
@@ -1767,6 +1737,16 @@
     <a href="../Vips/Image.html#pngsave_target%28target%3ATarget%2C%2A%2Akwargs%29-instance-method" class="tooltip">
       <span>pngsave_target(target : Target, **kwargs)</span>
     pngsave_target</a>, 
+    
+  
+    <a href="../Vips/Image.html#pnmsave_stream%28stream%3AIO%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>pnmsave_stream(stream : IO, **kwargs)</span>
+    pnmsave_stream</a>, 
+    
+  
+    <a href="../Vips/Image.html#pnmsave_target%28target%3ATarget%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>pnmsave_target(target : Target, **kwargs)</span>
+    pnmsave_target</a>, 
     
   
     <a href="../Vips/Image.html#polar%3AImage-instance-method" class="tooltip">
@@ -1994,18 +1974,18 @@
     sharpen</a>, 
     
   
-    <a href="../Vips/Image.html#shrink%28hshrink%3AFloat64%2Cvshrink%3AFloat64%29-instance-method" class="tooltip">
-      <span>shrink(hshrink : Float64, vshrink : Float64)</span>
+    <a href="../Vips/Image.html#shrink%28hshrink%3AFloat64%2Cvshrink%3AFloat64%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>shrink(hshrink : Float64, vshrink : Float64, **kwargs)</span>
     shrink</a>, 
     
   
-    <a href="../Vips/Image.html#shrinkh%28hshrink%3AInt32%29-instance-method" class="tooltip">
-      <span>shrinkh(hshrink : Int32)</span>
+    <a href="../Vips/Image.html#shrinkh%28hshrink%3AInt32%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>shrinkh(hshrink : Int32, **kwargs)</span>
     shrinkh</a>, 
     
   
-    <a href="../Vips/Image.html#shrinkv%28vshrink%3AInt32%29-instance-method" class="tooltip">
-      <span>shrinkv(vshrink : Int32)</span>
+    <a href="../Vips/Image.html#shrinkv%28vshrink%3AInt32%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>shrinkv(vshrink : Int32, **kwargs)</span>
     shrinkv</a>, 
     
   
@@ -2114,6 +2094,16 @@
     tiffsave_buffer</a>, 
     
   
+    <a href="../Vips/Image.html#tiffsave_stream%28stream%3AIO%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>tiffsave_stream(stream : IO, **kwargs)</span>
+    tiffsave_stream</a>, 
+    
+  
+    <a href="../Vips/Image.html#tiffsave_target%28target%3ATarget%2C%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>tiffsave_target(target : Target, **kwargs)</span>
+    tiffsave_target</a>, 
+    
+  
     <a href="../Vips/Image.html#tilecache%28%2A%2Akwargs%29-instance-method" class="tooltip">
       <span>tilecache(**kwargs)</span>
     tilecache</a>, 
@@ -2157,6 +2147,11 @@
     <a href="../Vips/Image.html#webpsave_buffer%28%2A%2Akwargs%29-instance-method" class="tooltip">
       <span>webpsave_buffer(**kwargs)</span>
     webpsave_buffer</a>, 
+    
+  
+    <a href="../Vips/Image.html#webpsave_mime%28%2A%2Akwargs%29-instance-method" class="tooltip">
+      <span>webpsave_mime(**kwargs)</span>
+    webpsave_mime</a>, 
     
   
     <a href="../Vips/Image.html#webpsave_stream%28stream%3AIO%2C%2A%2Akwargs%29-instance-method" class="tooltip">
@@ -2753,11 +2748,6 @@
     system</a>, 
     
   
-    <a href="../Vips/Image.html#text%28text%3AString%2C%2A%2Akwargs%29-class-method" class="tooltip">
-      <span>text(text : String, **kwargs)</span>
-    text</a>, 
-    
-  
     <a href="../Vips/Image.html#thumbnail%28filename%3AString%2Cwidth%3AInt32%2C%2A%2Akwargs%29-class-method" class="tooltip">
       <span>thumbnail(filename : String, width : Int32, **kwargs)</span>
     thumbnail</a>, 
@@ -3013,7 +3003,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/naqvis/crystal-vips/blob/7d78acdc6da6529a238effa4bea3f0d6e224ae1e/src/vips/mutableimage.cr#L44" target="_blank">View source</a>]
+          [<a href="https://github.com/naqvis/crystal-vips/blob/2d9a985d53ce726f033816a00798baa3a6c275b3/src/vips/mutableimage.cr#L44" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3043,7 +3033,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/naqvis/crystal-vips/blob/7d78acdc6da6529a238effa4bea3f0d6e224ae1e/src/vips/ext/mutableimage.cr#L37" target="_blank">View source</a>]
+          [<a href="https://github.com/naqvis/crystal-vips/blob/2d9a985d53ce726f033816a00798baa3a6c275b3/src/vips/ext/mutableimage.cr#L37" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3073,7 +3063,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/naqvis/crystal-vips/blob/7d78acdc6da6529a238effa4bea3f0d6e224ae1e/src/vips/ext/mutableimage.cr#L65" target="_blank">View source</a>]
+          [<a href="https://github.com/naqvis/crystal-vips/blob/2d9a985d53ce726f033816a00798baa3a6c275b3/src/vips/ext/mutableimage.cr#L65" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3102,7 +3092,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/naqvis/crystal-vips/blob/7d78acdc6da6529a238effa4bea3f0d6e224ae1e/src/vips/ext/mutableimage.cr#L91" target="_blank">View source</a>]
+          [<a href="https://github.com/naqvis/crystal-vips/blob/2d9a985d53ce726f033816a00798baa3a6c275b3/src/vips/ext/mutableimage.cr#L91" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3131,7 +3121,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/naqvis/crystal-vips/blob/7d78acdc6da6529a238effa4bea3f0d6e224ae1e/src/vips/ext/mutableimage.cr#L117" target="_blank">View source</a>]
+          [<a href="https://github.com/naqvis/crystal-vips/blob/2d9a985d53ce726f033816a00798baa3a6c275b3/src/vips/ext/mutableimage.cr#L117" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3159,7 +3149,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/naqvis/crystal-vips/blob/7d78acdc6da6529a238effa4bea3f0d6e224ae1e/src/vips/ext/mutableimage.cr#L140" target="_blank">View source</a>]
+          [<a href="https://github.com/naqvis/crystal-vips/blob/2d9a985d53ce726f033816a00798baa3a6c275b3/src/vips/ext/mutableimage.cr#L140" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3190,7 +3180,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/naqvis/crystal-vips/blob/7d78acdc6da6529a238effa4bea3f0d6e224ae1e/src/vips/ext/mutableimage.cr#L169" target="_blank">View source</a>]
+          [<a href="https://github.com/naqvis/crystal-vips/blob/2d9a985d53ce726f033816a00798baa3a6c275b3/src/vips/ext/mutableimage.cr#L169" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3218,7 +3208,7 @@
       <br/>
       <div>
         
-          [<a href="https://github.com/naqvis/crystal-vips/blob/7d78acdc6da6529a238effa4bea3f0d6e224ae1e/src/vips/ext/mutableimage.cr#L193" target="_blank">View source</a>]
+          [<a href="https://github.com/naqvis/crystal-vips/blob/2d9a985d53ce726f033816a00798baa3a6c275b3/src/vips/ext/mutableimage.cr#L193" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3252,7 +3242,7 @@ modifying pixels.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/naqvis/crystal-vips/blob/7d78acdc6da6529a238effa4bea3f0d6e224ae1e/src/vips/mutableimage.cr#L59" target="_blank">View source</a>]
+          [<a href="https://github.com/naqvis/crystal-vips/blob/2d9a985d53ce726f033816a00798baa3a6c275b3/src/vips/mutableimage.cr#L59" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3274,7 +3264,7 @@ named metadata item is removed</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/naqvis/crystal-vips/blob/7d78acdc6da6529a238effa4bea3f0d6e224ae1e/src/vips/mutableimage.cr#L34" target="_blank">View source</a>]
+          [<a href="https://github.com/naqvis/crystal-vips/blob/2d9a985d53ce726f033816a00798baa3a6c275b3/src/vips/mutableimage.cr#L34" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3296,7 +3286,7 @@ same name is removed. See <code><a href="../Vips/GValue.html">GValue</a></code> 
       <br/>
       <div>
         
-          [<a href="https://github.com/naqvis/crystal-vips/blob/7d78acdc6da6529a238effa4bea3f0d6e224ae1e/src/vips/mutableimage.cr#L18" target="_blank">View source</a>]
+          [<a href="https://github.com/naqvis/crystal-vips/blob/2d9a985d53ce726f033816a00798baa3a6c275b3/src/vips/mutableimage.cr#L18" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3317,7 +3307,7 @@ same name is removed. See <code><a href="../Vips/GValue.html">GValue</a></code> 
       <br/>
       <div>
         
-          [<a href="https://github.com/naqvis/crystal-vips/blob/7d78acdc6da6529a238effa4bea3f0d6e224ae1e/src/vips/mutableimage.cr#L26" target="_blank">View source</a>]
+          [<a href="https://github.com/naqvis/crystal-vips/blob/2d9a985d53ce726f033816a00798baa3a6c275b3/src/vips/mutableimage.cr#L26" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -3349,7 +3339,7 @@ which includes its class name and its object address.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/naqvis/crystal-vips/blob/7d78acdc6da6529a238effa4bea3f0d6e224ae1e/src/vips/mutableimage.cr#L64" target="_blank">View source</a>]
+          [<a href="https://github.com/naqvis/crystal-vips/blob/2d9a985d53ce726f033816a00798baa3a6c275b3/src/vips/mutableimage.cr#L64" target="_blank">View source</a>]
         
       </div>
     </div>
