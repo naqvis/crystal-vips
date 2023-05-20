@@ -400,6 +400,7 @@ lib LibVips
   alias GCallback = (->)
 
   enum GConnectFlags
+    GConnectDefault = 0
     GConnectAfter   = 1
     GConnectSwapped = 2
   end
@@ -420,7 +421,7 @@ lib LibVips
     notifiers : GClosureNotifyData*
   end
 
-  alias GClosureNotify = (Gpointer, GClosure* -> Void)
+  alias GClosureNotify = (Void*, Void* ->)
 
   struct GClosureNotifyData
     data : Gpointer

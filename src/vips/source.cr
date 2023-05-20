@@ -90,7 +90,7 @@ module Vips
     # exactly as IO::read, ie. it takes a slice and reads atmost `slice.size` and
     # returns a number of bytes read from the source, or 0 if the source is already
     # at end of file.
-    def on_read(&block : Bytes ->)
+    def on_read(&block : Bytes -> Int32)
       boxed_data = Box.box(block)
       @@box << boxed_data
 
@@ -98,7 +98,7 @@ module Vips
         next 0 if size <= 0
         callback = Box(typeof(block)).unbox(data)
         slice = Bytes.new(buff.as(UInt8*), size)
-        callback.call(slice) || 0
+        callback.call(slice)
       }, boxed_data)
     end
 
@@ -118,6 +118,10 @@ module Vips
         ret = callback.call(offset, IO::Seek.from_value(whence))
         ret.to_i64
       }, boxed_data)
+    end
+
+    def finalize
+      @@box.clear
     end
   end
 

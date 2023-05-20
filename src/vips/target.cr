@@ -84,6 +84,7 @@ module Vips
         next -1_i64 if size <= 0
         callback = Box(typeof(block)).unbox(data)
         slice = Bytes.new(buff, size)
+        @@box.delete(data)
         callback.call(slice)
       }, boxed_data)
     end
@@ -97,6 +98,7 @@ module Vips
       signal_connect("finish", LibVips::FinishCB.new { |_source, data|
         callback = Box(typeof(block)).unbox(data)
         callback.call
+        @@box.delete(data)
         nil
       }, boxed_data)
     end

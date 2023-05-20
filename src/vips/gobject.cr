@@ -16,12 +16,11 @@ module Vips
         callback = em
       end
 
-      box = Box.box(callback)
-      CBHandler.register(box)
       LibVips.g_signal_connect_data(@handle, signal,
         callback.pointer,
         data,
-        ->CBHandler.de_register, LibVips::GConnectFlags::GConnectAfter).tap do |ret|
+        nil,
+        LibVips::GConnectFlags::GConnectAfter).tap do |ret|
         raise VipsException.new("Couldn't connect signal #{signal}") if ret == 0
       end
     end
@@ -77,35 +76,8 @@ module Vips
       @handle
     end
 
-    # :nodoc:
-    private class CBHandler
-      def self.instance
-        @@instance ||= new
-      end
-
-      def initialize
-        @closure_data = Hash(LibVips::Gpointer, Int32).new { |h, k| h[k] = 0 }
-      end
-
-      def self.register(data)
-        instance.register(data)
-      end
-
-      def self.de_register(data, _closure)
-        instance.de_register(data)
-      end
-
-      def register(data)
-        @closure_data[data] += 1 if data
-        data
-      end
-
-      def de_register(data)
-        @closure_data[data] -= 1
-        if @closure_data[data] <= 0
-          @closure_data.delete(data)
-        end
-      end
+    def finalize
+      LibVips.g_object_unref(@handle)
     end
   end
 end
