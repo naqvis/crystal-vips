@@ -511,7 +511,7 @@ to read from a named file)</p>
   </h2>
   
     
-      <a href="https://github.com/naqvis/crystal-vips/blob/9b42792071413e8f1206883dee119337035f6e04/src/vips/source.cr#L79" target="_blank">
+      <a href="https://github.com/naqvis/crystal-vips/blob/4b1a523b2f5197a32acba99d87e12b2e5eec4949/src/vips/source.cr#L79" target="_blank">
         vips/source.cr
       </a>
     
@@ -554,7 +554,12 @@ to read from a named file)</p>
   <ul class="list-summary">
     
       <li class="entry-summary">
-        <a href="#on_read%28%26block%3ABytes-%3E%29-instance-method" class="signature"><strong>#on_read</strong>(&block : Bytes -> )</a>
+        <a href="#finalize-instance-method" class="signature"><strong>#finalize</strong></a>
+        
+      </li>
+    
+      <li class="entry-summary">
+        <a href="#on_read%28%26block%3ABytes-%3EInt32%29-instance-method" class="signature"><strong>#on_read</strong>(&block : Bytes -> Int32)</a>
         
           <div class="summary"><p>The block is executed to read data from the source.</p></div>
         
@@ -696,6 +701,11 @@ to read from a named file)</p>
   <h3>Instance methods inherited from class <code><a href="../Vips/GObject.html">Vips::GObject</a></code></h3>
   
   
+    <a href="../Vips/GObject.html#finalize-instance-method" class="tooltip">
+      <span>finalize</span>
+    finalize</a>, 
+    
+  
     <a href="../Vips/GObject.html#get%28name%3AString%2Cgval%3AGValue%29-instance-method" class="tooltip">
       <span>get(name : String, gval : GValue)</span>
     get</a>, 
@@ -783,7 +793,7 @@ to read from a named file)</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/naqvis/crystal-vips/blob/9b42792071413e8f1206883dee119337035f6e04/src/vips/source.cr#L82" target="_blank">View source</a>]
+          [<a href="https://github.com/naqvis/crystal-vips/blob/4b1a523b2f5197a32acba99d87e12b2e5eec4949/src/vips/source.cr#L82" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -802,12 +812,28 @@ to read from a named file)</p>
     Instance Method Detail
   </h2>
   
-    <div class="entry-detail" id="on_read(&amp;block:Bytes-&gt;)-instance-method">
+    <div class="entry-detail" id="finalize-instance-method">
       <div class="signature">
         
-        def <strong>on_read</strong>(&block : Bytes -> )
+        def <strong>finalize</strong>
 
-        <a class="method-permalink" href="#on_read%28%26block%3ABytes-%3E%29-instance-method">#</a>
+        <a class="method-permalink" href="#finalize-instance-method">#</a>
+      </div>
+      
+      <br/>
+      <div>
+        
+          [<a href="https://github.com/naqvis/crystal-vips/blob/4b1a523b2f5197a32acba99d87e12b2e5eec4949/src/vips/source.cr#L123" target="_blank">View source</a>]
+        
+      </div>
+    </div>
+  
+    <div class="entry-detail" id="on_read(&amp;block:Bytes-&gt;Int32)-instance-method">
+      <div class="signature">
+        
+        def <strong>on_read</strong>(&block : Bytes -> Int32)
+
+        <a class="method-permalink" href="#on_read%28%26block%3ABytes-%3EInt32%29-instance-method">#</a>
       </div>
       
         <div class="doc">
@@ -821,7 +847,7 @@ at end of file.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/naqvis/crystal-vips/blob/9b42792071413e8f1206883dee119337035f6e04/src/vips/source.cr#L93" target="_blank">View source</a>]
+          [<a href="https://github.com/naqvis/crystal-vips/blob/4b1a523b2f5197a32acba99d87e12b2e5eec4949/src/vips/source.cr#L93" target="_blank">View source</a>]
         
       </div>
     </div>
@@ -847,7 +873,7 @@ do extra caching.</p>
       <br/>
       <div>
         
-          [<a href="https://github.com/naqvis/crystal-vips/blob/9b42792071413e8f1206883dee119337035f6e04/src/vips/source.cr#L112" target="_blank">View source</a>]
+          [<a href="https://github.com/naqvis/crystal-vips/blob/4b1a523b2f5197a32acba99d87e12b2e5eec4949/src/vips/source.cr#L112" target="_blank">View source</a>]
         
       </div>
     </div>
