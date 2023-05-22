@@ -1323,6 +1323,7 @@ module Vips
     # :nodoc:
     def finalize
       @references.clear
+      release_handle
     end
 
     private def convert(value, op, &block) # : Array
