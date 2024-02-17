@@ -474,14 +474,15 @@ lib LibVips
 
   @[Flags]
   enum VipsArgumentFlags
-    Required   =   1
-    Construct  =   2
-    SetOnce    =   4
-    SetAlways  =   8
-    Input      =  16
-    Output     =  32
-    Deprecated =  64
-    Modify     = 128
+    Required    =   1
+    Construct   =   2
+    SetOnce     =   4
+    SetAlways   =   8
+    Input       =  16
+    Output      =  32
+    Deprecated  =  64
+    Modify      = 128
+    NonHashable = 256
   end
   fun vips_object_get_args(object : VipsObject*, names : LibC::Char***, flags : LibC::Int**, n_args : LibC::Int*) : LibC::Int
   fun vips_argument_class_map(object_class : VipsObjectClass*, fn : VipsArgumentClassMapFn, a : Void*, b : Void*) : Void*
