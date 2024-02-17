@@ -1373,6 +1373,9 @@ lib LibVips
     VipsOperationSequentialUnbuffered = 2
     VipsOperationNocache              = 4
     VipsOperationDeprecated           = 8
+	  VipsOperationUntrusted            = 16
+	  VipsOperationBlocked              = 32
+	  VipsOperationRevalidate           = 64
   end
   fun vips_operation_class_print_usage(operation_class : VipsOperationClass*)
 
