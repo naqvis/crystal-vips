@@ -310,6 +310,8 @@ lib LibVips
   fun g_param_spec_get_blurb(spec : GParamSpec) : Gchar*
 
   alias Gchar = LibC::Char
+
+  @[Flags]
   enum GParamFlags
     Readable       =  1
     Writable       =  2
@@ -399,6 +401,7 @@ lib LibVips
 
   alias GCallback = (->)
 
+  @[Flags]
   enum GConnectFlags
     Default = 0
     After   = 1
@@ -1179,6 +1182,7 @@ lib LibVips
     suffs : LibC::Char**
   end
 
+  @[Flags]
   enum VipsFormatFlags
     None      = 0
     Partial   = 1

@@ -402,20 +402,19 @@ module Vips::Enums
     Equals = 4
   end
 
+  @[Flags]
   enum OperationFlags
-    None                 = 0
     Sequential           = 1
     SequentialUnbuffered = 2
     Nocache              = 4
     Deprecated           = 8
   end
 
+  @[Flags]
   enum ForeignFlags
-    None       = 0
     Partial    = 1
     Bigendian  = 2
     Sequential = 4
-    All        = 7
   end
 
   # Signals that can be used on an `Image`. See `GObject#signal_connect`
