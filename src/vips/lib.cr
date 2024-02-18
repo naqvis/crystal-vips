@@ -209,11 +209,11 @@ lib LibVips
 
   fun vips__token_get(buffer : LibC::Char*, token : VipsToken*, string : LibC::Char*, size : LibC::Int) : LibC::Char*
   enum VipsToken
-    VipsTokenLeft   = 1
-    VipsTokenRight  = 2
-    VipsTokenString = 3
-    VipsTokenEquals = 4
-    VipsTokenComma  = 5
+    Left   = 1
+    Right  = 2
+    String = 3
+    Equals = 4
+    Comma  = 5
   end
   fun vips__token_must(buffer : LibC::Char*, token : VipsToken*, string : LibC::Char*, size : LibC::Int) : LibC::Char*
   fun vips__token_need(buffer : LibC::Char*, need_token : VipsToken, string : LibC::Char*, size : LibC::Int) : LibC::Char*
@@ -310,19 +310,21 @@ lib LibVips
   fun g_param_spec_get_blurb(spec : GParamSpec) : Gchar*
 
   alias Gchar = LibC::Char
+
+  @[Flags]
   enum GParamFlags
-    GParamReadable       =  1
-    GParamWritable       =  2
-    GParamReadwrite      =  3
-    GParamConstruct      =  4
-    GParamConstructOnly  =  8
-    GParamLaxValidation  = 16
-    GParamStaticName     = 32
-    GParamPrivate        = GParamStaticName
-    GParamStaticNick     =          64
-    GParamStaticBlurb    =         128
-    GParamExplicitNotify =  1073741824
-    GParamDeprecated     = -2147483648
+    Readable       =  1
+    Writable       =  2
+    Readwrite      =  3
+    Construct      =  4
+    ConstructOnly  =  8
+    LaxValidation  = 16
+    StaticName     = 32
+    Private        = StaticName
+    StaticNick     =          64
+    StaticBlurb    =         128
+    ExplicitNotify =  1073741824
+    Deprecated     = -2147483648
   end
   fun vips_argument_map(object : VipsObject*, fn : VipsArgumentMapFn, a : Void*, b : Void*) : Void*
 
@@ -399,10 +401,11 @@ lib LibVips
 
   alias GCallback = (->)
 
+  @[Flags]
   enum GConnectFlags
-    GConnectDefault = 0
-    GConnectAfter   = 1
-    GConnectSwapped = 2
+    Default = 0
+    After   = 1
+    Swapped = 2
   end
 
   struct GClosure
@@ -429,12 +432,12 @@ lib LibVips
   end
 
   enum GSignalMatchType
-    GSignalMatchId        =  1
-    GSignalMatchDetail    =  2
-    GSignalMatchClosure   =  4
-    GSignalMatchFunc      =  8
-    GSignalMatchData      = 16
-    GSignalMatchUnblocked = 32
+    Id        =  1
+    Detail    =  2
+    Closure   =  4
+    Func      =  8
+    Data      = 16
+    Unblocked = 32
   end
 
   fun g_signal_connect_data1(instance : Gpointer, detailed_signal : Gchar*,
@@ -460,15 +463,15 @@ lib LibVips
 
   @[Flags]
   enum GLogLevelFlags
-    GLogFlagRecursion =   1
-    GLogFlagFatal     =   2
-    GLogLevelError    =   4
-    GLogLevelCritical =   8
-    GLogLevelWarning  =  16
-    GLogLevelMessage  =  32
-    GLogLevelInfo     =  64
-    GLogLevelDebug    = 128
-    GLogLevelMask     =  -4
+    Recursion =   1
+    Fatal     =   2
+    Error    =   4
+    Critical =   8
+    Warning  =  16
+    Message  =  32
+    Info     =  64
+    Debug    = 128
+    Mask     =  -4
   end
   alias GLogFunc = (Gchar*, GLogLevelFlags, Gchar*, Gpointer -> Void)
 
@@ -861,34 +864,34 @@ lib LibVips
     Last      = 10
   end
   enum VipsCoding
-    VipsCodingError = -1
-    VipsCodingNone  =  0
-    VipsCodingLabq  =  2
-    VipsCodingRad   =  6
-    VipsCodingLast  =  7
+    Error = -1
+    None  =  0
+    Labq  =  2
+    Rad   =  6
+    Last  =  7
   end
   enum VipsInterpretation
-    VipsInterpretationError     = -1
-    VipsInterpretationMultiband =  0
-    VipsInterpretationBW        =  1
-    VipsInterpretationHistogram = 10
-    VipsInterpretationXyz       = 12
-    VipsInterpretationLab       = 13
-    VipsInterpretationCmyk      = 15
-    VipsInterpretationLabq      = 16
-    VipsInterpretationRgb       = 17
-    VipsInterpretationCmc       = 18
-    VipsInterpretationLch       = 19
-    VipsInterpretationLabs      = 21
-    VipsInterpretationSRgb      = 22
-    VipsInterpretationYxy       = 23
-    VipsInterpretationFourier   = 24
-    VipsInterpretationRgb16     = 25
-    VipsInterpretationGrey16    = 26
-    VipsInterpretationMatrix    = 27
-    VipsInterpretationScRgb     = 28
-    VipsInterpretationHsv       = 29
-    VipsInterpretationLast      = 30
+    Error     = -1
+    Multiband =  0
+    BW        =  1
+    Histogram = 10
+    Xyz       = 12
+    Lab       = 13
+    Cmyk      = 15
+    Labq      = 16
+    Rgb       = 17
+    Cmc       = 18
+    Lch       = 19
+    Labs      = 21
+    SRgb      = 22
+    Yxy       = 23
+    Fourier   = 24
+    Rgb16     = 25
+    Grey16    = 26
+    Matrix    = 27
+    ScRgb     = 28
+    Hsv       = 29
+    Last      = 30
   end
 
   struct VipsProgress
@@ -906,15 +909,15 @@ lib LibVips
   type GTimer = Void*
   alias VipsPel = UInt8
   enum VipsImageType
-    VipsImageError         = -1
-    VipsImageNone          =  0
-    VipsImageSetbuf        =  1
-    VipsImageSetbufForeign =  2
-    VipsImageOpenin        =  3
-    VipsImageMmapin        =  4
-    VipsImageMmapinrw      =  5
-    VipsImageOpenout       =  6
-    VipsImagePartial       =  7
+    Error         = -1
+    None          =  0
+    Setbuf        =  1
+    SetbufForeign =  2
+    Openin        =  3
+    Mmapin        =  4
+    Mmapinrw      =  5
+    Openout       =  6
+    Partial       =  7
   end
   alias VipsStartFn = (VipsImage*, Void*, Void* -> Void*)
 
@@ -934,11 +937,11 @@ lib LibVips
 
   alias VipsGenerateFn = (VipsRegion*, Void*, Void*, Void*, Gboolean* -> LibC::Int)
   enum RegionType
-    VipsRegionNone        = 0
-    VipsRegionBuffer      = 1
-    VipsRegionOtherRegion = 2
-    VipsRegionOtherImage  = 3
-    VipsRegionWindow      = 4
+    None        = 0
+    Buffer      = 1
+    OtherRegion = 2
+    OtherImage  = 3
+    Window      = 4
   end
 
   struct GThread
@@ -950,10 +953,10 @@ lib LibVips
 
   alias GThreadFunc = (Gpointer -> Gpointer)
   enum GThreadPriority
-    GThreadPriorityLow    = 0
-    GThreadPriorityNormal = 1
-    GThreadPriorityHigh   = 2
-    GThreadPriorityUrgent = 3
+    Low    = 0
+    Normal = 1
+    High   = 2
+    Urgent = 3
   end
 
   struct VipsBuffer
@@ -982,11 +985,11 @@ lib LibVips
 
   alias VipsStopFn = (Void*, Void*, Void* -> LibC::Int)
   enum VipsDemandStyle
-    VipsDemandStyleError     = -1
-    VipsDemandStyleSmalltile =  0
-    VipsDemandStyleFatstrip  =  1
-    VipsDemandStyleThinstrip =  2
-    VipsDemandStyleAny       =  3
+    Error     = -1
+    Smalltile =  0
+    Fatstrip  =  1
+    Thinstrip =  2
+    Any       =  3
   end
   fun vips_window_print(window : VipsWindow*)
   fun vips_buffer_dump_all
@@ -1080,10 +1083,10 @@ lib LibVips
   fun vips_array_image_newv(n : LibC::Int, ...) : VipsArrayImage*
   fun vips_array_image_new_from_string(string : LibC::Char*, flags : VipsAccess) : VipsArrayImage*
   enum VipsAccess
-    VipsAccessRandom               = 0
-    VipsAccessSequential           = 1
-    VipsAccessSequentialUnbuffered = 2
-    VipsAccessLast                 = 3
+    Random               = 0
+    Sequential           = 1
+    SequentialUnbuffered = 2
+    Last                 = 3
   end
   fun vips_array_image_empty : VipsArrayImage*
   fun vips_array_image_append(array : VipsArrayImage*, image : VipsImage*) : VipsArrayImage*
@@ -1156,10 +1159,10 @@ lib LibVips
   fun vips_check_separable(domain : LibC::Char*, im : VipsImage*) : LibC::Int
   fun vips_check_precision_intfloat(domain : LibC::Char*, precision : VipsPrecision) : LibC::Int
   enum VipsPrecision
-    VipsPrecisionInteger     = 0
-    VipsPrecisionFloat       = 1
-    VipsPrecisionApproximate = 2
-    VipsPrecisionLast        = 3
+    Integer     = 0
+    Float       = 1
+    Approximate = 2
+    Last        = 3
   end
   VipsFormatNone      = 0_i64
   VipsFormatPartial   = 1_i64
@@ -1179,10 +1182,11 @@ lib LibVips
     suffs : LibC::Char**
   end
 
+  @[Flags]
   enum VipsFormatFlags
-    VipsFormatNone      = 0
-    VipsFormatPartial   = 1
-    VipsFormatBigendian = 2
+    None      = 0
+    Partial   = 1
+    Bigendian = 2
   end
   fun vips_format_for_name(filename : LibC::Char*) : VipsFormatClass*
   fun vips_format_get_flags(format : VipsFormatClass*, filename : LibC::Char*) : VipsFormatFlags
@@ -1208,13 +1212,13 @@ lib LibVips
   fun vips_region_copy(reg : VipsRegion*, dest : VipsRegion*, r : VipsRect*, x : LibC::Int, y : LibC::Int)
   fun vips_region_shrink_method(from : VipsRegion*, to : VipsRegion*, target : VipsRect*, method : VipsRegionShrink) : LibC::Int
   enum VipsRegionShrink
-    VipsRegionShrinkMean    = 0
-    VipsRegionShrinkMedian  = 1
-    VipsRegionShrinkMode    = 2
-    VipsRegionShrinkMax     = 3
-    VipsRegionShrinkMin     = 4
-    VipsRegionShrinkNearest = 5
-    VipsRegionShrinkLast    = 6
+    Mean    = 0
+    Median  = 1
+    Mode    = 2
+    Max     = 3
+    Min     = 4
+    Nearest = 5
+    Last    = 6
   end
   fun vips_region_shrink(from : VipsRegion*, to : VipsRegion*, target : VipsRect*) : LibC::Int
   fun vips_region_prepare(reg : VipsRegion*, r : VipsRect*) : LibC::Int
@@ -1369,13 +1373,13 @@ lib LibVips
 
   @[Flags]
   enum VipsOperationFlags
-    VipsOperationSequential           = 1
-    VipsOperationSequentialUnbuffered = 2
-    VipsOperationNocache              = 4
-    VipsOperationDeprecated           = 8
-	  VipsOperationUntrusted            = 16
-	  VipsOperationBlocked              = 32
-	  VipsOperationRevalidate           = 64
+    Sequential           = 1
+    SequentialUnbuffered = 2
+    Nocache              = 4
+    Deprecated           = 8
+	  Untrusted            = 16
+	  Blocked              = 32
+	  Revalidate           = 64
   end
 
   fun vips_operation_class_print_usage(operation_class : VipsOperationClass*)
@@ -1426,9 +1430,9 @@ lib LibVips
 
   @[Flags]
   enum VipsForeignFlags
-    VipsForeignPartial    = 1
-    VipsForeignBigendian  = 2
-    VipsForeignSequential = 4
+    Partial    = 1
+    Bigendian  = 2
+    Sequential = 4
   end
 
   fun vips_foreign_is_a(loader : LibC::Char*, filename : LibC::Char*) : Gboolean
@@ -1610,33 +1614,33 @@ lib LibVips
   fun vips_sign(in : VipsImage*, out : VipsImage**, ...) : LibC::Int
   fun vips_round(in : VipsImage*, out : VipsImage**, round : VipsOperationRound, ...) : LibC::Int
   enum VipsOperationRound
-    VipsOperationRoundRint  = 0
-    VipsOperationRoundCeil  = 1
-    VipsOperationRoundFloor = 2
-    VipsOperationRoundLast  = 3
+    Rint  = 0
+    Ceil  = 1
+    Floor = 2
+    Last  = 3
   end
   fun vips_floor(in : VipsImage*, out : VipsImage**, ...) : LibC::Int
   fun vips_ceil(in : VipsImage*, out : VipsImage**, ...) : LibC::Int
   fun vips_rint(in : VipsImage*, out : VipsImage**, ...) : LibC::Int
   fun vips_math(in : VipsImage*, out : VipsImage**, math : VipsOperationMath, ...) : LibC::Int
   enum VipsOperationMath
-    VipsOperationMathSin   =  0
-    VipsOperationMathCos   =  1
-    VipsOperationMathTan   =  2
-    VipsOperationMathAsin  =  3
-    VipsOperationMathAcos  =  4
-    VipsOperationMathAtan  =  5
-    VipsOperationMathLog   =  6
-    VipsOperationMathLog10 =  7
-    VipsOperationMathExp   =  8
-    VipsOperationMathExp10 =  9
-    VipsOperationMathSinh  = 10
-    VipsOperationMathCosh  = 11
-    VipsOperationMathTanh  = 12
-    VipsOperationMathAsinh = 13
-    VipsOperationMathAcosh = 14
-    VipsOperationMathAtanh = 15
-    VipsOperationMathLast  = 16
+    Sin   =  0
+    Cos   =  1
+    Tan   =  2
+    Asin  =  3
+    Acos  =  4
+    Atan  =  5
+    Log   =  6
+    Log10 =  7
+    Exp   =  8
+    Exp10 =  9
+    Sinh  = 10
+    Cosh  = 11
+    Tanh  = 12
+    Asinh = 13
+    Acosh = 14
+    Atanh = 15
+    Last  = 16
   end
   fun vips_sin(in : VipsImage*, out : VipsImage**, ...) : LibC::Int
   fun vips_cos(in : VipsImage*, out : VipsImage**, ...) : LibC::Int
@@ -1656,38 +1660,38 @@ lib LibVips
   fun vips_atanh(in : VipsImage*, out : VipsImage**, ...) : LibC::Int
   fun vips_complex(in : VipsImage*, out : VipsImage**, cmplx : VipsOperationComplex, ...) : LibC::Int
   enum VipsOperationComplex
-    VipsOperationComplexPolar = 0
-    VipsOperationComplexRect  = 1
-    VipsOperationComplexConj  = 2
-    VipsOperationComplexLast  = 3
+    Polar = 0
+    Rect  = 1
+    Conj  = 2
+    Last  = 3
   end
   fun vips_polar(in : VipsImage*, out : VipsImage**, ...) : LibC::Int
   fun vips_rect(in : VipsImage*, out : VipsImage**, ...) : LibC::Int
   fun vips_conj(in : VipsImage*, out : VipsImage**, ...) : LibC::Int
   fun vips_complex2(left : VipsImage*, right : VipsImage*, out : VipsImage**, cmplx : VipsOperationComplex2, ...) : LibC::Int
   enum VipsOperationComplex2
-    VipsOperationComplex2CrossPhase = 0
-    VipsOperationComplex2Last       = 1
+    CrossPhase = 0
+    Last       = 1
   end
   fun vips_cross_phase(left : VipsImage*, right : VipsImage*, out : VipsImage**, ...) : LibC::Int
   fun vips_complexget(in : VipsImage*, out : VipsImage**, get : VipsOperationComplexget, ...) : LibC::Int
   enum VipsOperationComplexget
-    VipsOperationComplexgetReal = 0
-    VipsOperationComplexgetImag = 1
-    VipsOperationComplexgetLast = 2
+    Real = 0
+    Imag = 1
+    Last = 2
   end
   fun vips_real(in : VipsImage*, out : VipsImage**, ...) : LibC::Int
   fun vips_imag(in : VipsImage*, out : VipsImage**, ...) : LibC::Int
   fun vips_complexform(left : VipsImage*, right : VipsImage*, out : VipsImage**, ...) : LibC::Int
   fun vips_relational(left : VipsImage*, right : VipsImage*, out : VipsImage**, relational : VipsOperationRelational, ...) : LibC::Int
   enum VipsOperationRelational
-    VipsOperationRelationalEqual  = 0
-    VipsOperationRelationalNoteq  = 1
-    VipsOperationRelationalLess   = 2
-    VipsOperationRelationalLesseq = 3
-    VipsOperationRelationalMore   = 4
-    VipsOperationRelationalMoreeq = 5
-    VipsOperationRelationalLast   = 6
+    Equal  = 0
+    Noteq  = 1
+    Less   = 2
+    Lesseq = 3
+    More   = 4
+    Moreeq = 5
+    Last   = 6
   end
   fun vips_equal(left : VipsImage*, right : VipsImage*, out : VipsImage**, ...) : LibC::Int
   fun vips_notequal(left : VipsImage*, right : VipsImage*, out : VipsImage**, ...) : LibC::Int
@@ -1711,12 +1715,12 @@ lib LibVips
   fun vips_moreeq_const1(in : VipsImage*, out : VipsImage**, c : LibC::Double, ...) : LibC::Int
   fun vips_boolean(left : VipsImage*, right : VipsImage*, out : VipsImage**, boolean : VipsOperationBoolean, ...) : LibC::Int
   enum VipsOperationBoolean
-    VipsOperationBooleanAnd    = 0
-    VipsOperationBooleanOr     = 1
-    VipsOperationBooleanEor    = 2
-    VipsOperationBooleanLshift = 3
-    VipsOperationBooleanRshift = 4
-    VipsOperationBooleanLast   = 5
+    And    = 0
+    Or     = 1
+    Eor    = 2
+    Lshift = 3
+    Rshift = 4
+    Last   = 5
   end
   fun vips_andimage(left : VipsImage*, right : VipsImage*, out : VipsImage**, ...) : LibC::Int
   fun vips_orimage(left : VipsImage*, right : VipsImage*, out : VipsImage**, ...) : LibC::Int
@@ -1737,10 +1741,10 @@ lib LibVips
   fun vips_rshift_const1(in : VipsImage*, out : VipsImage**, c : LibC::Double, ...) : LibC::Int
   fun vips_math2(left : VipsImage*, right : VipsImage*, out : VipsImage**, math2 : VipsOperationMath2, ...) : LibC::Int
   enum VipsOperationMath2
-    VipsOperationMath2Pow   = 0
-    VipsOperationMath2Wop   = 1
-    VipsOperationMath2Atan2 = 2
-    VipsOperationMath2Last  = 3
+    Pow   = 0
+    Wop   = 1
+    Atan2 = 2
+    Last  = 3
   end
   fun vips_pow(left : VipsImage*, right : VipsImage*, out : VipsImage**, ...) : LibC::Int
   fun vips_wop(left : VipsImage*, right : VipsImage*, out : VipsImage**, ...) : LibC::Int
@@ -1778,22 +1782,22 @@ lib LibVips
   fun vips_embed(in : VipsImage*, out : VipsImage**, x : LibC::Int, y : LibC::Int, width : LibC::Int, height : LibC::Int, ...) : LibC::Int
   fun vips_gravity(in : VipsImage*, out : VipsImage**, direction : VipsCompassDirection, width : LibC::Int, height : LibC::Int, ...) : LibC::Int
   enum VipsCompassDirection
-    VipsCompassDirectionCentre    = 0
-    VipsCompassDirectionNorth     = 1
-    VipsCompassDirectionEast      = 2
-    VipsCompassDirectionSouth     = 3
-    VipsCompassDirectionWest      = 4
-    VipsCompassDirectionNorthEast = 5
-    VipsCompassDirectionSouthEast = 6
-    VipsCompassDirectionSouthWest = 7
-    VipsCompassDirectionNorthWest = 8
-    VipsCompassDirectionLast      = 9
+    Centre    = 0
+    North     = 1
+    East      = 2
+    South     = 3
+    West      = 4
+    NorthEast = 5
+    SouthEast = 6
+    SouthWest = 7
+    NorthWest = 8
+    Last      = 9
   end
   fun vips_flip(in : VipsImage*, out : VipsImage**, direction : VipsDirection, ...) : LibC::Int
   enum VipsDirection
-    VipsDirectionHorizontal = 0
-    VipsDirectionVertical   = 1
-    VipsDirectionLast       = 2
+    Horizontal = 0
+    Vertical   = 1
+    Last       = 2
   end
   fun vips_insert(main : VipsImage*, sub : VipsImage*, out : VipsImage**, x : LibC::Int, y : LibC::Int, ...) : LibC::Int
   fun vips_join(in1 : VipsImage*, in2 : VipsImage*, out : VipsImage**, direction : VipsDirection, ...) : LibC::Int
@@ -1808,11 +1812,11 @@ lib LibVips
   fun vips_wrap(in : VipsImage*, out : VipsImage**, ...) : LibC::Int
   fun vips_rot(in : VipsImage*, out : VipsImage**, angle : VipsAngle, ...) : LibC::Int
   enum VipsAngle
-    VipsAngleD0   = 0
-    VipsAngleD90  = 1
-    VipsAngleD180 = 2
-    VipsAngleD270 = 3
-    VipsAngleLast = 4
+    D0   = 0
+    D90  = 1
+    D180 = 2
+    D270 = 3
+    Last = 4
   end
   fun vips_rot90(in : VipsImage*, out : VipsImage**, ...) : LibC::Int
   fun vips_rot180(in : VipsImage*, out : VipsImage**, ...) : LibC::Int
@@ -1858,32 +1862,32 @@ lib LibVips
   fun vips_composite(in : VipsImage**, out : VipsImage**, n : LibC::Int, mode : LibC::Int*, ...) : LibC::Int
   fun vips_composite2(base : VipsImage*, overlay : VipsImage*, out : VipsImage**, mode1 : VipsBlendMode, ...) : LibC::Int
   enum VipsBlendMode
-    VipsBlendModeClear       =  0
-    VipsBlendModeSource      =  1
-    VipsBlendModeOver        =  2
-    VipsBlendModeIn          =  3
-    VipsBlendModeOut         =  4
-    VipsBlendModeAtop        =  5
-    VipsBlendModeDest        =  6
-    VipsBlendModeDestOver    =  7
-    VipsBlendModeDestIn      =  8
-    VipsBlendModeDestOut     =  9
-    VipsBlendModeDestAtop    = 10
-    VipsBlendModeXor         = 11
-    VipsBlendModeAdd         = 12
-    VipsBlendModeSaturate    = 13
-    VipsBlendModeMultiply    = 14
-    VipsBlendModeScreen      = 15
-    VipsBlendModeOverlay     = 16
-    VipsBlendModeDarken      = 17
-    VipsBlendModeLighten     = 18
-    VipsBlendModeColourDodge = 19
-    VipsBlendModeColourBurn  = 20
-    VipsBlendModeHardLight   = 21
-    VipsBlendModeSoftLight   = 22
-    VipsBlendModeDifference  = 23
-    VipsBlendModeExclusion   = 24
-    VipsBlendModeLast        = 25
+    Clear       =  0
+    Source      =  1
+    Over        =  2
+    In          =  3
+    Out         =  4
+    Atop        =  5
+    Dest        =  6
+    DestOver    =  7
+    DestIn      =  8
+    DestOut     =  9
+    DestAtop    = 10
+    Xor         = 11
+    Add         = 12
+    Saturate    = 13
+    Multiply    = 14
+    Screen      = 15
+    Overlay     = 16
+    Darken      = 17
+    Lighten     = 18
+    ColourDodge = 19
+    ColourBurn  = 20
+    HardLight   = 21
+    SoftLight   = 22
+    Difference  = 23
+    Exclusion   = 24
+    Last        = 25
   end
   fun vips_falsecolour(in : VipsImage*, out : VipsImage**, ...) : LibC::Int
   fun vips_gamma(in : VipsImage*, out : VipsImage**, ...) : LibC::Int
@@ -1909,9 +1913,9 @@ lib LibVips
   VipsOperationMorphologyLast = 2_i64
   fun vips_morph(in : VipsImage*, out : VipsImage**, mask : VipsImage*, morph : VipsOperationMorphology, ...) : LibC::Int
   enum VipsOperationMorphology
-    VipsOperationMorphologyErode  = 0
-    VipsOperationMorphologyDilate = 1
-    VipsOperationMorphologyLast   = 2
+    Erode  = 0
+    Dilate = 1
+    Last   = 2
   end
   fun vips_rank(in : VipsImage*, out : VipsImage**, width : LibC::Int, height : LibC::Int, index : LibC::Int, ...) : LibC::Int
   fun vips_median(in : VipsImage*, out : VipsImage**, size : LibC::Int, ...) : LibC::Int
