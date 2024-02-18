@@ -474,14 +474,15 @@ lib LibVips
 
   @[Flags]
   enum VipsArgumentFlags
-    Required   =   1
-    Construct  =   2
-    SetOnce    =   4
-    SetAlways  =   8
-    Input      =  16
-    Output     =  32
-    Deprecated =  64
-    Modify     = 128
+    Required    =   1
+    Construct   =   2
+    SetOnce     =   4
+    SetAlways   =   8
+    Input       =  16
+    Output      =  32
+    Deprecated  =  64
+    Modify      = 128
+    NonHashable = 256
   end
   fun vips_object_get_args(object : VipsObject*, names : LibC::Char***, flags : LibC::Int**, n_args : LibC::Int*) : LibC::Int
   fun vips_argument_class_map(object_class : VipsObjectClass*, fn : VipsArgumentClassMapFn, a : Void*, b : Void*) : Void*
@@ -1366,13 +1367,17 @@ lib LibVips
     pixels : LibC::Int
   end
 
+  @[Flags]
   enum VipsOperationFlags
-    VipsOperationNone                 = 0
     VipsOperationSequential           = 1
     VipsOperationSequentialUnbuffered = 2
     VipsOperationNocache              = 4
     VipsOperationDeprecated           = 8
+	  VipsOperationUntrusted            = 16
+	  VipsOperationBlocked              = 32
+	  VipsOperationRevalidate           = 64
   end
+
   fun vips_operation_class_print_usage(operation_class : VipsOperationClass*)
 
   struct VipsOperationClass
@@ -1418,13 +1423,14 @@ lib LibVips
   fun vips_foreign_find_load_buffer(data : Void*, size : LibC::SizeT) : LibC::Char*
   fun vips_foreign_find_load_source(source : VipsSource*) : LibC::Char*
   fun vips_foreign_flags(loader : LibC::Char*, filename : LibC::Char*) : VipsForeignFlags
+
+  @[Flags]
   enum VipsForeignFlags
-    VipsForeignNone       = 0
     VipsForeignPartial    = 1
     VipsForeignBigendian  = 2
     VipsForeignSequential = 4
-    VipsForeignAll        = 7
   end
+
   fun vips_foreign_is_a(loader : LibC::Char*, filename : LibC::Char*) : Gboolean
   fun vips_foreign_is_a_buffer(loader : LibC::Char*, data : Void*, size : LibC::SizeT) : Gboolean
   fun vips_foreign_is_a_source(loader : LibC::Char*, source : VipsSource*) : Gboolean
