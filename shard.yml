@@ -1,5 +1,5 @@
 name: vips
-version: 0.1.4
+version: 0.1.5
 
 authors:
   - Ali Naqvi <syed.alinaqvi@gmail.com>
@@ -7,6 +7,6 @@ authors:
 description: |
   Crystal bindings for the libvips image processing library.
 
-crystal:  ~> 0.36.0
+crystal: ~> 0.36.0
 
 license: MIT
