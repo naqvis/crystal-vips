@@ -20,7 +20,7 @@ module Vips
         callback.pointer,
         data,
         nil,
-        LibVips::GConnectFlags::GConnectAfter).tap do |ret|
+        LibVips::GConnectFlags::After).tap do |ret|
         raise VipsException.new("Couldn't connect signal #{signal}") if ret == 0
       end
     end
