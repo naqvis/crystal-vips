@@ -465,13 +465,13 @@ lib LibVips
   enum GLogLevelFlags
     Recursion =   1
     Fatal     =   2
-    Error    =   4
-    Critical =   8
-    Warning  =  16
-    Message  =  32
-    Info     =  64
-    Debug    = 128
-    Mask     =  -4
+    Error     =   4
+    Critical  =   8
+    Warning   =  16
+    Message   =  32
+    Info      =  64
+    Debug     = 128
+    Mask      =  -4
   end
   alias GLogFunc = (Gchar*, GLogLevelFlags, Gchar*, Gpointer -> Void)
 
@@ -1373,13 +1373,13 @@ lib LibVips
 
   @[Flags]
   enum VipsOperationFlags
-    Sequential           = 1
-    SequentialUnbuffered = 2
-    Nocache              = 4
-    Deprecated           = 8
-	  Untrusted            = 16
-	  Blocked              = 32
-	  Revalidate           = 64
+    Sequential           =  1
+    SequentialUnbuffered =  2
+    Nocache              =  4
+    Deprecated           =  8
+    Untrusted            = 16
+    Blocked              = 32
+    Revalidate           = 64
   end
 
   fun vips_operation_class_print_usage(operation_class : VipsOperationClass*)
@@ -2089,6 +2089,6 @@ lib LibVips
 
   alias ReadCB = (Void*, Void*, Gint64, Void* -> Gint)
   alias SeekCB = (Void*, Gint64, Gint, Void* -> Gint64)
-  alias WriteCB = (Void*, UInt8*, Gint, Void* -> Gint64)
+  alias WriteCB = (Void*, Void*, Gint, Void* -> Gint64)
   alias FinishCB = (Void*, Void* ->)
 end

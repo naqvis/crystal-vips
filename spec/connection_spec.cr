@@ -114,28 +114,19 @@ describe Vips::Connection do
       Vips::TargetCustom.new
     end
 
-    pending "can write an image to a user output stream" do
+    it "can write an image to a user output stream" do
       filename = timg("x5.png")
       file = File.open(filename, "wb")
+      io = IO::Memory.new
       target = Vips::TargetCustom.new
-      target.on_write { |slice| file.write(slice); slice.size.to_i64 }
-      target.on_finish { file.close }
-
-      image = Vips::Image.new_from_file(simg("wagon.jpg"))
-      image.write_to_target(target, "%.png")
-
-      image = Vips::Image.new_from_file(filename)
-
-      image.width.should eq(685)
-      image.height.should eq(478)
-      image.bands.should eq(3)
-      (image.avg - 109.789).should be <= 0.001
-    end
-
-    it "can write an image via target stream" do
-      filename = timg("x5.png")
-      file = File.open(filename, "wb")
-      target = Vips::TargetStream.new_from_stream(file)
+      target.on_write { |slice| io.write(slice); slice.size.to_i64 }
+      target.on_finish do
+        io.rewind
+        File.open(filename, "wb") do |file|
+          IO.copy(io, file)
+        end
+        io.clear
+      end
 
       image = Vips::Image.new_from_file(simg("wagon.jpg"))
       image.write_to_target(target, "%.png")
