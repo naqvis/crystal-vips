@@ -97,7 +97,7 @@ module Vips
       signal_connect("read", LibVips::ReadCB.new { |_source, buff, size, data|
         next 0 if size <= 0
         callback = Box(typeof(block)).unbox(data)
-        slice = Bytes.new(buff.as(UInt8*), size)
+        slice = Bytes.new(buff.as(UInt8*), size - 1)
         callback.call(slice)
       }, boxed_data)
     end

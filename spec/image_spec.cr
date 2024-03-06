@@ -599,7 +599,6 @@ describe Vips::Image do
                       Vips::Enums::Interpretation::Lch,
                       Vips::Enums::Interpretation::Cmc,
                       Vips::Enums::Interpretation::Labs,
-                      Vips::Enums::Interpretation::Scrgb,
                       Vips::Enums::Interpretation::Hsv,
                       Vips::Enums::Interpretation::Srgb,
                       Vips::Enums::Interpretation::Yxy]

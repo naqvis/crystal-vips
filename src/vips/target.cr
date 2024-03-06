@@ -83,7 +83,7 @@ module Vips
       signal_connect("write", LibVips::WriteCB.new { |source, buff, size, data|
         next -1_i64 if size <= 0
         callback = Box(typeof(block)).unbox(data)
-        slice = Bytes.new(buff, size)
+        slice = Bytes.new(buff.as(UInt8*), size)
         @@box.delete(data)
         callback.call(slice)
       }, boxed_data)
