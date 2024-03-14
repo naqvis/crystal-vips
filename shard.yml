@@ -7,6 +7,6 @@ authors:
 description: |
   Crystal bindings for the libvips image processing library.
 
-crystal: ~> 0.36.0
+crystal: '>= 0.36.0'
 
 license: MIT
